@@ -1,5 +1,6 @@
 package com.taufik.movieshow.ui.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,6 +9,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
 import com.taufik.movieshow.data.model.DummyTvShowMain
 import com.taufik.movieshow.databinding.ItemsMovieShowBinding
+import com.taufik.movieshow.ui.activity.DetailTvShowActivity
 import com.taufik.movieshow.utils.Utils
 
 class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.TvShowsViewHolder>() {
@@ -35,13 +37,13 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.TvShowsViewHolder>() {
                 tvReleaseDate.text = tvShowPopularResult.firstAirDate
                 tvRating.text = tvShowPopularResult.rating.toString()
 
-//                itemView.setOnClickListener {
-//                    val intent = Intent(itemView.context, DetailTvShowActivity::class.java).apply {
-//                        putExtra(DetailTvShowActivity.EXTRA_DETAIL_ID, tvShowPopularResult.id)
-//                        putExtra(DetailTvShowActivity.EXTRA_DETAIL_TITLE, tvShowPopularResult.title)
-//                    }
-//                    it.context.startActivity(intent)
-//                }
+                itemView.setOnClickListener {
+                    val intent = Intent(itemView.context, DetailTvShowActivity::class.java).apply {
+                        putExtra(DetailTvShowActivity.EXTRA_DETAIL_ID, tvShowPopularResult.id)
+                        putExtra(DetailTvShowActivity.EXTRA_DETAIL_TITLE, tvShowPopularResult.title)
+                    }
+                    it.context.startActivity(intent)
+                }
             }
         }
     }

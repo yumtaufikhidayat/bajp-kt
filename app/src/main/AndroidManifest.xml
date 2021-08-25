@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.taufik.movieshow">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -12,10 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieShow">
+        <activity android:name=".ui.activity.DetailTvShowActivity"
+            android:exported="true"
+            android:theme="@style/ThemeMovieShow" />
+        <activity
+            android:name=".ui.activity.DetailMovieActivity"
+            android:exported="true"
+            android:theme="@style/ThemeMovieShow" />
         <activity
             android:name=".ui.activity.MainActivity"
             android:exported="true"
-            android:theme="@style/ThemeMovieShow"/>
+            android:theme="@style/ThemeMovieShow" />
         <activity
             android:name=".ui.activity.SplashscreenActivity"
             android:exported="true">

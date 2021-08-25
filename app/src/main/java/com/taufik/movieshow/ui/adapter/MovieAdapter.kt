@@ -1,5 +1,6 @@
 package com.taufik.movieshow.ui.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,9 +9,10 @@ import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
 import com.taufik.movieshow.data.model.DummyMovieMain
 import com.taufik.movieshow.databinding.ItemsMovieShowBinding
+import com.taufik.movieshow.ui.activity.DetailMovieActivity
 import com.taufik.movieshow.utils.Utils
 
-class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
+class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     private var listMovies = ArrayList<DummyMovieMain>()
 
@@ -20,7 +22,8 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
         notifyDataSetChanged()
     }
 
-    inner class MovieViewHolder (private val binding: ItemsMovieShowBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class MovieViewHolder(private val binding: ItemsMovieShowBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(movieResult: DummyMovieMain) {
             with(binding) {
                 Glide.with(itemView.context)
@@ -35,19 +38,20 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
                 tvReleaseDate.text = movieResult.releaseDate
                 tvRating.text = movieResult.rating.toString()
 
-//                itemView.setOnClickListener {
-//                    val intent = Intent(itemView.context, DetailMovieActivity::class.java).apply {
-//                        putExtra(DetailMovieActivity.EXTRA_DETAIL_ID, movieResult.id)
-//                        putExtra(DetailMovieActivity.EXTRA_DETAIL_TITLE, movieResult.title)
-//                    }
-//                    it.context.startActivity(intent)
-//                }
+                itemView.setOnClickListener {
+                    val intent = Intent(itemView.context, DetailMovieActivity::class.java).apply {
+                        putExtra(DetailMovieActivity.EXTRA_DETAIL_ID, movieResult.id)
+                        putExtra(DetailMovieActivity.EXTRA_DETAIL_TITLE, movieResult.title)
+                    }
+                    it.context.startActivity(intent)
+                }
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        val itemsMovieBinding = ItemsMovieShowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val itemsMovieBinding =
+            ItemsMovieShowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MovieViewHolder(itemsMovieBinding)
     }
 

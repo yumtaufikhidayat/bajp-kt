@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.taufik.movieshow.data.viewmodel.DummyTvShowViewModel
+import com.taufik.movieshow.data.viewmodel.DummyViewModel
 import com.taufik.movieshow.databinding.FragmentTvShowBinding
 import com.taufik.movieshow.ui.adapter.TvShowAdapter
 
@@ -16,7 +16,7 @@ class TvShowFragment : Fragment() {
     private var _binding: FragmentTvShowBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var viewModel: DummyTvShowViewModel
+    private lateinit var viewModel: DummyViewModel
     private lateinit var tvShowAdapter: TvShowAdapter
 
     override fun onCreateView(
@@ -47,7 +47,7 @@ class TvShowFragment : Fragment() {
     private fun setViewModel() {
         viewModel = ViewModelProvider(requireActivity(),
             ViewModelProvider.NewInstanceFactory()
-        )[DummyTvShowViewModel::class.java]
+        )[DummyViewModel::class.java]
     }
 
     private fun setRecyclerView() {
