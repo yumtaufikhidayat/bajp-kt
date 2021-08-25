@@ -8,7 +8,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
 import com.taufik.movieshow.data.model.DummyTvShowMain
 import com.taufik.movieshow.databinding.ItemsMovieShowBinding
-import com.taufik.themovieshow.utils.Utils
+import com.taufik.movieshow.utils.Utils
 
 class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.TvShowsViewHolder>() {
 

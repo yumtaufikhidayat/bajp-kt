@@ -1,4 +1,4 @@
-package com.taufik.themovieshow.utils
+package com.taufik.movieshow.utils
 
 import com.taufik.movieshow.data.model.DummyMovieMain
 import com.taufik.movieshow.data.model.DummyTvShowMain

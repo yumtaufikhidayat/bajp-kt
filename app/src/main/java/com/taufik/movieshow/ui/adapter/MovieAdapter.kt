@@ -8,7 +8,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
 import com.taufik.movieshow.data.model.DummyMovieMain
 import com.taufik.movieshow.databinding.ItemsMovieShowBinding
-import com.taufik.themovieshow.utils.Utils
+import com.taufik.movieshow.utils.Utils
 
 class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
 
