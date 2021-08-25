@@ -99,7 +99,7 @@ class DetailTvShowActivity : AppCompatActivity() {
             imgBackdrop.loadImage(dummyTvShowsMain.imageBackdrop)
             imgPoster.loadImage(dummyTvShowsMain.imagePoster)
             tvTitle.text = dummyTvShowsMain.title
-            tvReleasedOn.text = String.format("%s: %s", resources.getString(R.string.tvStartedOn), dummyTvShowsMain.firstAirDate)
+            tvReleaseDate.text = dummyTvShowsMain.firstAirDate
             tvOverview.text = dummyTvShowsMain.overview
             tvRating.text = dummyTvShowsMain.rating.toString()
             tvLanguage.text = dummyTvShowsMain.language

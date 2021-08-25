@@ -16,7 +16,6 @@ import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
 import com.taufik.movieshow.data.model.DummyMovieMain
 import com.taufik.movieshow.data.viewmodel.DummyDetailViewModel
-import com.taufik.movieshow.data.viewmodel.DummyViewModel
 import com.taufik.movieshow.databinding.ActivityDetailMovieBinding
 import com.taufik.movieshow.utils.DataDummy
 import com.taufik.movieshow.utils.Utils
@@ -100,7 +99,7 @@ class DetailMovieActivity : AppCompatActivity() {
             imgBackdrop.loadImage(dummyMovieMain.imageBackdrop)
             imgPoster.loadImage(dummyMovieMain.imagePoster)
             tvTitle.text = dummyMovieMain.title
-            tvReleasedOn.text = String.format("%s: %s", resources.getString(R.string.tvReleasedOn), dummyMovieMain.releaseDate)
+            tvReleaseDate.text = dummyMovieMain.releaseDate
             tvOverview.text = dummyMovieMain.overview
             tvRating.text = dummyMovieMain.rating.toString()
             tvLanguage.text = dummyMovieMain.language
