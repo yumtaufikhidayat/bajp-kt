@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.taufik.movieshow">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +14,8 @@
         android:theme="@style/Theme.MovieShow">
         <activity
             android:name=".ui.activity.MainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/ThemeMovieShow"/>
         <activity
             android:name=".ui.activity.SplashscreenActivity"
             android:exported="true">
