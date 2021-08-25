@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
 import com.taufik.movieshow.data.model.DummyTvShowMain
-import com.taufik.movieshow.data.viewmodel.DummyViewModel
+import com.taufik.movieshow.data.viewmodel.DummyDetailViewModel
 import com.taufik.movieshow.databinding.ActivityDetailTvShowBinding
 import com.taufik.movieshow.utils.DataDummy
 import com.taufik.movieshow.utils.Utils
@@ -29,7 +29,7 @@ class DetailTvShowActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivityDetailTvShowBinding
-    private lateinit var viewModel: DummyViewModel
+    private lateinit var viewModel: DummyDetailViewModel
     private var id by Delegates.notNull<Int>()
     private lateinit var tvShowsTitle: String
     private lateinit var data: DummyTvShowMain
@@ -64,7 +64,7 @@ class DetailTvShowActivity : AppCompatActivity() {
         val extras = intent.extras
         if (extras != null) {
             val tvShowsId = extras.getInt(EXTRA_DETAIL_ID, 0)
-            viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[DummyViewModel::class.java]
+            viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[DummyDetailViewModel::class.java]
             viewModel.setSelectedTvShows(tvShowsId)
             for (tvShows in DataDummy.generateTvShowsAiringToday()) {
                 if (tvShows.id == tvShowsId) {
