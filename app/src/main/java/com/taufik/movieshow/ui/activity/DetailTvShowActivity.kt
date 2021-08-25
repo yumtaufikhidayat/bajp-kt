@@ -24,8 +24,8 @@ import kotlin.properties.Delegates
 class DetailTvShowActivity : AppCompatActivity() {
 
     companion object {
-        const val EXTRA_DETAIL_ID = "com.taufik.themovieshow.ui.main.movie.ui.activity.EXTRA_DETAIL_ID"
-        const val EXTRA_DETAIL_TITLE = "com.taufik.themovieshow.ui.main.movie.ui.activity.EXTRA_DETAIL_TITLE"
+        const val EXTRA_DETAIL_ID = "com.taufik.movieshow.ui.activity.EXTRA_DETAIL_ID"
+        const val EXTRA_DETAIL_TITLE = "com.taufik.movieshow.ui.activity.EXTRA_DETAIL_TITLE"
     }
 
     private lateinit var binding: ActivityDetailTvShowBinding
@@ -119,7 +119,8 @@ class DetailTvShowActivity : AppCompatActivity() {
     private fun ImageView.loadImage(url: String) {
         Glide.with(this.context)
             .load(Utils.IMAGE_URL + url)
-            .apply(RequestOptions.placeholderOf(R.drawable.ic_loading)
+            .apply(
+                RequestOptions.placeholderOf(R.drawable.ic_loading)
                 .error(R.drawable.ic_error)
             )
             .into(this)
