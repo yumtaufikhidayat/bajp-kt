@@ -39,7 +39,7 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 tools:ignore="ContentDescription"
-                android:src="@drawable/ic_loading"/>
+                tools:src="@drawable/ic_loading"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -52,34 +52,21 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"
+            tools:text="@string/tvTitle"
             android:maxLines="1"
             android:ellipsize="end"
             app:layout_constraintTop_toBottomOf="@id/imgBackdrop"
             app:layout_constraintStart_toEndOf="@id/cardPoster"
-            app:layout_constraintEnd_toEndOf="@id/tvOverview"
-            tools:text="@string/tvTitle"/>
+            app:layout_constraintEnd_toEndOf="@id/tvOverview" />
 
         <TextView
             android:id="@+id/tvReleasedOn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorGrey"
-            android:text="@string/tvReleasedOn"
+            tools:text="@string/tvReleasedOn"
             app:layout_constraintStart_toStartOf="@id/tvTitle"
             app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
-
-        <TextView
-            android:id="@+id/tvReleaseDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:maxLines="1"
-            android:ellipsize="end"
-            android:textColor="@color/colorGrey"
-            app:layout_constraintStart_toEndOf="@id/tvReleasedOn"
-            app:layout_constraintTop_toTopOf="@id/tvReleasedOn"
-            app:layout_constraintBottom_toBottomOf="@+id/tvReleasedOn"
-            tools:text="@string/tvReleaseDate"/>
 
         <TextView
             android:id="@+id/tvOverview"
@@ -87,11 +74,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:textColor="@color/white"
+            tools:text="@string/tvLoremIpsum"
             android:ellipsize="end"
             android:maxLines="4"
             app:layout_constraintTop_toBottomOf="@id/cardPoster"
-            app:layout_constraintStart_toStartOf="@id/cardPoster"
-            tools:text="@string/tvLoremIpsum"/>
+            app:layout_constraintStart_toStartOf="@id/cardPoster"/>
 
         <TextView
             android:id="@+id/tvReadMore"
@@ -180,7 +167,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
-            android:text="@string/btnWebsites"
+            tools:text="@string/btnWebsites"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:backgroundTint="@color/colorOrange"

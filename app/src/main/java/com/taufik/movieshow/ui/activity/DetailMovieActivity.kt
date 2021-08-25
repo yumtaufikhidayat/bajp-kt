@@ -99,11 +99,12 @@ class DetailMovieActivity : AppCompatActivity() {
             imgBackdrop.loadImage(dummyMovieMain.imageBackdrop)
             imgPoster.loadImage(dummyMovieMain.imagePoster)
             tvTitle.text = dummyMovieMain.title
-            tvReleaseDate.text = dummyMovieMain.releaseDate
+            tvReleasedOn.text = String.format("%s: %s", resources.getString(R.string.tvReleasedOn), dummyMovieMain.releaseDate)
             tvOverview.text = dummyMovieMain.overview
             tvRating.text = dummyMovieMain.rating.toString()
             tvLanguage.text = dummyMovieMain.language
 
+            btnWebsite.text = getString(R.string.btnWebsites)
             btnWebsite.setOnClickListener {
                 try {
                     val intentBrowser = Intent(Intent.ACTION_VIEW, Uri.parse(dummyMovieMain.homePage))

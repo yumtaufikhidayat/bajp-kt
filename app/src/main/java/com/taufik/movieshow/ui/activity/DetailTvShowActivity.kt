@@ -99,11 +99,12 @@ class DetailTvShowActivity : AppCompatActivity() {
             imgBackdrop.loadImage(dummyTvShowsMain.imageBackdrop)
             imgPoster.loadImage(dummyTvShowsMain.imagePoster)
             tvTitle.text = dummyTvShowsMain.title
-            tvReleaseDate.text = dummyTvShowsMain.firstAirDate
+            tvReleasedOn.text = String.format("%s: %s", resources.getString(R.string.tvStartedOn), dummyTvShowsMain.firstAirDate)
             tvOverview.text = dummyTvShowsMain.overview
             tvRating.text = dummyTvShowsMain.rating.toString()
             tvLanguage.text = dummyTvShowsMain.language
 
+            btnWebsite.text = getString(R.string.btnWebsites)
             btnWebsite.setOnClickListener {
                 try {
                     val intentBrowser = Intent(Intent.ACTION_VIEW, Uri.parse(dummyTvShowsMain.homePage))
