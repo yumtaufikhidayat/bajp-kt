@@ -447,7 +447,7 @@ object DataDummy {
                 id = 32415,
                 title = "Conan",
                 language = "en",
-                overview = "A late night television talk show hosted by  Conan O'Brien.",
+                overview = "A late night television talk show hosted by Conan O'Brien.",
                 imagePoster = "/e0QI3XHKO0n70U3mxBdHf8uoxie.jpg",
                 rating = 7.3,
                 homePage = "http://www.teamcoco.com"
