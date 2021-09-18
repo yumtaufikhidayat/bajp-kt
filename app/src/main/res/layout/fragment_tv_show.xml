@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".ui.fragment.TvShowFragment">
+    tools:context=".ui.tvshow.fragment.TvShowFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTvShow"

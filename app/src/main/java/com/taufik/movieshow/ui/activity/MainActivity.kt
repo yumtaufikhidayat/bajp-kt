@@ -3,7 +3,6 @@ package com.taufik.movieshow.ui.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.taufik.movieshow.databinding.ActivityMainBinding
-import com.taufik.movieshow.ui.adapter.MainPagerAdapter
 
 class MainActivity : AppCompatActivity() {
 

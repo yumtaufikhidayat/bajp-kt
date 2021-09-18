@@ -1,5 +1,6 @@
 package com.taufik.movieshow.data.viewmodel
 
+import com.taufik.movieshow.ui.activity.viewmodel.DummyViewModel
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test

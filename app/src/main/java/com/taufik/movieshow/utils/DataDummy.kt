@@ -1,13 +1,13 @@
 package com.taufik.movieshow.utils
 
-import com.taufik.movieshow.data.model.DummyMovieMain
-import com.taufik.movieshow.data.model.DummyTvShowMain
+import com.taufik.movieshow.data.MovieEntity
+import com.taufik.movieshow.data.TvShowEntity
 
 object DataDummy {
 
-    fun generateMovieNowPlaying(): List<DummyMovieMain> {
+    fun generateMovieNowPlaying(): List<MovieEntity> {
        return mutableListOf(
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/vpdBOYTWgjrh90JN1Yc1YnCPFkD.jpg",
                id= 399566,
                language= "en",
@@ -18,7 +18,7 @@ object DataDummy {
                rating= 8.4,
                homePage=  "https://www.godzillavskong.net"
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/hJuDvwzS0SPlsE6MNFOpznQltDZ.jpg",
                id= 527774,
                language= "en",
@@ -29,7 +29,7 @@ object DataDummy {
                rating= 8.3,
                homePage= "https://movies.disney.com/raya-and-the-last-dragon"
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/fev8UFNFFYsD5q7AcYS8LyTzqwl.jpg",
                id= 587807,
                language= "en",
@@ -40,7 +40,7 @@ object DataDummy {
                rating= 7.4,
                homePage= "https://www.tomandjerrymovie.com"
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/z8TvnEVRenMSTemxYZwLGqFofgF.jpg",
                id= 458576,
                language= "en",
@@ -51,7 +51,7 @@ object DataDummy {
                rating= 7.1,
                homePage= "https://www.monsterhunter.movie"
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/uQtqiAu2bBlokqjlURVLEha6zoi.jpg",
                id= 544401,
                language= "en",
@@ -62,7 +62,7 @@ object DataDummy {
                rating= 7.6,
                homePage= "https://tv.apple.com/movie/umc.cmc.40gvwq6hnbilmnxuutvmejx4r"
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/cjaOSjsjV6cl3uXdJqimktT880L.jpg",
                id= 529203,
                language= "en",
@@ -73,7 +73,7 @@ object DataDummy {
                rating= 7.5,
                homePage= "https://www.dreamworks.com/movies/the-croods-2"
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/zDq2pwPyt4xwSFHKUoNN2LohDWj.jpg",
                id= 632357,
                language= "en",
@@ -84,7 +84,7 @@ object DataDummy {
                rating= 6.1,
                homePage= "https://www.sonypictures.com/movies/theunholy"
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/5NxjLfs7Bi07bfZCRl9CCnUw7AA.jpg",
                id= 412656,
                language= "en",
@@ -95,7 +95,7 @@ object DataDummy {
                rating= 7.6,
                homePage= "https://chaoswalking.movie"
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/vfuzELmhBjBTswXj2Vqxnu5ge4g.jpg",
                id= 602269,
                language= "en",
@@ -106,7 +106,7 @@ object DataDummy {
                rating= 6.4,
                homePage= "https://www.thelittlethingsmovie.com"
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/3ombg55JQiIpoPnXYb2oYdr6DtP.jpg",
                id= 560144,
                language= "en",
@@ -117,7 +117,7 @@ object DataDummy {
                rating= 5.9,
                homePage= ""
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/9Is9OrQUnKczCfsLSbsbx8YSmES.jpg",
                id= 797394,
                language= "ru",
@@ -128,7 +128,7 @@ object DataDummy {
                rating= 7.3,
                homePage= "https://www.netflix.com/title/81267965"
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/u5WUCO6irZoq27qbYYrtLUrCGDV.jpg",
                id= 630586,
                language= "en",
@@ -139,7 +139,7 @@ object DataDummy {
                rating= 6.2,
                homePage= ""
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/nz8xWrTKZzA5A7FgxaM4kfAoO1W.jpg",
                id= 651571,
                language= "en",
@@ -150,7 +150,7 @@ object DataDummy {
                rating= 4.6,
                homePage= "https://crediblepapers.com/writing-services/"
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "",
                id= 684369,
                language= "es",
@@ -161,7 +161,7 @@ object DataDummy {
                rating= 3.5,
                homePage= "http://www.occidente-film.com/"
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/a9zFUuxzChmAlIybVge9IZt1hH0.jpg",
                id= 578908,
                language= "en",
@@ -172,7 +172,7 @@ object DataDummy {
                rating= 6.0,
                homePage= "https://badtripthemovie.com/"
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/nq4LRhGrCZ8ucxMaLMPa3uZV6ku.jpg",
                id= 709629,
                language= "es",
@@ -183,7 +183,7 @@ object DataDummy {
                rating= 7.9,
                homePage= ""
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/vQJ3yBdF91tzd73G8seL5bOxfvG.jpg",
                id= 599281,
                language= "en",
@@ -194,7 +194,7 @@ object DataDummy {
                rating= 7.3,
                homePage= "https://cimalek.net/"
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/las0P4Dua54XrZ73VQmGUaH1z0U.jpg",
                id= 283566,
                language= "ja",
@@ -205,7 +205,7 @@ object DataDummy {
                rating= 6.5,
                homePage= "https://www.evangelion.co.jp/final.html"
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/sNKnz0ZU8u55yCFreZUSOIBMSuY.jpg",
                id= 638597,
                language= "en",
@@ -216,7 +216,7 @@ object DataDummy {
                rating= 7.0,
                homePage= "https://www.netflix.com/title/81011712"
            ),
-           DummyMovieMain(
+           MovieEntity(
                imageBackdrop= "/7TxeZVg2evMG42p0uSbMJpWNQ8A.jpg",
                id= 520946,
                language= "en",
@@ -230,9 +230,9 @@ object DataDummy {
         )
     }
     
-    fun generateTvShowsAiringToday(): List<DummyTvShowMain>{
+    fun generateTvShowsAiringToday(): List<TvShowEntity>{
         return mutableListOf(
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/edmk8xjGBsYVIf4QtLY9WMaMcXZ.jpg",
                 firstAirDate = "2005-03-27",
                 id = 1416,
@@ -243,7 +243,7 @@ object DataDummy {
                 rating = 8.2,
                 homePage = "http://abc.go.com/shows/greys-anatomy"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/fRYwdeNjMqC30EhofPx5PlDpdun.jpg",
                 firstAirDate = "2018-10-25",
                 id = 79460,
@@ -254,7 +254,7 @@ object DataDummy {
                 rating = 8.6,
                 homePage = "http://www.cwtv.com/shows/legacies"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/qPO43E0tnw9Gjh9EzkNmc3AKlE3.jpg",
                 firstAirDate = "2018-03-22",
                 id = 76773,
@@ -265,7 +265,7 @@ object DataDummy {
                 rating = 8.2,
                 homePage = "http://abc.go.com/shows/station-19"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/W5geO8tq68ng4TsXyZ81phcPiz.jpg",
                 firstAirDate = "2012-10-10",
                 id = 44006,
@@ -276,7 +276,7 @@ object DataDummy {
                 rating = 8.4,
                 homePage = "http://www.nbc.com/chicago-fire"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/s2IXx944vnZUtAxC2nPydOfqakh.jpg",
                 firstAirDate = "2021-01-21",
                 id = 99121,
@@ -287,7 +287,7 @@ object DataDummy {
                 rating = 6.9,
                 homePage = "https://www.cwtv.com/shows/walker"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/cD9PxbrdWYgL7MUpD9eOYuiSe2P.jpg",
                 firstAirDate = "1999-09-20",
                 id = 2734,
@@ -298,7 +298,7 @@ object DataDummy {
                 rating = 7.8,
                 homePage = "http://www.nbc.com/law-and-order-special-victims-unit"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/f9eLOgAiN8x7nFXbedYxb3KCKxR.jpg",
                 firstAirDate = "2014-01-08",
                 id = 58841,
@@ -309,7 +309,7 @@ object DataDummy {
                 rating = 8.4,
                 homePage = "http://www.nbc.com/chicago-pd"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/xVt9ADgKoJMzQ7eVXiFYMbXU85E.jpg",
                 firstAirDate = "2020-04-28",
                 id = 102966,
@@ -320,7 +320,7 @@ object DataDummy {
                 rating = 7.7,
                 homePage = "https://www.telemundo.com/series-y-novelas/100-dias-para-enamorarnos"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/nlDBlCtorM7nx130wYnfR5ZmyLX.jpg",
                 firstAirDate = "2017-09-25",
                 id = 71728,
@@ -331,7 +331,7 @@ object DataDummy {
                 rating = 8.0,
                 homePage = "http://www.cbs.com/shows/young-sheldon/"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/iCBMJZFsdXALgpS121qu4CAe2Sa.jpg",
                 firstAirDate = "2017-09-27",
                 id = 71789,
@@ -342,7 +342,7 @@ object DataDummy {
                 rating = 7.8,
                 homePage = "http://www.cbs.com/shows/seal-team/"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/gJSqr2prvTegFbL0cEWK9Qti3Vs.jpg",
                 firstAirDate = "2017-11-02",
                 id = 71790,
@@ -353,7 +353,7 @@ object DataDummy {
                 rating = 7.7,
                 homePage = "http://www.cbs.com/shows/swat/"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/hBYvHCcZX4dyvXeM0NTBh5uJIk3.jpg",
                 firstAirDate = "2019-01-08",
                 id = 80006,
@@ -364,7 +364,7 @@ object DataDummy {
                 rating = 7.9,
                 homePage = "https://freeform.go.com/shows/good-trouble"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/sHjNS2lYyEjwjjQXTZmdyMJ29bI.jpg",
                 firstAirDate = "2015-11-17",
                 id = 62650,
@@ -375,7 +375,7 @@ object DataDummy {
                 rating = 8.2,
                 homePage = "http://www.nbc.com/chicago-med"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/ibAYMuyRodgOYTeHGQqh6WCh5JU.jpg",
                 firstAirDate = "2021-04-01",
                 id = 104699,
@@ -386,7 +386,7 @@ object DataDummy {
                 rating = 8.3,
                 homePage = "https://shamanking-project.com/"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/owvL8PxjIvU4X83mJ4Z7aYMVBmw.jpg",
                 firstAirDate = "2021-04-07",
                 id = 95631,
@@ -397,7 +397,7 @@ object DataDummy {
                 rating = 0.0,
                 homePage = "https://supercub-anime.com"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/zd3BxI5qC8U2Feg83H4tLkwLcfg.jpg",
                 firstAirDate = "2018-10-04",
                 id = 82822,
@@ -408,7 +408,7 @@ object DataDummy {
                 rating = 8.4,
                 homePage = "https://www.zombielandsaga.com/"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/cvFnG5roIAopSFkHvVnPMHWO01s.jpg",
                 firstAirDate = "2021-04-07",
                 id = 114198,
@@ -419,7 +419,7 @@ object DataDummy {
                 rating = 0.0,
                 homePage = "https://fulldive-rpg.com"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/3ib0uov9Qq9JtTIEGL39irTa3vZ.jpg",
                 firstAirDate = "2018-09-24",
                 id = 79696,
@@ -430,7 +430,7 @@ object DataDummy {
                 rating = 7.7,
                 homePage = "https://www.nbc.com/manifest"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/q79U95wgkocoECitZPfRDhZXBNz.jpg",
                 firstAirDate = "2007-10-14",
                 id = 14814,
@@ -441,7 +441,7 @@ object DataDummy {
                 rating = 5.0,
                 homePage = "http://www.eonline.com/shows/kardashians"
             ),
-            DummyTvShowMain(
+            TvShowEntity(
                 imageBackdrop = "/2Ib8kvWa9gGhJrAfGlhIvbmtbWn.jpg",
                 firstAirDate = "2010-11-08",
                 id = 32415,
