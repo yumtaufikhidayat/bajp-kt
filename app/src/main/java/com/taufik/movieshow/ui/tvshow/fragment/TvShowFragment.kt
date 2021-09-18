@@ -62,7 +62,7 @@ class TvShowFragment : Fragment() {
                 tvShowAdapter.notifyDataSetChanged()
             })
 
-            with(binding.rvTvShow) {
+            with(rvTvShow) {
                 layoutManager = LinearLayoutManager(context)
                 setHasFixedSize(true)
                 adapter = tvShowAdapter

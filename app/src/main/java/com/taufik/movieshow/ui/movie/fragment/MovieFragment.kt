@@ -62,8 +62,8 @@ class MovieFragment : Fragment() {
                 movieAdapter.setMovies(it)
                 movieAdapter.notifyDataSetChanged()
             })
-
-            with(binding.rvMovie) {
+            
+            with(rvMovie) {
                 layoutManager = LinearLayoutManager(requireActivity())
                 setHasFixedSize(true)
                 adapter = movieAdapter
