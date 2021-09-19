@@ -15,24 +15,20 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
 import com.taufik.movieshow.data.TvShowEntity
-import com.taufik.movieshow.ui.activity.viewmodel.DummyDetailViewModel
 import com.taufik.movieshow.databinding.ActivityDetailTvShowBinding
-import com.taufik.movieshow.ui.movie.activity.DetailMovieActivity
-import com.taufik.movieshow.utils.DataDummy
+import com.taufik.movieshow.ui.activity.ViewModelFactory
+import com.taufik.movieshow.ui.tvshow.viewmodel.DetailTvShowViewModel
 import com.taufik.movieshow.utils.Utils
-import kotlin.properties.Delegates
 
 class DetailTvShowActivity : AppCompatActivity() {
 
     companion object {
-        const val EXTRA_DETAIL_ID = "com.taufik.movieshow.ui.activity.EXTRA_DETAIL_ID"
-        const val EXTRA_DETAIL_TITLE = "com.taufik.movieshow.ui.activity.EXTRA_DETAIL_TITLE"
+        const val EXTRA_DETAIL = "com.taufik.movieshow.ui.tvshow.activity.EXTRA_DETAIL"
     }
 
     private lateinit var binding: ActivityDetailTvShowBinding
-    private lateinit var viewModel: DummyDetailViewModel
-    private var id by Delegates.notNull<Int>()
-    private lateinit var tvShowsTitle: String
+    private lateinit var viewModel: DetailTvShowViewModel
+    private lateinit var parcelData: TvShowEntity
     private lateinit var data: TvShowEntity
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,29 +46,28 @@ class DetailTvShowActivity : AppCompatActivity() {
     }
 
     private fun setParcelableData() {
-        id = intent.getIntExtra(DetailMovieActivity.EXTRA_DETAIL_ID, 0)
-        tvShowsTitle = intent.getStringExtra(DetailMovieActivity.EXTRA_DETAIL_TITLE).toString()
+        parcelData = intent.getParcelableExtra(EXTRA_DETAIL)!!
     }
 
     private fun initActionBar() {
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setIcon(R.drawable.ic_arrow_back)
-        supportActionBar?.title = tvShowsTitle
-        supportActionBar?.elevation = 0F
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setIcon(R.drawable.ic_arrow_back)
+            title = parcelData.title
+            elevation = 0F
+        }
     }
 
     private fun setData() {
-        val extras = intent.extras
-        if (extras != null) {
-            val tvShowsId = extras.getInt(EXTRA_DETAIL_ID, 0)
-            viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[DummyDetailViewModel::class.java]
-            viewModel.setSelectedTvShows(tvShowsId)
-            for (tvShows in DataDummy.generateTvShowsAiringToday()) {
-                if (tvShows.id == tvShowsId) {
-                    populateDetailTvShows(viewModel.getSelectedTvShows())
-                }
+        val tvShowId = parcelData.id
+        val factory = ViewModelFactory.getInstance(this)
+        viewModel = ViewModelProvider(this, factory)[DetailTvShowViewModel::class.java]
+        viewModel.setSelectedTvShow(tvShowId)
+        viewModel.getTvShow().observe(this, {
+            if (it.id == tvShowId) {
+                populateDetailTvShows(it)
             }
-        }
+        })
     }
 
     private fun setReadMore() {

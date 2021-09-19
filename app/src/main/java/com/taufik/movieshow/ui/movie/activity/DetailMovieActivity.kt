@@ -16,18 +16,19 @@ import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
 import com.taufik.movieshow.data.MovieEntity
 import com.taufik.movieshow.databinding.ActivityDetailMovieBinding
-import com.taufik.movieshow.ui.activity.viewmodel.DummyDetailViewModel
-import com.taufik.movieshow.utils.DataDummy
+import com.taufik.movieshow.ui.activity.ViewModelFactory
+import com.taufik.movieshow.ui.movie.viewmodel.DetailMovieViewModel
 import com.taufik.movieshow.utils.Utils
 
 class DetailMovieActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_DETAIL = "com.taufik.movieshow.ui.movie.activity.EXTRA_DETAIL"
+        const val TAG = "DETAIL_MOVIE_ACTIVITY"
     }
 
     private lateinit var binding: ActivityDetailMovieBinding
-    private lateinit var viewModel: DummyDetailViewModel
+    private lateinit var viewModel: DetailMovieViewModel
     private lateinit var parcelData: MovieEntity
     private lateinit var data: MovieEntity
 
@@ -59,17 +60,16 @@ class DetailMovieActivity : AppCompatActivity() {
     }
 
     private fun setData() {
-        val extras = intent.extras
-        if (extras != null) {
-            val movieId = parcelData.id
-            viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[DummyDetailViewModel::class.java]
-            viewModel.setSelectedMovie(movieId)
-            for (movie in DataDummy.generateMovieNowPlaying()) {
-                if (movie.id == movieId) {
-                    populateDetailMovie(viewModel.getSelectedMovie())
-                }
+        val movieId = parcelData.id
+        val factory = ViewModelFactory.getInstance(this)
+        viewModel = ViewModelProvider(this, factory)[DetailMovieViewModel::class.java]
+        viewModel.setSelectedMovie(movieId)
+        viewModel.getMovie().observe(this, {
+            if (it.id == movieId) {
+                Log.e(TAG, "setData: $it")
+                populateDetailMovie(it)
             }
-        }
+        })
     }
 
     private fun setReadMore() {
