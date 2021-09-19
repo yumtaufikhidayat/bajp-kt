@@ -152,7 +152,7 @@
       <recent name="com.taufik.movieshow.ui.activity" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TvShowViewModelTest">
+  <component name="RunManager" selected="Android App.app">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="Movie_Show.app" />
       <option name="DEPLOY" value="true" />
