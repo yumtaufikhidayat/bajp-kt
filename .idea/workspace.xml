@@ -14,13 +14,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e4e666d-9e16-4687-9c8e-23273236e96a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/data/data/FakeTvShowRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/MovieShowDataSource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/data/source/MovieShowDataSource.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/MovieShowRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/data/source/MovieShowRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/remote/RemoteDataSource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/data/source/remote/RemoteDataSource.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/remote/response/MovieResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/data/source/remote/response/MovieResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/remote/response/TvShowResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/data/source/remote/response/TvShowResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/data/source/MovieShowDataSource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/MovieShowDataSource.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/data/source/MovieShowRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/MovieShowRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/data/source/remote/RemoteDataSource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/remote/RemoteDataSource.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/data/source/remote/response/MovieResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/remote/response/MovieResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/data/source/remote/response/TvShowResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/remote/response/TvShowResponse.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/di/Injection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/di/Injection.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/activity/ViewModelFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/activity/ViewModelFactory.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/viewmodel/DetailMovieViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/viewmodel/DetailMovieViewModel.kt" afterDir="false" />
@@ -29,9 +33,9 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/tvshow/viewmodel/TvShowViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/tvshow/viewmodel/TvShowViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/utils/DataDummy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/utils/DataDummy.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/utils/JsonHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/utils/JsonHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/data/source/MovieShowRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/data/data/source/MovieShowRepositoryTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/data/viewmodel/data/FakeMovieRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/data/data/FakeMovieRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/data/viewmodel/data/FakeTvShowRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/data/data/FakeMovieRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/data/FakeMovieShowRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/data/data/FakeTvShowRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/data/data/source/MovieShowRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/data/source/MovieShowRepositoryTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +82,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1xC41a04Xygxkv16vXKA0zxZiKb" />
   <component name="ProjectLevelVcsManager">
@@ -129,6 +141,7 @@
       <recent name="com.taufik.movieshow.ui.activity" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.taufik.movieshow" />
       <recent name="com.taufik.movieshow.data" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
@@ -203,50 +216,6 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DummyViewModelTest.getMovieNowPlaying" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.taufik.movieshow.data.viewmodel.DummyViewModelTest.getMovieNowPlaying&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:cleanTestDebugUnitTest" />
-            <option value=":app:testDebugUnitTest" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="DummyViewModelTest.getTvShowAiringToday" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.taufik.movieshow.data.viewmodel.DummyViewModelTest.getTvShowAiringToday&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:cleanTestDebugUnitTest" />
-            <option value=":app:testDebugUnitTest" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="MovieShowRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -291,6 +260,28 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="MovieShowRepositoryTest.getAllTvShows" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.taufik.movieshow.data.source.MovieShowRepositoryTest.getAllTvShows&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:cleanTestDebugUnitTest" />
+            <option value=":app:testDebugUnitTest" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="MovieShowRepositoryTest.getDetailMovie" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -313,13 +304,35 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="MovieShowRepositoryTest.getDetailTvShow" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.taufik.movieshow.data.source.MovieShowRepositoryTest.getDetailTvShow&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:cleanTestDebugUnitTest" />
+            <option value=":app:testDebugUnitTest" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.MovieShowRepositoryTest" />
+        <item itemvalue="Gradle.MovieShowRepositoryTest.getDetailTvShow" />
+        <item itemvalue="Gradle.MovieShowRepositoryTest.getAllTvShows" />
         <item itemvalue="Gradle.MovieShowRepositoryTest.getDetailMovie" />
         <item itemvalue="Gradle.MovieShowRepositoryTest.getAllMovies" />
-        <item itemvalue="Gradle.DummyViewModelTest.getTvShowAiringToday" />
-        <item itemvalue="Gradle.DummyViewModelTest.getMovieNowPlaying" />
       </list>
     </recent_temporary>
   </component>

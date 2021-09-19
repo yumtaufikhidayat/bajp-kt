@@ -1,9 +1,9 @@
-package com.taufik.movieshow.data.data.source.remote
+package com.taufik.movieshow.data.source.remote
 
 import android.os.Handler
 import android.os.Looper
-import com.taufik.movieshow.data.data.source.remote.response.MovieResponse
-import com.taufik.movieshow.data.data.source.remote.response.TvShowResponse
+import com.taufik.movieshow.data.source.remote.response.MovieResponse
+import com.taufik.movieshow.data.source.remote.response.TvShowResponse
 import com.taufik.movieshow.utils.EspressoIdlingResource
 import com.taufik.movieshow.utils.JsonHelper
 

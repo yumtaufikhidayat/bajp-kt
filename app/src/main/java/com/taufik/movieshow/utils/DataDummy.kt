@@ -1,7 +1,7 @@
 package com.taufik.movieshow.utils
 
-import com.taufik.movieshow.data.data.source.remote.response.MovieResponse
-import com.taufik.movieshow.data.data.source.remote.response.TvShowResponse
+import com.taufik.movieshow.data.source.remote.response.MovieResponse
+import com.taufik.movieshow.data.source.remote.response.TvShowResponse
 
 object DataDummy {
 
