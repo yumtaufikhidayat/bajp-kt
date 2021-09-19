@@ -15,23 +15,20 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
 import com.taufik.movieshow.data.MovieEntity
-import com.taufik.movieshow.ui.activity.viewmodel.DummyDetailViewModel
 import com.taufik.movieshow.databinding.ActivityDetailMovieBinding
+import com.taufik.movieshow.ui.activity.viewmodel.DummyDetailViewModel
 import com.taufik.movieshow.utils.DataDummy
 import com.taufik.movieshow.utils.Utils
-import kotlin.properties.Delegates
 
 class DetailMovieActivity : AppCompatActivity() {
 
     companion object {
-        const val EXTRA_DETAIL_ID = "com.taufik.movieshow.ui.activity.EXTRA_DETAIL_ID"
-        const val EXTRA_DETAIL_TITLE = "com.taufik.movieshow.ui.activity.EXTRA_DETAIL_TITLE"
+        const val EXTRA_DETAIL = "com.taufik.movieshow.ui.movie.activity.EXTRA_DETAIL"
     }
 
     private lateinit var binding: ActivityDetailMovieBinding
     private lateinit var viewModel: DummyDetailViewModel
-    private var id by Delegates.notNull<Int>()
-    private lateinit var movieTitle: String
+    private lateinit var parcelData: MovieEntity
     private lateinit var data: MovieEntity
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,21 +46,22 @@ class DetailMovieActivity : AppCompatActivity() {
     }
 
     private fun setParcelableData() {
-        id = intent.getIntExtra(EXTRA_DETAIL_ID, 0)
-        movieTitle = intent.getStringExtra(EXTRA_DETAIL_TITLE).toString()
+        parcelData = intent.getParcelableExtra(EXTRA_DETAIL)!!
     }
 
     private fun initActionBar() {
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setIcon(R.drawable.ic_arrow_back)
-        supportActionBar?.title = movieTitle
-        supportActionBar?.elevation = 0F
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setIcon(R.drawable.ic_arrow_back)
+            elevation = 0F
+            title = parcelData.title
+        }
     }
 
     private fun setData() {
         val extras = intent.extras
         if (extras != null) {
-            val movieId = extras.getInt(EXTRA_DETAIL_ID, 0)
+            val movieId = parcelData.id
             viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[DummyDetailViewModel::class.java]
             viewModel.setSelectedMovie(movieId)
             for (movie in DataDummy.generateMovieNowPlaying()) {
