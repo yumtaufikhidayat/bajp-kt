@@ -3,7 +3,7 @@ package com.taufik.movieshow.ui.tvshow.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.taufik.movieshow.data.TvShowEntity
-import com.taufik.movieshow.data.source.MovieShowRepository
+import com.taufik.movieshow.data.data.source.MovieShowRepository
 import kotlin.properties.Delegates
 
 class DetailTvShowViewModel(private val movieShowRepository: MovieShowRepository) : ViewModel() {

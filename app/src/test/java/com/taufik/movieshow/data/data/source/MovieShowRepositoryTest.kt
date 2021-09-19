@@ -1,10 +1,10 @@
-package com.taufik.movieshow.data.source
+package com.taufik.movieshow.data.data.source
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.doAnswer
-import com.taufik.movieshow.data.source.remote.RemoteDataSource
-import com.taufik.movieshow.data.viewmodel.data.FakeMovieRepository
+import com.taufik.movieshow.data.data.FakeMovieRepository
+import com.taufik.movieshow.data.data.source.remote.RemoteDataSource
 import com.taufik.movieshow.utils.DataDummy
 import com.taufik.movieshow.utils.LiveDataTestUtil
 import org.junit.Assert.assertEquals

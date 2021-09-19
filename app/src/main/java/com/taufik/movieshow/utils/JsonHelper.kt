@@ -1,8 +1,8 @@
 package com.taufik.movieshow.utils
 
 import android.content.Context
-import com.taufik.movieshow.data.source.remote.response.MovieResponse
-import com.taufik.movieshow.data.source.remote.response.TvShowResponse
+import com.taufik.movieshow.data.data.source.remote.response.MovieResponse
+import com.taufik.movieshow.data.data.source.remote.response.TvShowResponse
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
