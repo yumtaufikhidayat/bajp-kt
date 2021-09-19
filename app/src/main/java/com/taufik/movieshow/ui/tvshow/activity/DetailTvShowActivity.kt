@@ -54,8 +54,8 @@ class DetailTvShowActivity : AppCompatActivity() {
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             setIcon(R.drawable.ic_arrow_back)
-            title = parcelData.title
             elevation = 0F
+            title = parcelData.title
         }
     }
 
