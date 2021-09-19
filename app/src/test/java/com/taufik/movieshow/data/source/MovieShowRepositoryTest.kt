@@ -22,8 +22,8 @@ class MovieShowRepositoryTest {
     private val remote = mock(RemoteDataSource::class.java)
     private val movieShowRepository = FakeMovieShowRepository(remote)
 
-    private val movieResponses = DataDummy.generateMovieNowPlaying()
-    private val tvShowResponse = DataDummy.generateTvShowsAiringToday()
+    private val movieResponses = DataDummy.generateRemoteMovieNowPlaying()
+    private val tvShowResponse = DataDummy.generateRemoteTvShowsAiringToday()
     private val movieId = movieResponses[0].id
     private val tvShowId = tvShowResponse[0].id
 
