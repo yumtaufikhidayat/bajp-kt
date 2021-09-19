@@ -1,238 +1,280 @@
 package com.taufik.movieshow.utils
 
-import com.taufik.movieshow.data.MovieEntity
-import com.taufik.movieshow.data.TvShowEntity
+import com.taufik.movieshow.data.source.remote.response.MovieResponse
+import com.taufik.movieshow.data.source.remote.response.TvShowResponse
 
 object DataDummy {
 
-    fun generateMovieNowPlaying(): List<MovieEntity> {
-       return mutableListOf(
-           MovieEntity(
-               imageBackdrop= "/vpdBOYTWgjrh90JN1Yc1YnCPFkD.jpg",
-               id= 399566,
-               language= "en",
-               overview= "In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages.",
-               imagePoster= "/pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg",
-               releaseDate= "2021-03-24",
-               title= "Godzilla vs. Kong",
-               rating= 8.4,
-               homePage=  "https://www.godzillavskong.net"
-           ),
-           MovieEntity(
-               imageBackdrop= "/hJuDvwzS0SPlsE6MNFOpznQltDZ.jpg",
-               id= 527774,
-               language= "en",
-               overview= "Long ago, in the fantasy world of Kumandra, humans and dragons lived together in harmony. But when an evil force threatened the land, the dragons sacrificed themselves to save humanity. Now, 500 years later, that same evil has returned and it’s up to a lone warrior, Raya, to track down the legendary last dragon to restore the fractured land and its divided people.",
-               imagePoster= "/lPsD10PP4rgUGiGR4CCXA6iY0QQ.jpg",
-               releaseDate= "2021-03-03",
-               title= "Raya and the Last Dragon",
-               rating= 8.3,
-               homePage= "https://movies.disney.com/raya-and-the-last-dragon"
-           ),
-           MovieEntity(
-               imageBackdrop= "/fev8UFNFFYsD5q7AcYS8LyTzqwl.jpg",
-               id= 587807,
-               language= "en",
-               overview= "Tom the cat and Jerry the mouse get kicked out of their home and relocate to a fancy New York hotel, where a scrappy employee named Kayla will lose her job if she can’t evict Jerry before a high-class wedding at the hotel. Her solution? Hiring Tom to get rid of the pesky mouse.",
-               imagePoster= "/6KErczPBROQty7QoIsaa6wJYXZi.jpg",
-               releaseDate= "2021-02-11",
-               title= "Tom & Jerry",
-               rating= 7.4,
-               homePage= "https://www.tomandjerrymovie.com"
-           ),
-           MovieEntity(
-               imageBackdrop= "/z8TvnEVRenMSTemxYZwLGqFofgF.jpg",
-               id= 458576,
-               language= "en",
-               overview= "A portal transports Cpt. Artemis and an elite unit of soldiers to a strange world where powerful monsters rule with deadly ferocity. Faced with relentless danger, the team encounters a mysterious hunter who may be their only hope to find a way home.",
-               imagePoster= "/1UCOF11QCw8kcqvce8LKOO6pimh.jpg",
-               releaseDate= "2020-12-03",
-               title= "Monster Hunter",
-               rating= 7.1,
-               homePage= "https://www.monsterhunter.movie"
-           ),
-           MovieEntity(
-               imageBackdrop= "/uQtqiAu2bBlokqjlURVLEha6zoi.jpg",
-               id= 544401,
-               language= "en",
-               overview= "Cherry drifts from college dropout to army medic in Iraq - anchored only by his true love, Emily. But after returning from the war with PTSD, his life spirals into drugs and crime as he struggles to find his place in the world.",
-               imagePoster= "/pwDvkDyaHEU9V7cApQhbcSJMG1w.jpg",
-               releaseDate= "2021-02-26",
-               title= "Cherry",
-               rating= 7.6,
-               homePage= "https://tv.apple.com/movie/umc.cmc.40gvwq6hnbilmnxuutvmejx4r"
-           ),
-           MovieEntity(
-               imageBackdrop= "/cjaOSjsjV6cl3uXdJqimktT880L.jpg",
-               id= 529203,
-               language= "en",
-               overview= "Searching for a safer habitat, the prehistoric Crood family discovers an idyllic, walled-in paradise that meets all of its needs. Unfortunately, they must also learn to live with the Bettermans -- a family that's a couple of steps above the Croods on the evolutionary ladder. As tensions between the new neighbors start to rise, a new threat soon propels both clans on an epic adventure that forces them to embrace their differences, draw strength from one another, and survive together.",
-               imagePoster= "/tbVZ3Sq88dZaCANlUcewQuHQOaE.jpg",
-               releaseDate= "2020-11-25",
-               title= "The Croods: A New Age",
-               rating= 7.5,
-               homePage= "https://www.dreamworks.com/movies/the-croods-2"
-           ),
-           MovieEntity(
-               imageBackdrop= "/zDq2pwPyt4xwSFHKUoNN2LohDWj.jpg",
-               id= 632357,
-               language= "en",
-               overview= "Alice, a young hearing-impaired girl who, after a supposed visitation from the Virgin Mary, is inexplicably able to hear, speak and heal the sick. As word spreads and people from near and far flock to witness her miracles, a disgraced journalist hoping to revive his career visits the small New England town to investigate. When terrifying events begin to happen all around, he starts to question if these phenomena are the works of the Virgin Mary or something much more sinister.",
-               imagePoster= "/b4gYVcl8pParX8AjkN90iQrWrWO.jpg",
-               releaseDate= "2021-03-31",
-               title= "The Unholy",
-               rating= 6.1,
-               homePage= "https://www.sonypictures.com/movies/theunholy"
-           ),
-           MovieEntity(
-               imageBackdrop= "/5NxjLfs7Bi07bfZCRl9CCnUw7AA.jpg",
-               id= 412656,
-               language= "en",
-               overview= "Two unlikely companions embark on a perilous adventure through the badlands of an unexplored planet as they try to escape a dangerous and disorienting reality, where all inner thoughts are seen and heard by everyone.",
-               imagePoster= "/9kg73Mg8WJKlB9Y2SAJzeDKAnuB.jpg",
-               releaseDate= "2021-02-24",
-               title= "Chaos Walking",
-               rating= 7.6,
-               homePage= "https://chaoswalking.movie"
-           ),
-           MovieEntity(
-               imageBackdrop= "/vfuzELmhBjBTswXj2Vqxnu5ge4g.jpg",
-               id= 602269,
-               language= "en",
-               overview= "Deputy Sheriff Joe \"Deke\" Deacon joins forces with Sgt. Jim Baxter to search for a serial killer who's terrorizing Los Angeles. As they track the culprit, Baxter is unaware that the investigation is dredging up echoes of Deke's past, uncovering disturbing secrets that could threaten more than his case.",
-               imagePoster= "/c7VlGCCgM9GZivKSzBgzuOVxQn7.jpg",
-               releaseDate= "2021-01-28",
-               title= "The Little Things",
-               rating= 6.4,
-               homePage= "https://www.thelittlethingsmovie.com"
-           ),
-           MovieEntity(
-               imageBackdrop= "/3ombg55JQiIpoPnXYb2oYdr6DtP.jpg",
-               id= 560144,
-               language= "en",
-               overview= "When a virus threatens to turn the now earth-dwelling friendly alien hybrids against humans, Captain Rose Corley must lead a team of elite mercenaries on a mission to the alien world in order to save what's left of humanity.",
-               imagePoster= "/2W4ZvACURDyhiNnSIaFPHfNbny3.jpg",
-               releaseDate= "2020-10-25",
-               title= "Skylines",
-               rating= 5.9,
-               homePage= ""
-           ),
-           MovieEntity(
-               imageBackdrop= "/9Is9OrQUnKczCfsLSbsbx8YSmES.jpg",
-               id= 797394,
-               language= "ru",
-               overview= "The Secret Magic Control Agency sends its two best agents, Hansel and Gretel, to fight against the witch of the Gingerbread House.",
-               imagePoster= "/4ZSzEDVdxWVMVO4oZDvoodQOEfr.jpg",
-               releaseDate= "2021-03-18",
-               title= "Secret Magic Control Agency",
-               rating= 7.3,
-               homePage= "https://www.netflix.com/title/81267965"
-           ),
-           MovieEntity(
-               imageBackdrop= "/u5WUCO6irZoq27qbYYrtLUrCGDV.jpg",
-               id= 630586,
-               language= "en",
-               overview= "Jen and a group of friends set out to hike the Appalachian Trail. Despite warnings to stick to the trail, the hikers stray off course—and cross into land inhabited by The Foundation, a hidden community of mountain dwellers who use deadly means to protect their way of life.",
-               imagePoster= "/4U1SBHmwHkNA0eHZ2n1CuiC1K1g.jpg",
-               releaseDate= "2021-01-26",
-               title= "Wrong Turn",
-               rating= 6.2,
-               homePage= ""
-           ),
-           MovieEntity(
-               imageBackdrop= "/nz8xWrTKZzA5A7FgxaM4kfAoO1W.jpg",
-               id= 651571,
-               language= "en",
-               overview= "A hardened mechanic must stay awake and maintain an interstellar ark fleeing the dying planet Earth with a few thousand lucky souls on board... the last of humanity. Unfortunately, humans are not the only passengers. A shapeshifting alien creature has taken residence, its only goal is to kill as many people as possible. The crew must think quickly to stop this menace before it destroys mankind.",
-               imagePoster= "/13B6onhL6FzSN2KaNeQeMML05pS.jpg",
-               releaseDate= "2020-12-17",
-               title= "Breach",
-               rating= 4.6,
-               homePage= "https://crediblepapers.com/writing-services/"
-           ),
-           MovieEntity(
-               imageBackdrop= "",
-               id= 684369,
-               language= "es",
-               overview= "A fugitive film director in exile, called H, returns to the industrial city of which he fled in the past, in a time and place unknown. Gloria, the working woman who loved and left behind lives subjected to routine. But H, unable to adapt, convince her to run away together to a place that no one remembers the outside of civilization.",
-               imagePoster= "/6Bp5EyQCunRumsswNyw9FzWM5Ji.jpg",
-               releaseDate= "2019-11-05",
-               title= "West",
-               rating= 3.5,
-               homePage= "http://www.occidente-film.com/"
-           ),
-           MovieEntity(
-               imageBackdrop= "/a9zFUuxzChmAlIybVge9IZt1hH0.jpg",
-               id= 578908,
-               language= "en",
-               overview= "Two pals embark on a road trip full of funny pranks that pull real people into mayhem.",
-               imagePoster= "/A1Gy5HX3DKGaNW1Ay30NTIVJqJ6.jpg",
-               releaseDate= "2021-03-26",
-               title= "Bad Trip",
-               rating= 6.0,
-               homePage= "https://badtripthemovie.com/"
-           ),
-           MovieEntity(
-               imageBackdrop= "/nq4LRhGrCZ8ucxMaLMPa3uZV6ku.jpg",
-               id= 709629,
-               language= "es",
-               overview= "In order to advance her career in the dynamic world of publicity in Mexico City, Raquel tries to reunite with her high school friend Cecy who has become the queen of social media. But unlike followers, friendships do not come instantly.",
-               imagePoster= "/jpdWHOu6EJbYnLXLCA52h82nLEz.jpg",
-               releaseDate= "2021-03-12",
-               title= "War of Likes",
-               rating= 7.9,
-               homePage= ""
-           ),
-           MovieEntity(
-               imageBackdrop= "/vQJ3yBdF91tzd73G8seL5bOxfvG.jpg",
-               id= 599281,
-               language= "en",
-               overview= "A teenage girl living with schizophrenia begins to suspect her neighbor has kidnapped a child. Her parents try desperately to help her live a normal life, without exposing their own tragic secrets, and the only person who believes her is Caleb – a boy she isn’t even sure exists.",
-               imagePoster= "/b2shaNA4F8zNIwoRYr33lPTiFfl.jpg",
-               releaseDate= "2021-02-12",
-               title= "Fear of Rain",
-               rating= 7.3,
-               homePage= "https://cimalek.net/"
-           ),
-           MovieEntity(
-               imageBackdrop= "/las0P4Dua54XrZ73VQmGUaH1z0U.jpg",
-               id= 283566,
-               language= "ja",
-               overview= "In the aftermath of the Fourth Impact, stranded without their Evangelions, Shinji, Asuka, and Rei search for refuge in the desolate red remains of Tokyo-3. But the danger to the world is far from over. A new impact is looming on the horizon—one that will prove to be the true end of Evangelion.",
-               imagePoster= "/AoevYJSVtg15hntg8SYwWm2k3hP.jpg",
-               releaseDate= "2021-03-08",
-               title= "Evangelion: 3.0+1.0 Thrice Upon a Time",
-               rating= 6.5,
-               homePage= "https://www.evangelion.co.jp/final.html"
-           ),
-           MovieEntity(
-               imageBackdrop= "/sNKnz0ZU8u55yCFreZUSOIBMSuY.jpg",
-               id= 638597,
-               language= "en",
-               overview= "A mom and dad who usually say no decide to say yes to their kids' wildest requests — with a few ground rules — on a whirlwind day of fun and adventure.",
-               imagePoster= "/rejrD9ovTHJbfmpLM0mbEliEPV6.jpg",
-               releaseDate= "2021-03-12",
-               title= "Yes Day",
-               rating= 7.0,
-               homePage= "https://www.netflix.com/title/81011712"
-           ),
-           MovieEntity(
-               imageBackdrop= "/7TxeZVg2evMG42p0uSbMJpWNQ8A.jpg",
-               id= 520946,
-               language= "en",
-               overview= "Freddy Lupin, heir to a proud family line of werewolves, is in for a shock when on his 14th birthday his first 'warfing' goes awry, turning him into a ferocious poodle. The pack elders give Freddy until the next moonrise to prove he has the heart of a wolf, or risk being cast out forever. With the help of an unlikely ally in a streetwise stray named Batty, Freddy must prove he's 100% Wolf.",
-               imagePoster= "/2VrvxK4yxNCU6KVgo5TADJeBEQu.jpg",
-               releaseDate= "2020-06-26",
-               title= "100% Wolf",
-               rating= 5.7,
-               homePage= "https://www.screenaustralia.gov.au/the-screen-guide/t/100--wolf-2019/34581"
-           )
+    fun generateMovieNowPlaying(): List<MovieResponse> {
+        val movies = ArrayList<MovieResponse>()
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/vpdBOYTWgjrh90JN1Yc1YnCPFkD.jpg",
+                id= 399566,
+                language= "en",
+                overview= "In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages.",
+                imagePoster= "/pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg",
+                releaseDate= "2021-03-24",
+                title= "Godzilla vs. Kong",
+                rating= 8.4,
+                homePage=  "https://www.godzillavskong.net"
+            )
         )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/hJuDvwzS0SPlsE6MNFOpznQltDZ.jpg",
+                id= 527774,
+                language= "en",
+                overview= "Long ago, in the fantasy world of Kumandra, humans and dragons lived together in harmony. But when an evil force threatened the land, the dragons sacrificed themselves to save humanity. Now, 500 years later, that same evil has returned and it’s up to a lone warrior, Raya, to track down the legendary last dragon to restore the fractured land and its divided people.",
+                imagePoster= "/lPsD10PP4rgUGiGR4CCXA6iY0QQ.jpg",
+                releaseDate= "2021-03-03",
+                title= "Raya and the Last Dragon",
+                rating= 8.3,
+                homePage= "https://movies.disney.com/raya-and-the-last-dragon"
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/fev8UFNFFYsD5q7AcYS8LyTzqwl.jpg",
+                id= 587807,
+                language= "en",
+                overview= "Tom the cat and Jerry the mouse get kicked out of their home and relocate to a fancy New York hotel, where a scrappy employee named Kayla will lose her job if she can’t evict Jerry before a high-class wedding at the hotel. Her solution? Hiring Tom to get rid of the pesky mouse.",
+                imagePoster= "/6KErczPBROQty7QoIsaa6wJYXZi.jpg",
+                releaseDate= "2021-02-11",
+                title= "Tom & Jerry",
+                rating= 7.4,
+                homePage= "https://www.tomandjerrymovie.com"
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/z8TvnEVRenMSTemxYZwLGqFofgF.jpg",
+                id= 458576,
+                language= "en",
+                overview= "A portal transports Cpt. Artemis and an elite unit of soldiers to a strange world where powerful monsters rule with deadly ferocity. Faced with relentless danger, the team encounters a mysterious hunter who may be their only hope to find a way home.",
+                imagePoster= "/1UCOF11QCw8kcqvce8LKOO6pimh.jpg",
+                releaseDate= "2020-12-03",
+                title= "Monster Hunter",
+                rating= 7.1,
+                homePage= "https://www.monsterhunter.movie"
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/uQtqiAu2bBlokqjlURVLEha6zoi.jpg",
+                id= 544401,
+                language= "en",
+                overview= "Cherry drifts from college dropout to army medic in Iraq - anchored only by his true love, Emily. But after returning from the war with PTSD, his life spirals into drugs and crime as he struggles to find his place in the world.",
+                imagePoster= "/pwDvkDyaHEU9V7cApQhbcSJMG1w.jpg",
+                releaseDate= "2021-02-26",
+                title= "Cherry",
+                rating= 7.6,
+                homePage= "https://tv.apple.com/movie/umc.cmc.40gvwq6hnbilmnxuutvmejx4r"
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/cjaOSjsjV6cl3uXdJqimktT880L.jpg",
+                id= 529203,
+                language= "en",
+                overview= "Searching for a safer habitat, the prehistoric Crood family discovers an idyllic, walled-in paradise that meets all of its needs. Unfortunately, they must also learn to live with the Bettermans -- a family that's a couple of steps above the Croods on the evolutionary ladder. As tensions between the new neighbors start to rise, a new threat soon propels both clans on an epic adventure that forces them to embrace their differences, draw strength from one another, and survive together.",
+                imagePoster= "/tbVZ3Sq88dZaCANlUcewQuHQOaE.jpg",
+                releaseDate= "2020-11-25",
+                title= "The Croods: A New Age",
+                rating= 7.5,
+                homePage= "https://www.dreamworks.com/movies/the-croods-2"
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/zDq2pwPyt4xwSFHKUoNN2LohDWj.jpg",
+                id= 632357,
+                language= "en",
+                overview= "Alice, a young hearing-impaired girl who, after a supposed visitation from the Virgin Mary, is inexplicably able to hear, speak and heal the sick. As word spreads and people from near and far flock to witness her miracles, a disgraced journalist hoping to revive his career visits the small New England town to investigate. When terrifying events begin to happen all around, he starts to question if these phenomena are the works of the Virgin Mary or something much more sinister.",
+                imagePoster= "/b4gYVcl8pParX8AjkN90iQrWrWO.jpg",
+                releaseDate= "2021-03-31",
+                title= "The Unholy",
+                rating= 6.1,
+                homePage= "https://www.sonypictures.com/movies/theunholy"
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/5NxjLfs7Bi07bfZCRl9CCnUw7AA.jpg",
+                id= 412656,
+                language= "en",
+                overview= "Two unlikely companions embark on a perilous adventure through the badlands of an unexplored planet as they try to escape a dangerous and disorienting reality, where all inner thoughts are seen and heard by everyone.",
+                imagePoster= "/9kg73Mg8WJKlB9Y2SAJzeDKAnuB.jpg",
+                releaseDate= "2021-02-24",
+                title= "Chaos Walking",
+                rating= 7.6,
+                homePage= "https://chaoswalking.movie"
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/vfuzELmhBjBTswXj2Vqxnu5ge4g.jpg",
+                id= 602269,
+                language= "en",
+                overview= "Deputy Sheriff Joe \"Deke\" Deacon joins forces with Sgt. Jim Baxter to search for a serial killer who's terrorizing Los Angeles. As they track the culprit, Baxter is unaware that the investigation is dredging up echoes of Deke's past, uncovering disturbing secrets that could threaten more than his case.",
+                imagePoster= "/c7VlGCCgM9GZivKSzBgzuOVxQn7.jpg",
+                releaseDate= "2021-01-28",
+                title= "The Little Things",
+                rating= 6.4,
+                homePage= "https://www.thelittlethingsmovie.com"
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/3ombg55JQiIpoPnXYb2oYdr6DtP.jpg",
+                id= 560144,
+                language= "en",
+                overview= "When a virus threatens to turn the now earth-dwelling friendly alien hybrids against humans, Captain Rose Corley must lead a team of elite mercenaries on a mission to the alien world in order to save what's left of humanity.",
+                imagePoster= "/2W4ZvACURDyhiNnSIaFPHfNbny3.jpg",
+                releaseDate= "2020-10-25",
+                title= "Skylines",
+                rating= 5.9,
+                homePage= ""
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/9Is9OrQUnKczCfsLSbsbx8YSmES.jpg",
+                id= 797394,
+                language= "ru",
+                overview= "The Secret Magic Control Agency sends its two best agents, Hansel and Gretel, to fight against the witch of the Gingerbread House.",
+                imagePoster= "/4ZSzEDVdxWVMVO4oZDvoodQOEfr.jpg",
+                releaseDate= "2021-03-18",
+                title= "Secret Magic Control Agency",
+                rating= 7.3,
+                homePage= "https://www.netflix.com/title/81267965"
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/u5WUCO6irZoq27qbYYrtLUrCGDV.jpg",
+                id= 630586,
+                language= "en",
+                overview= "Jen and a group of friends set out to hike the Appalachian Trail. Despite warnings to stick to the trail, the hikers stray off course—and cross into land inhabited by The Foundation, a hidden community of mountain dwellers who use deadly means to protect their way of life.",
+                imagePoster= "/4U1SBHmwHkNA0eHZ2n1CuiC1K1g.jpg",
+                releaseDate= "2021-01-26",
+                title= "Wrong Turn",
+                rating= 6.2,
+                homePage= ""
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/nz8xWrTKZzA5A7FgxaM4kfAoO1W.jpg",
+                id= 651571,
+                language= "en",
+                overview= "A hardened mechanic must stay awake and maintain an interstellar ark fleeing the dying planet Earth with a few thousand lucky souls on board... the last of humanity. Unfortunately, humans are not the only passengers. A shapeshifting alien creature has taken residence, its only goal is to kill as many people as possible. The crew must think quickly to stop this menace before it destroys mankind.",
+                imagePoster= "/13B6onhL6FzSN2KaNeQeMML05pS.jpg",
+                releaseDate= "2020-12-17",
+                title= "Breach",
+                rating= 4.6,
+                homePage= "https://crediblepapers.com/writing-services/"
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "",
+                id= 684369,
+                language= "es",
+                overview= "A fugitive film director in exile, called H, returns to the industrial city of which he fled in the past, in a time and place unknown. Gloria, the working woman who loved and left behind lives subjected to routine. But H, unable to adapt, convince her to run away together to a place that no one remembers the outside of civilization.",
+                imagePoster= "/6Bp5EyQCunRumsswNyw9FzWM5Ji.jpg",
+                releaseDate= "2019-11-05",
+                title= "West",
+                rating= 3.5,
+                homePage= "http://www.occidente-film.com/"
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/a9zFUuxzChmAlIybVge9IZt1hH0.jpg",
+                id= 578908,
+                language= "en",
+                overview= "Two pals embark on a road trip full of funny pranks that pull real people into mayhem.",
+                imagePoster= "/A1Gy5HX3DKGaNW1Ay30NTIVJqJ6.jpg",
+                releaseDate= "2021-03-26",
+                title= "Bad Trip",
+                rating= 6.0,
+                homePage= "https://badtripthemovie.com/"
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/nq4LRhGrCZ8ucxMaLMPa3uZV6ku.jpg",
+                id= 709629,
+                language= "es",
+                overview= "In order to advance her career in the dynamic world of publicity in Mexico City, Raquel tries to reunite with her high school friend Cecy who has become the queen of social media. But unlike followers, friendships do not come instantly.",
+                imagePoster= "/jpdWHOu6EJbYnLXLCA52h82nLEz.jpg",
+                releaseDate= "2021-03-12",
+                title= "War of Likes",
+                rating= 7.9,
+                homePage= ""
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/vQJ3yBdF91tzd73G8seL5bOxfvG.jpg",
+                id= 599281,
+                language= "en",
+                overview= "A teenage girl living with schizophrenia begins to suspect her neighbor has kidnapped a child. Her parents try desperately to help her live a normal life, without exposing their own tragic secrets, and the only person who believes her is Caleb – a boy she isn’t even sure exists.",
+                imagePoster= "/b2shaNA4F8zNIwoRYr33lPTiFfl.jpg",
+                releaseDate= "2021-02-12",
+                title= "Fear of Rain",
+                rating= 7.3,
+                homePage= "https://cimalek.net/"
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/las0P4Dua54XrZ73VQmGUaH1z0U.jpg",
+                id= 283566,
+                language= "ja",
+                overview= "In the aftermath of the Fourth Impact, stranded without their Evangelions, Shinji, Asuka, and Rei search for refuge in the desolate red remains of Tokyo-3. But the danger to the world is far from over. A new impact is looming on the horizon—one that will prove to be the true end of Evangelion.",
+                imagePoster= "/AoevYJSVtg15hntg8SYwWm2k3hP.jpg",
+                releaseDate= "2021-03-08",
+                title= "Evangelion: 3.0+1.0 Thrice Upon a Time",
+                rating= 6.5,
+                homePage= "https://www.evangelion.co.jp/final.html"
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/sNKnz0ZU8u55yCFreZUSOIBMSuY.jpg",
+                id= 638597,
+                language= "en",
+                overview= "A mom and dad who usually say no decide to say yes to their kids' wildest requests — with a few ground rules — on a whirlwind day of fun and adventure.",
+                imagePoster= "/rejrD9ovTHJbfmpLM0mbEliEPV6.jpg",
+                releaseDate= "2021-03-12",
+                title= "Yes Day",
+                rating= 7.0,
+                homePage= "https://www.netflix.com/title/81011712"
+            )
+        )
+        movies.add(
+            MovieResponse(
+                imageBackdrop= "/7TxeZVg2evMG42p0uSbMJpWNQ8A.jpg",
+                id= 520946,
+                language= "en",
+                overview= "Freddy Lupin, heir to a proud family line of werewolves, is in for a shock when on his 14th birthday his first 'warfing' goes awry, turning him into a ferocious poodle. The pack elders give Freddy until the next moonrise to prove he has the heart of a wolf, or risk being cast out forever. With the help of an unlikely ally in a streetwise stray named Batty, Freddy must prove he's 100% Wolf.",
+                imagePoster= "/2VrvxK4yxNCU6KVgo5TADJeBEQu.jpg",
+                releaseDate= "2020-06-26",
+                title= "100% Wolf",
+                rating= 5.7,
+                homePage= "https://www.screenaustralia.gov.au/the-screen-guide/t/100--wolf-2019/34581"
+            )
+        )
+        
+       return movies
     }
     
-    fun generateTvShowsAiringToday(): List<TvShowEntity>{
-        return mutableListOf(
-            TvShowEntity(
+    fun generateTvShowsAiringToday(): List<TvShowResponse>{
+        val tvShows = ArrayList<TvShowResponse>()
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/edmk8xjGBsYVIf4QtLY9WMaMcXZ.jpg",
                 firstAirDate = "2005-03-27",
                 id = 1416,
@@ -242,8 +284,10 @@ object DataDummy {
                 imagePoster = "/clnyhPqj1SNgpAdeSS6a6fwE6Bo.jpg",
                 rating = 8.2,
                 homePage = "http://abc.go.com/shows/greys-anatomy"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/fRYwdeNjMqC30EhofPx5PlDpdun.jpg",
                 firstAirDate = "2018-10-25",
                 id = 79460,
@@ -253,8 +297,10 @@ object DataDummy {
                 imagePoster = "/qTZIgXrBKURBK1KrsT7fe3qwtl9.jpg",
                 rating = 8.6,
                 homePage = "http://www.cwtv.com/shows/legacies"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/qPO43E0tnw9Gjh9EzkNmc3AKlE3.jpg",
                 firstAirDate = "2018-03-22",
                 id = 76773,
@@ -264,8 +310,10 @@ object DataDummy {
                 imagePoster = "/lcuCED5Ky2uM5VE6wILOwt5FEb0.jpg",
                 rating = 8.2,
                 homePage = "http://abc.go.com/shows/station-19"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/W5geO8tq68ng4TsXyZ81phcPiz.jpg",
                 firstAirDate = "2012-10-10",
                 id = 44006,
@@ -275,8 +323,10 @@ object DataDummy {
                 imagePoster = "/6AccYL0eb7uzHn98IKaNjvJbyuA.jpg",
                 rating = 8.4,
                 homePage = "http://www.nbc.com/chicago-fire"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/s2IXx944vnZUtAxC2nPydOfqakh.jpg",
                 firstAirDate = "2021-01-21",
                 id = 99121,
@@ -286,8 +336,10 @@ object DataDummy {
                 imagePoster = "/y4VHQbbY1UcAjHN7UTGu0MGyVl2.jpg",
                 rating = 6.9,
                 homePage = "https://www.cwtv.com/shows/walker"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/cD9PxbrdWYgL7MUpD9eOYuiSe2P.jpg",
                 firstAirDate = "1999-09-20",
                 id = 2734,
@@ -297,8 +349,10 @@ object DataDummy {
                 imagePoster = "/jDCgWVlejIo8sQYxw3Yf1cVQUIL.jpg",
                 rating = 7.8,
                 homePage = "http://www.nbc.com/law-and-order-special-victims-unit"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/f9eLOgAiN8x7nFXbedYxb3KCKxR.jpg",
                 firstAirDate = "2014-01-08",
                 id = 58841,
@@ -308,8 +362,10 @@ object DataDummy {
                 imagePoster = "/OlPR1kctwXzSUJQkZINDDhNlHV.jpg",
                 rating = 8.4,
                 homePage = "http://www.nbc.com/chicago-pd"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/xVt9ADgKoJMzQ7eVXiFYMbXU85E.jpg",
                 firstAirDate = "2020-04-28",
                 id = 102966,
@@ -319,8 +375,10 @@ object DataDummy {
                 imagePoster = "/r13t1ohRQAlZpsjxgTKY7ypkWPc.jpg",
                 rating = 7.7,
                 homePage = "https://www.telemundo.com/series-y-novelas/100-dias-para-enamorarnos"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/nlDBlCtorM7nx130wYnfR5ZmyLX.jpg",
                 firstAirDate = "2017-09-25",
                 id = 71728,
@@ -330,8 +388,10 @@ object DataDummy {
                 imagePoster = "/aESxB2HblKlDzma39xVefa20pbW.jpg",
                 rating = 8.0,
                 homePage = "http://www.cbs.com/shows/young-sheldon/"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/iCBMJZFsdXALgpS121qu4CAe2Sa.jpg",
                 firstAirDate = "2017-09-27",
                 id = 71789,
@@ -341,8 +401,10 @@ object DataDummy {
                 imagePoster = "/uTSLeQTeHevt4fplegmQ6bOnE0Z.jpg",
                 rating = 7.8,
                 homePage = "http://www.cbs.com/shows/seal-team/"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/gJSqr2prvTegFbL0cEWK9Qti3Vs.jpg",
                 firstAirDate = "2017-11-02",
                 id = 71790,
@@ -352,8 +414,10 @@ object DataDummy {
                 imagePoster = "/ushSkKB8aeLsyyW2c7S7CCmEmRA.jpg",
                 rating = 7.7,
                 homePage = "http://www.cbs.com/shows/swat/"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/hBYvHCcZX4dyvXeM0NTBh5uJIk3.jpg",
                 firstAirDate = "2019-01-08",
                 id = 80006,
@@ -363,8 +427,10 @@ object DataDummy {
                 imagePoster = "/b9OwPQZr4dVv7K8SrUbAYJ35uLg.jpg",
                 rating = 7.9,
                 homePage = "https://freeform.go.com/shows/good-trouble"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/sHjNS2lYyEjwjjQXTZmdyMJ29bI.jpg",
                 firstAirDate = "2015-11-17",
                 id = 62650,
@@ -374,8 +440,10 @@ object DataDummy {
                 imagePoster = "/8mFhW6fJlapqq3cmQjxcG5h4KFa.jpg",
                 rating = 8.2,
                 homePage = "http://www.nbc.com/chicago-med"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/ibAYMuyRodgOYTeHGQqh6WCh5JU.jpg",
                 firstAirDate = "2021-04-01",
                 id = 104699,
@@ -385,8 +453,10 @@ object DataDummy {
                 imagePoster = "/rFFsdLlwyclyM83ALobrfMhr28A.jpg",
                 rating = 8.3,
                 homePage = "https://shamanking-project.com/"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/owvL8PxjIvU4X83mJ4Z7aYMVBmw.jpg",
                 firstAirDate = "2021-04-07",
                 id = 95631,
@@ -396,8 +466,10 @@ object DataDummy {
                 imagePoster = "/h36KQWhJEZuVptk0WBuSVXhuiD8.jpg",
                 rating = 0.0,
                 homePage = "https://supercub-anime.com"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/zd3BxI5qC8U2Feg83H4tLkwLcfg.jpg",
                 firstAirDate = "2018-10-04",
                 id = 82822,
@@ -407,8 +479,10 @@ object DataDummy {
                 imagePoster = "/c62Myh7wxmAUabqmCje8u9mbVIO.jpg",
                 rating = 8.4,
                 homePage = "https://www.zombielandsaga.com/"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/cvFnG5roIAopSFkHvVnPMHWO01s.jpg",
                 firstAirDate = "2021-04-07",
                 id = 114198,
@@ -418,8 +492,10 @@ object DataDummy {
                 imagePoster = "/6pRbPIGuBAZDjblqhDl6U4CUQxI.jpg",
                 rating = 0.0,
                 homePage = "https://fulldive-rpg.com"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/3ib0uov9Qq9JtTIEGL39irTa3vZ.jpg",
                 firstAirDate = "2018-09-24",
                 id = 79696,
@@ -429,8 +505,10 @@ object DataDummy {
                 imagePoster = "/1xeiUxShzNn8TNdMqy3Hvo9o2R.jpg",
                 rating = 7.7,
                 homePage = "https://www.nbc.com/manifest"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/q79U95wgkocoECitZPfRDhZXBNz.jpg",
                 firstAirDate = "2007-10-14",
                 id = 14814,
@@ -440,8 +518,10 @@ object DataDummy {
                 imagePoster = "/nddXOC8wYpIDv7giLzjjqIg8WDA.jpg",
                 rating = 5.0,
                 homePage = "http://www.eonline.com/shows/kardashians"
-            ),
-            TvShowEntity(
+            )
+        )
+        tvShows.add(
+            TvShowResponse(
                 imageBackdrop = "/2Ib8kvWa9gGhJrAfGlhIvbmtbWn.jpg",
                 firstAirDate = "2010-11-08",
                 id = 32415,
@@ -453,5 +533,7 @@ object DataDummy {
                 homePage = "http://www.teamcoco.com"
             )
         )
+
+        return tvShows
     }
 }

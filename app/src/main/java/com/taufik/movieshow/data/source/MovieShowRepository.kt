@@ -77,8 +77,11 @@ class MovieShowRepository private constructor(private val remoteDataSource: Remo
 
     override fun getDetailMovie(movieId: Int): LiveData<MovieEntity> {
         val movieResult = MutableLiveData<MovieEntity>()
-        remoteDataSource.getAllMovies(object : RemoteDataSource.LoadMoviesCallback{
-            override fun onAllMoviesReceived(movieResponse: List<MovieResponse>) {
+        remoteDataSource.getDetailMovies(movieId, object : RemoteDataSource.LoadDetailMoviesCallback{
+            override fun onAllDetailMoviesReceived(
+                movieId: Int,
+                movieResponse: List<MovieResponse>
+            ) {
                 lateinit var movie: MovieEntity
                 for (response in movieResponse) {
                     if (response.id == movieId) {
@@ -105,8 +108,11 @@ class MovieShowRepository private constructor(private val remoteDataSource: Remo
 
     override fun getDetailTvShow(tvShowId: Int): LiveData<TvShowEntity> {
         val tvShowResult = MutableLiveData<TvShowEntity>()
-        remoteDataSource.getAllTvShows(object : RemoteDataSource.LoadTvShowCallback{
-            override fun onAllTvShowsReceived(tvShowResponse: List<TvShowResponse>) {
+        remoteDataSource.getDetailTvShows(tvShowId, object : RemoteDataSource.LoadDetailTvShowsCallback{
+            override fun onAllDetailTvShowsReceived(
+                tvShowId: Int,
+                tvShowResponse: List<TvShowResponse>
+            ) {
                 lateinit var tvShow: TvShowEntity
                 for (response in tvShowResponse) {
                     if (response.id == tvShowId) {

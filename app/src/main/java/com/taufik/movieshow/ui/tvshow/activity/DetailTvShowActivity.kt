@@ -24,6 +24,7 @@ class DetailTvShowActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_DETAIL = "com.taufik.movieshow.ui.tvshow.activity.EXTRA_DETAIL"
+        const val TAG = "DETAIL_TV_SHOW_ACTIVITY"
     }
 
     private lateinit var binding: ActivityDetailTvShowBinding
@@ -65,6 +66,7 @@ class DetailTvShowActivity : AppCompatActivity() {
         viewModel.setSelectedTvShow(tvShowId)
         viewModel.getTvShow().observe(this, {
             if (it.id == tvShowId) {
+                Log.e(TAG, "setData: $it")
                 populateDetailTvShows(it)
             }
         })
