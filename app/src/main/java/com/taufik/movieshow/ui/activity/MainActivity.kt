@@ -19,7 +19,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initActionBar() {
-        supportActionBar?.elevation = 0F
+        supportActionBar?.apply {
+            elevation = 0F
+        }
     }
 
     private fun setViewPager() {
