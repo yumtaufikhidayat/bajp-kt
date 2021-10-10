@@ -161,7 +161,6 @@
                 android:textSize="12sp"
                 tools:text="@string/tvLanguage"/>
 
-
         </LinearLayout>
 
         <View
