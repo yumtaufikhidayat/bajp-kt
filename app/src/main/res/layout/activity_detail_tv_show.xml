@@ -16,8 +16,8 @@
             android:id="@+id/imgBackdrop"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@color/colorPrimaryDark"
-            android:contentDescription="@null"
+            android:src="@color/colorPrimary"
+            android:contentDescription="@string/tvBackdrop"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -37,8 +37,8 @@
                 android:id="@+id/imgPoster"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="@string/tvPoster"
                 android:scaleType="centerCrop"
-                tools:ignore="ContentDescription"
                 tools:src="@drawable/ic_loading"/>
 
         </androidx.cardview.widget.CardView>
@@ -52,12 +52,12 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"
+            tools:text="@string/tvTitle"
             android:maxLines="1"
             android:ellipsize="end"
             app:layout_constraintTop_toBottomOf="@id/imgBackdrop"
             app:layout_constraintStart_toEndOf="@id/cardPoster"
-            app:layout_constraintEnd_toEndOf="@id/tvOverview"
-            tools:text="@string/tvTitle"/>
+            app:layout_constraintEnd_toEndOf="@id/tvOverview" />
 
         <TextView
             android:id="@+id/tvReleasedOn"
@@ -85,13 +85,13 @@
             android:id="@+id/tvOverview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="24dp"
             android:textColor="@color/white"
+            tools:text="@string/tvLoremIpsum"
             android:ellipsize="end"
             android:maxLines="4"
-            app:layout_constraintTop_toBottomOf="@id/cardPoster"
-            app:layout_constraintStart_toStartOf="@id/cardPoster"
-            tools:text="@string/tvLoremIpsum"/>
+            app:layout_constraintTop_toBottomOf="@id/tvRating"
+            app:layout_constraintStart_toStartOf="@id/cardPoster"/>
 
         <TextView
             android:id="@+id/tvReadMore"
@@ -105,74 +105,88 @@
             app:layout_constraintStart_toStartOf="@id/cardPoster"
             app:layout_constraintTop_toBottomOf="@id/tvOverview"/>
 
-        <View
-            android:id="@+id/viewHelper1"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/white"
-            android:layout_margin="16dp"
-            app:layout_constraintStart_toStartOf="@id/tvOverview"
-            app:layout_constraintEnd_toEndOf="@+id/tvOverview"
-            app:layout_constraintTop_toBottomOf="@+id/tvReadMore"/>
-
-        <LinearLayout
-            android:id="@+id/llLayoutMisc"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tvRatingTitle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/viewHelper1">
+            android:layout_marginTop="20dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/colorTextOther"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="@string/tvRating"
+            app:layout_constraintTop_toBottomOf="@id/cardPoster"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imgRating"
+            app:layout_constraintHorizontal_bias="0.75"/>
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_rate"
-                app:tint="@color/colorTextOther"/>
+        <ImageView
+            android:id="@+id/imgRating"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/tvRating"
+            android:src="@drawable/ic_rate"
+            app:tint="@color/colorTextOther"
+            app:layout_constraintStart_toEndOf="@id/tvRatingTitle"
+            app:layout_constraintTop_toTopOf="@id/tvRatingTitle"
+            app:layout_constraintBottom_toBottomOf="@id/tvRatingTitle"
+            app:layout_constraintEnd_toEndOf="@id/tvLanguageTitle"
+            app:layout_constraintHorizontal_bias="0.01"/>
 
-            <TextView
-                android:id="@+id/tvRating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:includeFontPadding="false"
-                android:textColor="@color/colorTextIcons"
-                android:textSize="12sp"
-                tools:text="@string/tvRating"/>
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/colorTextIcons"
+            android:textSize="12sp"
+            tools:text="@string/tvRating"
+            app:layout_constraintTop_toBottomOf="@id/tvRatingTitle"
+            app:layout_constraintStart_toStartOf="@id/tvRatingTitle"
+            app:layout_constraintEnd_toEndOf="@id/imgRating"/>
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="8dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_language"
-                app:tint="@color/colorTextOther"/>
+        <TextView
+            android:id="@+id/tvLanguageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/colorTextOther"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="@string/tvLanguage"
+            app:layout_constraintTop_toTopOf="@id/tvRatingTitle"
+            app:layout_constraintBottom_toBottomOf="@id/tvRatingTitle"
+            app:layout_constraintStart_toEndOf="@id/imgRating"
+            app:layout_constraintEnd_toEndOf="@id/imgLanguage"
+            app:layout_constraintHorizontal_bias="0.87"/>
 
-            <TextView
-                android:id="@+id/tvLanguage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:includeFontPadding="false"
-                android:textColor="@color/colorTextIcons"
-                android:textSize="12sp"
-                tools:text="@string/tvLanguage"/>
+        <ImageView
+            android:id="@+id/imgLanguage"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/tvLanguage"
+            android:src="@drawable/ic_language"
+            app:tint="@color/colorTextOther"
+            app:layout_constraintTop_toTopOf="@id/tvRatingTitle"
+            app:layout_constraintBottom_toBottomOf="@id/tvRatingTitle"
+            app:layout_constraintStart_toEndOf="@id/tvLanguageTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"/>
 
-        </LinearLayout>
-
-        <View
-            android:id="@+id/viewHelper2"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/white"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="5dp"
-            app:layout_constraintStart_toStartOf="@id/tvOverview"
-            app:layout_constraintEnd_toEndOf="@+id/tvOverview"
-            app:layout_constraintTop_toBottomOf="@+id/llLayoutMisc"/>
+        <TextView
+            android:id="@+id/tvLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/colorTextIcons"
+            android:textSize="12sp"
+            tools:text="@string/tvLanguage"
+            app:layout_constraintTop_toBottomOf="@id/tvLanguageTitle"
+            app:layout_constraintStart_toStartOf="@id/tvLanguageTitle"
+            app:layout_constraintEnd_toEndOf="@id/imgLanguage"/>
 
         <Button
             android:id="@+id/btnWebsite"
@@ -184,7 +198,7 @@
             android:textColor="@color/white"
             android:backgroundTint="@color/colorOrange"
             app:cornerRadius="8dp"
-            app:layout_constraintTop_toBottomOf="@id/viewHelper2"
+            app:layout_constraintTop_toBottomOf="@id/tvOverview"
             app:layout_constraintStart_toStartOf="@id/imgBackdrop"
             app:layout_constraintEnd_toEndOf="@id/tvOverview"/>
 
