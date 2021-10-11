@@ -31,8 +31,7 @@
     <string name="btnShare">Bagikan</string>
 
     <!--Bottom menu-->
-    <string name="tvMovieNowPlaying">Now Playing</string>
-    <string name="tvMovieUpcoming">Upcoming</string>
-    <string name="tvTvShowPopular">Popular</string>
-    <string name="tvTvShowAiringToday">Airing Today</string>
+    <string name="icMovie">Movie</string>
+    <string name="icTvShow">TV Shows</string>
+    <string name="icFavorite">Favorite</string>
 </resources>

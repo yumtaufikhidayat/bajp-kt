@@ -31,4 +31,28 @@
         <item name="android:editTextColor">@android:color/white</item>
         <item name="android:textColorHint">@color/colorGrey</item>
     </style>
+
+    <style name="BottomNavigationView">
+        <item name="itemTextAppearanceActive">@style/TextAppearance.BottomNavigationView.Active</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.BottomNavigationView.Inactive</item>
+    </style>
+
+    <!-- blank styles for better code readability-->
+    <style name="TextAppearance"/>
+    <style name="TextAppearance.BottomNavigationView"/>
+
+    <!-- inactive tab icon style -->
+    <style name="TextAppearance.BottomNavigationView.Inactive">
+        <item name="android:textSize">12sp</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+    </style>
+
+    <!-- active tab icon style -->
+    <style name="TextAppearance.BottomNavigationView.Active">
+        <item name="android:textSize">12sp</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+    </style>
+
 </resources>
