@@ -109,23 +109,22 @@
                     android:gravity="center"
                     tools:ignore="UseCompoundDrawables">
 
-                    <TextView
-                        android:id="@+id/tvRatingTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:includeFontPadding="false"
-                        android:textColor="@color/colorTextOther"
-                        android:textStyle="bold"
-                        android:text="@string/tvRating"/>
-
                     <ImageView
                         android:id="@+id/imgRating"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:layout_marginStart="5dp"
                         android:contentDescription="@string/tvRating"
                         android:src="@drawable/ic_rate"
                         app:tint="@color/colorTextOther"/>
+
+                    <TextView
+                        android:id="@+id/tvRatingTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:textColor="@color/colorTextOther"
+                        android:textStyle="bold"
+                        android:text="@string/tvRating"/>
 
                 </LinearLayout>
 
@@ -153,24 +152,22 @@
                     android:gravity="center"
                     tools:ignore="UseCompoundDrawables">
 
-                    <TextView
-                        android:id="@+id/tvLanguageTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:includeFontPadding="false"
-                        android:textColor="@color/colorTextOther"
-                        android:textStyle="bold"
-                        android:text="@string/tvLanguage"/>
-
                     <ImageView
                         android:id="@+id/imgLanguage"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:layout_marginStart="5dp"
                         android:contentDescription="@string/tvLanguage"
                         android:src="@drawable/ic_language"
                         app:tint="@color/colorTextOther"/>
+
+                    <TextView
+                        android:id="@+id/tvLanguageTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:textColor="@color/colorTextOther"
+                        android:textStyle="bold"
+                        android:text="@string/tvLanguage"/>
 
                 </LinearLayout>
 
