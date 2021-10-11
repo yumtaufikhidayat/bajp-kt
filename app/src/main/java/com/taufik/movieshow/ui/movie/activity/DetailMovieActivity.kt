@@ -102,6 +102,21 @@ class DetailMovieActivity : AppCompatActivity() {
             tvRating.text = movieEntity.rating.toString()
             tvLanguage.text = movieEntity.language
 
+            btnShare.text = getString(R.string.btnShare)
+            btnShare.setOnClickListener {
+                try {
+
+                    val body = "Visit this awesome movie \n${data.homePage}"
+
+                    val shareIntent = Intent(Intent.ACTION_SEND)
+                    shareIntent.type = "text/plain"
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, body)
+                    startActivity(Intent.createChooser(shareIntent, "Share with:"))
+                } catch (e: Exception) {
+                    Log.e("shareFailed", "onOptionsItemSelected: ${e.localizedMessage}")
+                }
+            }
+
             btnWebsite.text = getString(R.string.btnWebsites)
             btnWebsite.setOnClickListener {
                 try {

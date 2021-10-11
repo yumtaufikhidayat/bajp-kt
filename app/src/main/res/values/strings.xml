@@ -28,6 +28,7 @@
     <string name="tvBackdrop">Backdrop</string>
 
     <string name="btnWebsites">Website</string>
+    <string name="btnShare">Bagikan</string>
 
     <!--Bottom menu-->
     <string name="tvMovieNowPlaying">Now Playing</string>
