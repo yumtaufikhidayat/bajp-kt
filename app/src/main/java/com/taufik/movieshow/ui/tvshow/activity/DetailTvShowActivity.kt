@@ -22,11 +22,6 @@ import com.taufik.movieshow.utils.Utils
 
 class DetailTvShowActivity : AppCompatActivity() {
 
-    companion object {
-        const val EXTRA_DETAIL = "com.taufik.movieshow.ui.tvshow.activity.EXTRA_DETAIL"
-        const val TAG = "DETAIL_TV_SHOW_ACTIVITY"
-    }
-
     private lateinit var binding: ActivityDetailTvShowBinding
     private lateinit var viewModel: DetailTvShowViewModel
     private lateinit var parcelData: TvShowEntity
@@ -173,5 +168,10 @@ class DetailTvShowActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    companion object {
+        const val EXTRA_DETAIL = "com.taufik.movieshow.ui.tvshow.activity.EXTRA_DETAIL"
+        const val TAG = "DETAIL_TV_SHOW_ACTIVITY"
     }
 }

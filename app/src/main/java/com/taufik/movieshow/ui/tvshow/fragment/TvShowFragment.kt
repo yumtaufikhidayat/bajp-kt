@@ -15,12 +15,8 @@ import com.taufik.movieshow.ui.tvshow.viewmodel.TvShowViewModel
 
 class TvShowFragment : Fragment() {
 
-    companion object {
-        const val TAG = "TV_SHOW_FRAGMENT"
-    }
-
     private var _binding: FragmentTvShowBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = _binding
 
     private lateinit var viewModel: TvShowViewModel
     private lateinit var tvShowAdapter: TvShowAdapter
@@ -29,9 +25,9 @@ class TvShowFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentTvShowBinding.inflate(inflater, container, false)
-        return binding.root
+    ): View? {
+        _binding = FragmentTvShowBinding.inflate(layoutInflater, container, false)
+        return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,12 +40,13 @@ class TvShowFragment : Fragment() {
 
         showLoading(true)
 
-        binding.apply {
+        binding?.apply {
 
             if (activity != null) {
 
                 val factory = ViewModelFactory.getInstance(requireActivity())
-                viewModel = ViewModelProvider(requireActivity(),
+                viewModel = ViewModelProvider(
+                    requireActivity(),
                     factory
                 )[TvShowViewModel::class.java]
                 tvShowAdapter = TvShowAdapter()
@@ -59,7 +56,6 @@ class TvShowFragment : Fragment() {
                 Log.e(TAG, "setData: $it")
                 showLoading(false)
                 tvShowAdapter.setTvShows(it)
-                tvShowAdapter.notifyDataSetChanged()
             })
 
             with(rvTvShow) {
@@ -72,7 +68,7 @@ class TvShowFragment : Fragment() {
 
     private fun showLoading(state: Boolean) {
 
-        binding.apply {
+        binding?.apply {
             if (state) {
                 progressBar.visibility = View.VISIBLE
             } else {
@@ -84,5 +80,9 @@ class TvShowFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        const val TAG = "TV_SHOW_FRAGMENT"
     }
 }

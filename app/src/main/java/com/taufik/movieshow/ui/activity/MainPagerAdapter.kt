@@ -18,13 +18,11 @@ class MainPagerAdapter(private val context: Context, fragmentManager: FragmentMa
     override fun getCount(): Int = 2
 
     override fun getItem(position: Int): Fragment {
-        var fragment: Fragment? = null
-        when (position) {
-            0 -> fragment = MovieFragment()
-            1 -> fragment = TvShowFragment()
+        return when (position) {
+            0 -> MovieFragment()
+            1 -> TvShowFragment()
+            else -> TvShowFragment()
         }
-
-        return fragment as Fragment
     }
 
     override fun getPageTitle(position: Int): CharSequence {

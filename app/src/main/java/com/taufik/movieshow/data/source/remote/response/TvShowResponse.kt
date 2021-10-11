@@ -1,9 +1,5 @@
 package com.taufik.movieshow.data.source.remote.response
 
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
-
-@Parcelize
 data class TvShowResponse(
     val imageBackdrop: String,
     val firstAirDate: String,
@@ -14,4 +10,4 @@ data class TvShowResponse(
     val imagePoster: String,
     val rating: Double,
     val homePage: String
-): Parcelable
+)

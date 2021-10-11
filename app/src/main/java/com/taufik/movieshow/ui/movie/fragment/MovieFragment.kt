@@ -15,12 +15,8 @@ import com.taufik.movieshow.ui.movie.viewmodel.MovieViewModel
 
 class MovieFragment : Fragment() {
 
-    companion object {
-        const val TAG = "MOVIE_FRAGMENT"
-    }
-
     private var _binding: FragmentMovieBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = _binding
 
     private lateinit var viewModel: MovieViewModel
     private lateinit var movieAdapter: MovieAdapter
@@ -29,9 +25,9 @@ class MovieFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentMovieBinding.inflate(inflater, container, false)
-        return binding.root
+    ): View? {
+        _binding = FragmentMovieBinding.inflate(layoutInflater, container, false)
+        return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,7 +40,7 @@ class MovieFragment : Fragment() {
 
         showLoading(true)
 
-        binding.apply {
+        binding?.apply {
 
             if (activity != null) {
 
@@ -60,7 +56,6 @@ class MovieFragment : Fragment() {
                 Log.e(TAG, "setData: $it")
                 showLoading(false)
                 movieAdapter.setMovies(it)
-                movieAdapter.notifyDataSetChanged()
             })
             
             with(rvMovie) {
@@ -74,7 +69,7 @@ class MovieFragment : Fragment() {
 
     private fun showLoading(state: Boolean) {
 
-        binding.apply {
+        binding?.apply {
             if (state) {
                 progressBar.visibility = View.VISIBLE
             } else {
@@ -86,5 +81,9 @@ class MovieFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        const val TAG = "MOVIE_FRAGMENT"
     }
 }

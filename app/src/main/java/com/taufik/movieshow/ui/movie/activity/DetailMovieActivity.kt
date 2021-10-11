@@ -22,11 +22,6 @@ import com.taufik.movieshow.utils.Utils
 
 class DetailMovieActivity : AppCompatActivity() {
 
-    companion object {
-        const val EXTRA_DETAIL = "com.taufik.movieshow.ui.movie.activity.EXTRA_DETAIL"
-        const val TAG = "DETAIL_MOVIE_ACTIVITY"
-    }
-
     private lateinit var binding: ActivityDetailMovieBinding
     private lateinit var viewModel: DetailMovieViewModel
     private lateinit var parcelData: MovieEntity
@@ -174,5 +169,10 @@ class DetailMovieActivity : AppCompatActivity() {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    companion object {
+        const val EXTRA_DETAIL = "com.taufik.movieshow.ui.movie.activity.EXTRA_DETAIL"
+        const val TAG = "DETAIL_MOVIE_ACTIVITY"
     }
 }

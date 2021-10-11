@@ -20,6 +20,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
         if (movieResult == null) return
         this.listMovies.clear()
         this.listMovies.addAll(movieResult)
+        notifyDataSetChanged()
     }
 
     inner class MovieViewHolder(private val binding: ItemsMovieShowBinding) :
