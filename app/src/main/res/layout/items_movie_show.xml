@@ -40,11 +40,11 @@
             android:id="@+id/imgPoster"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:contentDescription="@string/tvPoster"
             android:scaleType="centerCrop"
             android:background="@color/colorPrimaryDark"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -95,7 +95,7 @@
         android:id="@+id/imgRate"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:contentDescription="@null"
+        android:contentDescription="@string/tvRating"
         app:layout_constraintStart_toStartOf="@id/tvReleasedOn"
         app:layout_constraintTop_toBottomOf="@id/tvReleasedOn"
         android:src="@drawable/ic_rate"/>

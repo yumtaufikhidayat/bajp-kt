@@ -24,8 +24,11 @@
     <string name="tvOpenInBrowser">Open in browser</string>
     <string name="tvReadMore">Read More</string>
     <string name="tvReadLess">Read Less</string>
+    <string name="tvPoster">Poster</string>
+    <string name="tvBackdrop">Backdrop</string>
 
     <string name="btnWebsites">Website</string>
+    <string name="btnShare">Bagikan</string>
 
     <!--Bottom menu-->
     <string name="tvMovieNowPlaying">Now Playing</string>
