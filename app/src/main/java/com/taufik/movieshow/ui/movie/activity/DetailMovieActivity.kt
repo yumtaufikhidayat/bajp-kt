@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
-import com.taufik.movieshow.data.MovieEntity
+import com.taufik.movieshow.data.source.model.MovieEntity
 import com.taufik.movieshow.databinding.ActivityDetailMovieBinding
 import com.taufik.movieshow.ui.activity.ViewModelFactory
 import com.taufik.movieshow.ui.movie.viewmodel.DetailMovieViewModel
@@ -55,12 +55,12 @@ class DetailMovieActivity : AppCompatActivity() {
     }
 
     private fun setData() {
-        val movieId = parcelData.id
+        val movieId = parcelData.movieId
         val factory = ViewModelFactory.getInstance(this)
         viewModel = ViewModelProvider(this, factory)[DetailMovieViewModel::class.java]
         viewModel.setSelectedMovie(movieId)
         viewModel.getMovie().observe(this, {
-            if (it.id == movieId) {
+            if (it.movieId == movieId) {
                 Log.e(TAG, "setData: $it")
                 populateDetailMovie(it)
             }

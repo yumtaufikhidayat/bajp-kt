@@ -1,29 +1,23 @@
 package com.taufik.movieshow.ui.movie.adapter
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagedListAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
-import com.taufik.movieshow.data.MovieEntity
+import com.taufik.movieshow.data.source.model.MovieEntity
 import com.taufik.movieshow.databinding.ItemsMovieShowBinding
 import com.taufik.movieshow.ui.movie.activity.DetailMovieActivity
 import com.taufik.movieshow.utils.Utils
 
-class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
+class MovieAdapter : PagedListAdapter<MovieEntity, MovieAdapter.MovieViewHolder>(DIFF_CALLBACK) {
 
-    private var listMovies = ArrayList<MovieEntity>()
-
-    fun setMovies(movieResult: List<MovieEntity>?) {
-        if (movieResult == null) return
-        this.listMovies.clear()
-        this.listMovies.addAll(movieResult)
-        notifyDataSetChanged()
-    }
-
-    inner class MovieViewHolder(private val binding: ItemsMovieShowBinding) :
+    class MovieViewHolder(private val binding: ItemsMovieShowBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(movieResult: MovieEntity) {
             with(binding) {
@@ -56,9 +50,21 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        val pos = listMovies[position]
-        holder.bind(pos)
+        val pos = getItem(position)
+        if (pos != null) {
+            Log.e(TAG, "onBindViewHolder: $pos")
+            holder.bind(pos)
+        }
     }
 
-    override fun getItemCount(): Int = listMovies.size
+    companion object {
+        private const val TAG = "MOVIE_ADAPTER"
+        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<MovieEntity>(){
+            override fun areItemsTheSame(oldItem: MovieEntity, newItem: MovieEntity): Boolean =
+                oldItem.movieId == newItem.movieId
+
+            override fun areContentsTheSame(oldItem: MovieEntity, newItem: MovieEntity): Boolean =
+                oldItem == newItem
+        }
+    }
 }

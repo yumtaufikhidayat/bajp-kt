@@ -3,7 +3,7 @@ package com.taufik.movieshow.ui.activity
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.taufik.movieshow.data.source.MovieShowRepository
+import com.taufik.movieshow.data.MovieShowRepository
 import com.taufik.movieshow.di.Injection
 import com.taufik.movieshow.ui.movie.viewmodel.DetailMovieViewModel
 import com.taufik.movieshow.ui.movie.viewmodel.MovieViewModel

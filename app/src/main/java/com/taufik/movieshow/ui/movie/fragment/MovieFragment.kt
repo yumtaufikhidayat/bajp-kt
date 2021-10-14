@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +13,7 @@ import com.taufik.movieshow.databinding.FragmentMovieBinding
 import com.taufik.movieshow.ui.activity.ViewModelFactory
 import com.taufik.movieshow.ui.movie.adapter.MovieAdapter
 import com.taufik.movieshow.ui.movie.viewmodel.MovieViewModel
+import com.taufik.movieshow.vo.Status
 
 class MovieFragment : Fragment() {
 
@@ -38,8 +40,6 @@ class MovieFragment : Fragment() {
 
     private fun setData() {
 
-        showLoading(true)
-
         binding?.apply {
 
             if (activity != null) {
@@ -54,8 +54,24 @@ class MovieFragment : Fragment() {
 
             viewModel.getMovies().observe(viewLifecycleOwner, {
                 Log.e(TAG, "setData: $it")
-                showLoading(false)
-                movieAdapter.setMovies(it)
+                if (it != null) {
+                    when (it.status) {
+                        Status.LOADING -> {
+                            progressBar.visibility = View.VISIBLE
+                        }
+
+                        Status.SUCCESS -> {
+                            progressBar.visibility = View.GONE
+                            Log.e(TAG, "setData: ${it.data}")
+                            movieAdapter.submitList(it.data)
+                        }
+
+                        Status.ERROR -> {
+                            progressBar.visibility = View.GONE
+                            Toast.makeText(requireActivity(), "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
             })
             
             with(rvMovie) {
@@ -67,16 +83,16 @@ class MovieFragment : Fragment() {
         }
     }
 
-    private fun showLoading(state: Boolean) {
-
-        binding?.apply {
-            if (state) {
-                progressBar.visibility = View.VISIBLE
-            } else {
-                progressBar.visibility = View.GONE
-            }
-        }
-    }
+//    private fun showLoading(state: Boolean) {
+//
+//        binding?.apply {
+//            if (state) {
+//                progressBar.visibility = View.VISIBLE
+//            } else {
+//                progressBar.visibility = View.GONE
+//            }
+//        }
+//    }
 
     override fun onDestroyView() {
         super.onDestroyView()

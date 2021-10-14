@@ -2,15 +2,15 @@ package com.taufik.movieshow.ui.movie.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.taufik.movieshow.data.MovieEntity
-import com.taufik.movieshow.data.source.MovieShowRepository
+import com.taufik.movieshow.data.source.model.MovieEntity
+import com.taufik.movieshow.data.MovieShowRepository
 import kotlin.properties.Delegates
 
 class DetailMovieViewModel(private val movieShowRepository: MovieShowRepository) : ViewModel() {
 
-    private var movieId by Delegates.notNull<Int>()
+    private var movieId by Delegates.notNull<String>()
 
-    fun setSelectedMovie(movieId: Int){
+    fun setSelectedMovie(movieId: String){
         this.movieId = movieId
     }
 

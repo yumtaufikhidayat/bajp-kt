@@ -3,26 +3,20 @@ package com.taufik.movieshow.ui.tvshow.adapter
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagedListAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
-import com.taufik.movieshow.data.TvShowEntity
+import com.taufik.movieshow.data.source.model.TvShowEntity
 import com.taufik.movieshow.databinding.ItemsMovieShowBinding
 import com.taufik.movieshow.ui.tvshow.activity.DetailTvShowActivity
 import com.taufik.movieshow.utils.Utils
 
-class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.TvShowsViewHolder>() {
+class TvShowAdapter : PagedListAdapter<TvShowEntity, TvShowAdapter.TvShowsViewHolder>(DIFF_CALLBACK) {
 
-    private var listTvShows = ArrayList<TvShowEntity>()
-
-    fun setTvShows(tvShowPopularResult: List<TvShowEntity>) {
-        this.listTvShows.clear()
-        this.listTvShows.addAll(tvShowPopularResult)
-        notifyDataSetChanged()
-    }
-
-    inner class TvShowsViewHolder(private val binding: ItemsMovieShowBinding) : RecyclerView.ViewHolder(binding.root) {
+    class TvShowsViewHolder(private val binding: ItemsMovieShowBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(tvShowPopularResult: TvShowEntity) {
             with(binding) {
                 Glide.with(itemView.context)
@@ -53,9 +47,20 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.TvShowsViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: TvShowsViewHolder, position: Int) {
-        val pos = listTvShows[position]
-        holder.bind(pos)
+        val pos = getItem(position)
+        if (pos != null) {
+            holder.bind(pos)
+        }
     }
 
-    override fun getItemCount(): Int = listTvShows.size
+    companion object {
+        private const val TAG = "TV_SHOW_ADAPTER"
+        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<TvShowEntity>(){
+            override fun areItemsTheSame(oldItem: TvShowEntity, newItem: TvShowEntity): Boolean =
+                oldItem.tvShowId == newItem.tvShowId
+
+            override fun areContentsTheSame(oldItem: TvShowEntity, newItem: TvShowEntity): Boolean =
+                oldItem == newItem
+        }
+    }
 }

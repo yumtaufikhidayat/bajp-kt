@@ -3,8 +3,8 @@ package com.taufik.movieshow.ui.tvshow.viewmodel
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.taufik.movieshow.data.TvShowEntity
-import com.taufik.movieshow.data.source.MovieShowRepository
+import com.taufik.movieshow.data.source.model.TvShowEntity
+import com.taufik.movieshow.data.MovieShowRepository
 import com.taufik.movieshow.utils.DataDummy
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull

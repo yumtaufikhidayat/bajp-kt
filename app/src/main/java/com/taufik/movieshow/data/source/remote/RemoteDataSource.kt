@@ -2,6 +2,8 @@ package com.taufik.movieshow.data.source.remote
 
 import android.os.Handler
 import android.os.Looper
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.taufik.movieshow.data.source.remote.response.MovieResponse
 import com.taufik.movieshow.data.source.remote.response.TvShowResponse
 import com.taufik.movieshow.utils.EspressoIdlingResource
@@ -26,23 +28,27 @@ class RemoteDataSource private constructor(private val jsonHelper: JsonHelper) {
             }
     }
 
-    fun getAllMovies(callback: LoadMoviesCallback){
+    fun getAllMovies(): LiveData<ApiResponse<List<MovieResponse>>>{
         EspressoIdlingResource.increment()
+        val resultMovie = MutableLiveData<ApiResponse<List<MovieResponse>>>()
         handler.postDelayed({
-            callback.onAllMoviesReceived(jsonHelper.loadMovies())
+            resultMovie.value = ApiResponse.success(jsonHelper.loadMovies())
             EspressoIdlingResource.decrement()
         }, SERVICE_LATENCY_IN_MILLIS)
+        return resultMovie
     }
 
-    fun getAllTvShows(callback: LoadTvShowCallback) {
+    fun getAllTvShows(): LiveData<ApiResponse<List<TvShowResponse>>>{
         EspressoIdlingResource.increment()
+        val resultTvShow = MutableLiveData<ApiResponse<List<TvShowResponse>>>()
         handler.postDelayed({
-            callback.onAllTvShowsReceived(jsonHelper.loadTvShow())
+            resultTvShow.value = ApiResponse.success(jsonHelper.loadTvShow())
             EspressoIdlingResource.decrement()
         }, SERVICE_LATENCY_IN_MILLIS)
+        return resultTvShow
     }
 
-    fun getDetailMovies(movieId: Int, callback: LoadDetailMoviesCallback){
+    fun getDetailMovies(movieId: String, callback: LoadDetailMoviesCallback){
         EspressoIdlingResource.increment()
         handler.postDelayed({
             callback.onAllDetailMoviesReceived(movieId, jsonHelper.loadMovies())
@@ -50,7 +56,7 @@ class RemoteDataSource private constructor(private val jsonHelper: JsonHelper) {
         }, SERVICE_LATENCY_IN_MILLIS)
     }
 
-    fun getDetailTvShows(tvShowId: Int, callback: LoadDetailTvShowsCallback){
+    fun getDetailTvShows(tvShowId: String, callback: LoadDetailTvShowsCallback){
         EspressoIdlingResource.increment()
         handler.postDelayed({
             callback.onAllDetailTvShowsReceived(tvShowId, jsonHelper.loadTvShow())
@@ -63,7 +69,7 @@ class RemoteDataSource private constructor(private val jsonHelper: JsonHelper) {
     }
 
     interface LoadDetailMoviesCallback {
-        fun onAllDetailMoviesReceived(movieId: Int, movieResponse: List<MovieResponse>)
+        fun onAllDetailMoviesReceived(movieId: String, movieResponse: List<MovieResponse>)
     }
 
     interface LoadTvShowCallback {
@@ -71,6 +77,6 @@ class RemoteDataSource private constructor(private val jsonHelper: JsonHelper) {
     }
 
     interface LoadDetailTvShowsCallback {
-        fun onAllDetailTvShowsReceived(tvShowId: Int, tvShowResponse: List<TvShowResponse>)
+        fun onAllDetailTvShowsReceived(tvShowId: String, tvShowResponse: List<TvShowResponse>)
     }
 }

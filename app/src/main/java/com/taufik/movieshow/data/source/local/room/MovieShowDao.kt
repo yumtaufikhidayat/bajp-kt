@@ -1,23 +1,36 @@
 package com.taufik.movieshow.data.source.local.room
 
-import androidx.room.Dao
+import androidx.paging.DataSource
+import androidx.room.*
+import com.taufik.movieshow.data.source.local.entity.MovieEntities
+import com.taufik.movieshow.data.source.local.entity.TvShowEntities
+import com.taufik.movieshow.data.source.model.MovieEntity
+import com.taufik.movieshow.data.source.model.TvShowEntity
 
 @Dao
 interface MovieShowDao {
 
-    fun getMovies()
+    @Query("SELECT * FROM movieentities")
+    fun getMovies(): DataSource.Factory<Int, MovieEntity>
 
-    fun getFavoriteMovies()
+    @Query("SELECT * FROM movieentities WHERE favorited = 1")
+    fun getFavoriteMovies(): DataSource.Factory<Int, MovieEntity>
 
-    fun insertMovies()
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertMovies(movies: List<MovieEntity>)
 
-    fun updateMovies()
+    @Update
+    fun updateMovies(movies: MovieEntity)
 
-    fun getTvShows()
+    @Query("SELECT * FROM tvshowentities")
+    fun getTvShows(): DataSource.Factory<Int, TvShowEntity>
 
-    fun getFavoriteTvShows()
+    @Query("SELECT * FROM tvshowentities WHERE favorited = 1")
+    fun getFavoriteTvShows(): DataSource.Factory<Int, TvShowEntity>
 
-    fun insertTvShows()
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertTvShows(tvShows: List<TvShowEntity>)
 
-    fun updateTvShows()
+    @Update
+    fun updateTvShows(tvShows: TvShowEntity)
 }

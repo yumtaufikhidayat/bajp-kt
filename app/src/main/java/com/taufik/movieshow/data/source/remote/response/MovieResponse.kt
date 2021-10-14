@@ -2,7 +2,7 @@ package com.taufik.movieshow.data.source.remote.response
 
 data class MovieResponse(
     val imageBackdrop: String,
-    val id: Int,
+    val id: String,
     val language: String,
     val overview: String,
     val imagePoster: String,

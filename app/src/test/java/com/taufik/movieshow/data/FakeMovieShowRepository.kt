@@ -2,7 +2,8 @@ package com.taufik.movieshow.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.taufik.movieshow.data.source.MovieShowDataSource
+import com.taufik.movieshow.data.source.model.MovieEntity
+import com.taufik.movieshow.data.source.model.TvShowEntity
 import com.taufik.movieshow.data.source.remote.RemoteDataSource
 import com.taufik.movieshow.data.source.remote.response.MovieResponse
 import com.taufik.movieshow.data.source.remote.response.TvShowResponse

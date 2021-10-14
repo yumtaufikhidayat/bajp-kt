@@ -31,7 +31,7 @@ class JsonHelper(private val context: Context) {
                 val results = listArray.getJSONObject(i)
 
                 val imageBackdrop = results.getString("imageBackdrop")
-                val id = results.getInt("id")
+                val id = results.getString("id")
                 val language = results.getString("language")
                 val overview = results.getString("overview")
                 val imagePoster = results.getString("imagePoster")
@@ -70,7 +70,7 @@ class JsonHelper(private val context: Context) {
 
                 val imageBackdrop = results.getString("imageBackdrop")
                 val firstAirDate = results.getString("firstAirDate")
-                val id = results.getInt("id")
+                val id = results.getString("id")
                 val title = results.getString("title")
                 val language = results.getString("language")
                 val overview = results.getString("overview")

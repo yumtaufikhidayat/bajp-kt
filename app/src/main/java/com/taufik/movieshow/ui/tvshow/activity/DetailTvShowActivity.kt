@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
-import com.taufik.movieshow.data.TvShowEntity
+import com.taufik.movieshow.data.source.model.TvShowEntity
 import com.taufik.movieshow.databinding.ActivityDetailTvShowBinding
 import com.taufik.movieshow.ui.activity.ViewModelFactory
 import com.taufik.movieshow.ui.tvshow.viewmodel.DetailTvShowViewModel
@@ -55,12 +55,12 @@ class DetailTvShowActivity : AppCompatActivity() {
     }
 
     private fun setData() {
-        val tvShowId = parcelData.id
+        val tvShowId = parcelData.tvShowId
         val factory = ViewModelFactory.getInstance(this)
         viewModel = ViewModelProvider(this, factory)[DetailTvShowViewModel::class.java]
         viewModel.setSelectedTvShow(tvShowId)
         viewModel.getTvShow().observe(this, {
-            if (it.id == tvShowId) {
+            if (it.tvShowId == tvShowId) {
                 Log.e(TAG, "setData: $it")
                 populateDetailTvShows(it)
             }
