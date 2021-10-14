@@ -1,7 +1,7 @@
 package com.taufik.movieshow.utils
 
-import com.taufik.movieshow.data.source.model.MovieEntity
-import com.taufik.movieshow.data.source.model.TvShowEntity
+import com.taufik.movieshow.data.source.local.entity.MovieEntity
+import com.taufik.movieshow.data.source.local.entity.TvShowEntity
 import com.taufik.movieshow.data.source.remote.response.MovieResponse
 import com.taufik.movieshow.data.source.remote.response.TvShowResponse
 

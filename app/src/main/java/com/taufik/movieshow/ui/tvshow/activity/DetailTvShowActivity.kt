@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
-import com.taufik.movieshow.data.source.model.TvShowEntity
+import com.taufik.movieshow.data.source.local.entity.TvShowEntity
 import com.taufik.movieshow.databinding.ActivityDetailTvShowBinding
 import com.taufik.movieshow.ui.activity.ViewModelFactory
 import com.taufik.movieshow.ui.tvshow.viewmodel.DetailTvShowViewModel

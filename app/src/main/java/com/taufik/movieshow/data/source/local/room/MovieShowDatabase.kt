@@ -4,9 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.taufik.movieshow.data.source.local.entity.MovieEntities
-import com.taufik.movieshow.data.source.model.MovieEntity
-import com.taufik.movieshow.data.source.model.TvShowEntity
+import com.taufik.movieshow.data.source.local.entity.MovieEntity
+import com.taufik.movieshow.data.source.local.entity.TvShowEntity
 
 @Database(
     entities = [MovieEntity::class, TvShowEntity::class],

@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
-import com.taufik.movieshow.data.source.model.MovieEntity
+import com.taufik.movieshow.data.source.local.entity.MovieEntity
 import com.taufik.movieshow.databinding.ActivityDetailMovieBinding
 import com.taufik.movieshow.ui.activity.ViewModelFactory
 import com.taufik.movieshow.ui.movie.viewmodel.DetailMovieViewModel
@@ -43,6 +43,7 @@ class DetailMovieActivity : AppCompatActivity() {
 
     private fun setParcelableData() {
         parcelData = intent.getParcelableExtra(EXTRA_DETAIL)!!
+        Log.e(TAG, "setParcelableData: $parcelData")
     }
 
     private fun initActionBar() {

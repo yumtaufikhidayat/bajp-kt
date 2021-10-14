@@ -1,26 +1,22 @@
 package com.taufik.movieshow.data.source.local.entity
 
+import android.os.Parcelable
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 
-@Entity(tableName = "tvshowentities")
-data class TvShowEntities(
-
+@Parcelize
+@Entity(tableName = "movieentities")
+data class MovieEntity(
     @PrimaryKey
     @NonNull
-    @ColumnInfo(name = "tvShowId")
-    val tvShowId: Int,
+    @ColumnInfo(name = "movieId")
+    var movieId: String,
 
     @ColumnInfo(name = "imageBackdrop")
     val imageBackdrop: String,
-
-    @ColumnInfo(name = "firstAirDate")
-    val firstAirDate: String,
-
-    @ColumnInfo(name = "title")
-    val title: String,
 
     @ColumnInfo(name = "language")
     val language: String,
@@ -31,6 +27,12 @@ data class TvShowEntities(
     @ColumnInfo(name = "imagePoster")
     val imagePoster: String,
 
+    @ColumnInfo(name = "releaseDate")
+    val releaseDate: String,
+
+    @ColumnInfo(name = "title")
+    val title: String,
+
     @ColumnInfo(name = "rating")
     val rating: Double,
 
@@ -39,4 +41,4 @@ data class TvShowEntities(
 
     @ColumnInfo(name = "favorited")
     var favorited: Boolean = false
-)
+): Parcelable

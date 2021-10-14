@@ -48,6 +48,16 @@ class RemoteDataSource private constructor(private val jsonHelper: JsonHelper) {
         return resultTvShow
     }
 
+    fun getDetailMovies(): LiveData<ApiResponse<MovieResponse>>{
+        EspressoIdlingResource.increment()
+        val resultMovie = MutableLiveData<ApiResponse<MovieResponse>>()
+        handler.postDelayed({
+//            resultMovie.value = ApiResponse.success(jsonHelper.loadMovies())
+            EspressoIdlingResource.decrement()
+        }, SERVICE_LATENCY_IN_MILLIS)
+        return resultMovie
+    }
+
     fun getDetailMovies(movieId: String, callback: LoadDetailMoviesCallback){
         EspressoIdlingResource.increment()
         handler.postDelayed({

@@ -2,10 +2,8 @@ package com.taufik.movieshow.data.source.local.room
 
 import androidx.paging.DataSource
 import androidx.room.*
-import com.taufik.movieshow.data.source.local.entity.MovieEntities
-import com.taufik.movieshow.data.source.local.entity.TvShowEntities
-import com.taufik.movieshow.data.source.model.MovieEntity
-import com.taufik.movieshow.data.source.model.TvShowEntity
+import com.taufik.movieshow.data.source.local.entity.MovieEntity
+import com.taufik.movieshow.data.source.local.entity.TvShowEntity
 
 @Dao
 interface MovieShowDao {

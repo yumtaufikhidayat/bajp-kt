@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
-import com.taufik.movieshow.data.source.model.MovieEntity
+import com.taufik.movieshow.data.source.local.entity.MovieEntity
 import com.taufik.movieshow.databinding.ItemsMovieShowBinding
 import com.taufik.movieshow.ui.movie.activity.DetailMovieActivity
 import com.taufik.movieshow.utils.Utils
@@ -19,23 +19,24 @@ class MovieAdapter : PagedListAdapter<MovieEntity, MovieAdapter.MovieViewHolder>
 
     class MovieViewHolder(private val binding: ItemsMovieShowBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(movieResult: MovieEntity) {
+        fun bind(movieEntity: MovieEntity) {
             with(binding) {
                 Glide.with(itemView.context)
-                    .load(Utils.IMAGE_URL + movieResult.imagePoster)
+                    .load(Utils.IMAGE_URL + movieEntity.imagePoster)
                     .apply(
                         RequestOptions.placeholderOf(R.drawable.ic_loading)
                             .error(R.drawable.ic_error)
                     )
                     .into(imgPoster)
 
-                tvTitle.text = movieResult.title
-                tvReleaseDate.text = movieResult.releaseDate
-                tvRating.text = movieResult.rating.toString()
+                tvTitle.text = movieEntity.title
+                tvReleaseDate.text = movieEntity.releaseDate
+                tvRating.text = movieEntity.rating.toString()
 
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, DetailMovieActivity::class.java).apply {
-                        putExtra(DetailMovieActivity.EXTRA_DETAIL, movieResult)
+                        Log.e(TAG, "bind: $movieEntity")
+                        putExtra(DetailMovieActivity.EXTRA_DETAIL, movieEntity)
                     }
                     it.context.startActivity(intent)
                 }

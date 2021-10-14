@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.taufik.movieshow.data.source.local.LocalDataSource
-import com.taufik.movieshow.data.source.model.MovieEntity
-import com.taufik.movieshow.data.source.model.TvShowEntity
+import com.taufik.movieshow.data.source.local.entity.MovieEntity
+import com.taufik.movieshow.data.source.local.entity.TvShowEntity
 import com.taufik.movieshow.data.source.remote.ApiResponse
 import com.taufik.movieshow.data.source.remote.RemoteDataSource
 import com.taufik.movieshow.data.source.remote.response.MovieResponse
@@ -161,7 +161,8 @@ class MovieShowRepository private constructor(
                             response.releaseDate,
                             response.title,
                             response.rating,
-                            response.homePage
+                            response.homePage,
+                            false
                         )
                     }
                 }

@@ -2,7 +2,7 @@ package com.taufik.movieshow.ui.tvshow.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.taufik.movieshow.data.source.model.TvShowEntity
+import com.taufik.movieshow.data.source.local.entity.TvShowEntity
 import com.taufik.movieshow.data.MovieShowRepository
 import kotlin.properties.Delegates
 

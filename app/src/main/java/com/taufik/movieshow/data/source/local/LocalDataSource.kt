@@ -2,8 +2,8 @@ package com.taufik.movieshow.data.source.local
 
 import androidx.paging.DataSource
 import com.taufik.movieshow.data.source.local.room.MovieShowDao
-import com.taufik.movieshow.data.source.model.MovieEntity
-import com.taufik.movieshow.data.source.model.TvShowEntity
+import com.taufik.movieshow.data.source.local.entity.MovieEntity
+import com.taufik.movieshow.data.source.local.entity.TvShowEntity
 
 class LocalDataSource private constructor(private val movieShowDao: MovieShowDao){
 
