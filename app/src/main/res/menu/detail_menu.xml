@@ -4,9 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/nav_share"
-        android:title="@string/tvShare"
-        android:icon="@drawable/ic_share"
+        android:id="@+id/nav_favorite"
+        android:title="@string/icFavorite"
+        android:icon="@drawable/ic_favorite"
         app:showAsAction="ifRoom"/>
 
     <item

@@ -5,6 +5,8 @@ import android.os.Looper
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.taufik.movieshow.data.source.remote.response.MovieResponse
+import com.taufik.movieshow.data.source.remote.response.OtherMoviesResponse
+import com.taufik.movieshow.data.source.remote.response.OtherTvShowsResponse
 import com.taufik.movieshow.data.source.remote.response.TvShowResponse
 import com.taufik.movieshow.utils.EspressoIdlingResource
 import com.taufik.movieshow.utils.JsonHelper
@@ -66,12 +68,32 @@ class RemoteDataSource private constructor(private val jsonHelper: JsonHelper) {
         }, SERVICE_LATENCY_IN_MILLIS)
     }
 
+    fun getOtherMovies(movieId: String): LiveData<ApiResponse<List<OtherMoviesResponse>>> {
+        EspressoIdlingResource.increment()
+        val resultMovies = MutableLiveData<ApiResponse<List<OtherMoviesResponse>>>()
+        handler.postDelayed({
+            resultMovies.value = ApiResponse.success(jsonHelper.loadOtherMovies(movieId))
+            EspressoIdlingResource.decrement()
+        }, SERVICE_LATENCY_IN_MILLIS)
+        return resultMovies
+    }
+
     fun getDetailTvShows(tvShowId: String, callback: LoadDetailTvShowsCallback){
         EspressoIdlingResource.increment()
         handler.postDelayed({
             callback.onAllDetailTvShowsReceived(tvShowId, jsonHelper.loadTvShow())
             EspressoIdlingResource.decrement()
         }, SERVICE_LATENCY_IN_MILLIS)
+    }
+
+    fun getOtherTvShows(tvShowId: String): LiveData<ApiResponse<List<OtherTvShowsResponse>>> {
+        EspressoIdlingResource.increment()
+        val resultTvShows = MutableLiveData<ApiResponse<List<OtherTvShowsResponse>>>()
+        handler.postDelayed({
+            resultTvShows.value = ApiResponse.success(jsonHelper.loadOtherTvShows(tvShowId))
+            EspressoIdlingResource.decrement()
+        }, SERVICE_LATENCY_IN_MILLIS)
+        return resultTvShows
     }
 
     interface LoadMoviesCallback {

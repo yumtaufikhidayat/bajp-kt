@@ -1,0 +1,49 @@
+{
+  "result": [
+    {
+      "detailTvShowId": "71789m1",
+      "tvShowId": "71789",
+      "title": "Suicide Squad",
+      "imagePoster": "/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg",
+      "year": "2016",
+      "rating": 5.91,
+      "position": "0"
+    },
+    {
+      "detailTvShowId": "71789m2",
+      "tvShowId": "71789",
+      "title": "Jason Bourne",
+      "imagePoster": "/lFSSLTlFozwpaGlO31OoUeirBgQ.jpg",
+      "year": "2016",
+      "rating": 5.25,
+      "position": "1"
+    },
+    {
+      "detailTvShowId": "71789m3",
+      "tvShowId": "71789",
+      "title": "War Dogs",
+      "imagePoster": "/wJXku1YhMKeuzYNEHux7XtaYPsE.jpg",
+      "year": "2016",
+      "rating": 5.08,
+      "position": "2"
+    },
+    {
+      "detailTvShowId": "71789m4",
+      "tvShowId": "71789",
+      "title": "A Man Called Ove",
+      "imagePoster": "/pXqnqw4V1Rly2HEacfl07d5DcUE.jpg",
+      "year": "2016",
+      "rating": 5.57,
+      "position": "3"
+    },
+    {
+      "detailTvShowId": "71789m5",
+      "tvShowId": "71789",
+      "title": "Lights Out",
+      "imagePoster": "/rxXA5vwJElXQ8BgrB0pocUcuqFA.jpg",
+      "year": "2016",
+      "rating": 6.11,
+      "position": "4"
+    }
+  ]
+}

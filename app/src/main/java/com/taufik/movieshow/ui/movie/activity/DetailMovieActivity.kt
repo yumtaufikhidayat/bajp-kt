@@ -9,16 +9,21 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
 import com.taufik.movieshow.data.source.local.entity.MovieEntity
 import com.taufik.movieshow.databinding.ActivityDetailMovieBinding
 import com.taufik.movieshow.ui.activity.ViewModelFactory
+import com.taufik.movieshow.ui.movie.adapter.DetailMovieAdapter
 import com.taufik.movieshow.ui.movie.viewmodel.DetailMovieViewModel
 import com.taufik.movieshow.utils.Utils
+import com.taufik.movieshow.vo.Status
 
 class DetailMovieActivity : AppCompatActivity() {
 
@@ -26,6 +31,7 @@ class DetailMovieActivity : AppCompatActivity() {
     private lateinit var viewModel: DetailMovieViewModel
     private lateinit var parcelData: MovieEntity
     private lateinit var data: MovieEntity
+    private var menu: Menu? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,14 +64,55 @@ class DetailMovieActivity : AppCompatActivity() {
     private fun setData() {
         val movieId = parcelData.movieId
         val factory = ViewModelFactory.getInstance(this)
+        val detailMovieAdapter = DetailMovieAdapter()
         viewModel = ViewModelProvider(this, factory)[DetailMovieViewModel::class.java]
         viewModel.setSelectedMovie(movieId)
-        viewModel.getMovie().observe(this, {
-            if (it.movieId == movieId) {
-                Log.e(TAG, "setData: $it")
-                populateDetailMovie(it)
-            }
-        })
+
+        binding.apply {
+            progressBar.visibility = View.VISIBLE
+            viewModel.otherMovies.observe(this@DetailMovieActivity, {
+                if (it != null) {
+                    when (it.status) {
+                        Status.LOADING -> {
+                            Log.e(TAG, "setData: $it")
+                            progressBar.visibility = View.VISIBLE
+                        }
+
+                        Status.SUCCESS -> {
+                            if (it.data != null) {
+                                progressBar.visibility = View.GONE
+                                Log.e(TAG, "setData: ${it.data.mOtherMovies}")
+                                detailMovieAdapter.setOtherMovies(it.data.mOtherMovies)
+                                populateDetailMovie(it.data.mMovie)
+                            }
+                        }
+                        
+                        Status.ERROR -> {
+                            progressBar.visibility = View.GONE
+                            Log.e(TAG, "setData: $it")
+                            Toast.makeText(
+                                this@DetailMovieActivity, 
+                                "Terjadi kesalahan", 
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+                }
+            })
+        }
+
+        with(binding.rvTopMovieShow) { 
+            isNestedScrollingEnabled = false
+            layoutManager = LinearLayoutManager(this@DetailMovieActivity, LinearLayoutManager.HORIZONTAL, false)
+            setHasFixedSize(true)
+            adapter = detailMovieAdapter
+        }
+//        viewModel.getMovie().observe(this, {
+//            if (it.movieId == movieId) {
+//                Log.e(TAG, "setData: $it")
+//                populateDetailMovie(it)
+//            }
+//        })
     }
 
     private fun setReadMore() {
@@ -135,8 +182,31 @@ class DetailMovieActivity : AppCompatActivity() {
             .into(this)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.detail_menu, menu)
+        this.menu = menu
+        binding.apply {
+            viewModel.otherMovies.observe(this@DetailMovieActivity, {
+                if (it != null) {
+                    when (it.status) {
+                        Status.LOADING -> progressBar.visibility = View.VISIBLE
+                        Status.SUCCESS -> if (it.data != null) {
+                            progressBar.visibility = View.GONE
+                            val state = it.data.mMovie.favorited
+                            setFavorite(state)
+                        }
+                        Status.ERROR -> {
+                            progressBar.visibility = View.GONE
+                            Toast.makeText(
+                                this@DetailMovieActivity,
+                                "Terjadi kesalahan",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+                }
+            })
+        }
         return true
     }
 
@@ -145,18 +215,9 @@ class DetailMovieActivity : AppCompatActivity() {
 
             android.R.id.home -> onBackPressed()
 
-            R.id.nav_share -> {
-                try {
-
-                    val body = "Visit this awesome movie \n${data.homePage}"
-
-                    val shareIntent = Intent(Intent.ACTION_SEND)
-                    shareIntent.type = "text/plain"
-                    shareIntent.putExtra(Intent.EXTRA_TEXT, body)
-                    startActivity(Intent.createChooser(shareIntent, "Share with:"))
-                } catch (e: Exception) {
-                    Log.e("shareFailed", "onOptionsItemSelected: ${e.localizedMessage}")
-                }
+            R.id.nav_favorite -> {
+                viewModel.setFavorite()
+                return true
             }
 
             R.id.nav_open_in_browser -> {
@@ -170,6 +231,16 @@ class DetailMovieActivity : AppCompatActivity() {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun setFavorite(state: Boolean) {
+        if (menu == null) return
+        val menuItem = menu?.findItem(R.id.nav_favorite)
+        if (state) {
+            menuItem?.icon = ContextCompat.getDrawable(this, R.drawable.ic_favorite)
+        } else {
+            menuItem?.icon = ContextCompat.getDrawable(this, R.drawable.ic_favorite_detail)
+        }
     }
 
     companion object {

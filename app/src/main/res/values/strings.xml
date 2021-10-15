@@ -18,7 +18,6 @@
     <string name="tvBullet">\u2022</string>
     <string name="tvRuntime">Runtime</string>
     <string name="tvGenre">Genre</string>
-    <string name="tvEpisodes">Episodes</string>
     <string name="tvOtherMenus">Other Menu</string>
     <string name="tvShare">Share</string>
     <string name="tvOpenInBrowser">Open in browser</string>
@@ -26,9 +25,11 @@
     <string name="tvReadLess">Read Less</string>
     <string name="tvPoster">Poster</string>
     <string name="tvBackdrop">Backdrop</string>
+    <string name="tvWatchAlso">Watch Also</string>
+    <string name="tvYear">(2021)</string>
 
     <string name="btnWebsites">Website</string>
-    <string name="btnShare">Bagikan</string>
+    <string name="btnShare">Share</string>
 
     <!--Bottom menu-->
     <string name="icMovie">Movie</string>

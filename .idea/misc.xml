@@ -5,8 +5,10 @@
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.17222222222222222" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.19895833333333332" />
+        <entry key="app/src/main/res/drawable/background_movie.xml" value="0.19895833333333332" />
         <entry key="app/src/main/res/drawable/bottom_navigation_selector.xml" value="0.19895833333333332" />
         <entry key="app/src/main/res/drawable/ic_arrow_back.xml" value="0.19895833333333332" />
+        <entry key="app/src/main/res/drawable/ic_baseline_favorite.xml" value="0.19895833333333332" />
         <entry key="app/src/main/res/drawable/ic_baseline_movies.xml" value="0.19895833333333332" />
         <entry key="app/src/main/res/drawable/ic_broken_image_black.xml" value="0.19895833333333332" />
         <entry key="app/src/main/res/drawable/ic_circle.xml" value="0.19895833333333332" />
@@ -22,7 +24,7 @@
         <entry key="app/src/main/res/drawable/nav_movie_selector.xml" value="0.19895833333333332" />
         <entry key="app/src/main/res/drawable/nav_tvshow_selector.xml" value="0.19895833333333332" />
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.1828125" />
-        <entry key="app/src/main/res/layout/activity_detail_movie.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_detail_movie.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_detail_tv_show.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1828125" />
         <entry key="app/src/main/res/layout/activity_splashscreen.xml" value="0.1" />
@@ -33,6 +35,7 @@
         <entry key="app/src/main/res/layout/fragment_movie.xml" value="0.1828125" />
         <entry key="app/src/main/res/layout/fragment_tv_show.xml" value="0.1828125" />
         <entry key="app/src/main/res/layout/ic_arrow_back.xml" value="0.1828125" />
+        <entry key="app/src/main/res/layout/item_top_movie_show.xml" value="0.33" />
         <entry key="app/src/main/res/layout/items_movie_show.xml" value="0.1828125" />
         <entry key="app/src/main/res/layout/items_movies.xml" value="0.1828125" />
         <entry key="app/src/main/res/menu/bottomnav_menu.xml" value="0.1828125" />

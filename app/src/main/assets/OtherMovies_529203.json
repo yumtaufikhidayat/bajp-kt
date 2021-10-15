@@ -1,0 +1,49 @@
+{
+  "result": [
+    {
+      "detailMovieId": "529203m1",
+      "movieId": "529203",
+      "title": "Suicide Squad",
+      "imagePoster": "/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg",
+      "year": "2016",
+      "rating": 5.91,
+      "position": "0"
+    },
+    {
+      "detailMovieId": "529203m2",
+      "movieId": "529203",
+      "title": "Jason Bourne",
+      "imagePoster": "/lFSSLTlFozwpaGlO31OoUeirBgQ.jpg",
+      "year": "2016",
+      "rating": 5.25,
+      "position": "1"
+    },
+    {
+      "detailMovieId": "529203m3",
+      "movieId": "529203",
+      "title": "War Dogs",
+      "imagePoster": "/wJXku1YhMKeuzYNEHux7XtaYPsE.jpg",
+      "year": "2016",
+      "rating": 5.08,
+      "position": "2"
+    },
+    {
+      "detailMovieId": "529203m4",
+      "movieId": "529203",
+      "title": "A Man Called Ove",
+      "imagePoster": "/pXqnqw4V1Rly2HEacfl07d5DcUE.jpg",
+      "year": "2016",
+      "rating": 5.57,
+      "position": "3"
+    },
+    {
+      "detailMovieId": "529203m5",
+      "movieId": "529203",
+      "title": "Lights Out",
+      "imagePoster": "/rxXA5vwJElXQ8BgrB0pocUcuqFA.jpg",
+      "year": "2016",
+      "rating": 6.11,
+      "position": "4"
+    }
+  ]
+}

@@ -9,16 +9,21 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.taufik.movieshow.R
 import com.taufik.movieshow.data.source.local.entity.TvShowEntity
 import com.taufik.movieshow.databinding.ActivityDetailTvShowBinding
 import com.taufik.movieshow.ui.activity.ViewModelFactory
+import com.taufik.movieshow.ui.tvshow.adapter.DetailTvShowAdapter
 import com.taufik.movieshow.ui.tvshow.viewmodel.DetailTvShowViewModel
 import com.taufik.movieshow.utils.Utils
+import com.taufik.movieshow.vo.Status
 
 class DetailTvShowActivity : AppCompatActivity() {
 
@@ -26,6 +31,7 @@ class DetailTvShowActivity : AppCompatActivity() {
     private lateinit var viewModel: DetailTvShowViewModel
     private lateinit var parcelData: TvShowEntity
     private lateinit var data: TvShowEntity
+    private var menu: Menu? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,14 +63,55 @@ class DetailTvShowActivity : AppCompatActivity() {
     private fun setData() {
         val tvShowId = parcelData.tvShowId
         val factory = ViewModelFactory.getInstance(this)
+        val detailTvShowAdapter = DetailTvShowAdapter()
         viewModel = ViewModelProvider(this, factory)[DetailTvShowViewModel::class.java]
         viewModel.setSelectedTvShow(tvShowId)
-        viewModel.getTvShow().observe(this, {
-            if (it.tvShowId == tvShowId) {
-                Log.e(TAG, "setData: $it")
-                populateDetailTvShows(it)
-            }
-        })
+
+        binding.apply {
+            progressBar.visibility = View.VISIBLE
+            viewModel.otherTvShows.observe(this@DetailTvShowActivity, {
+                if (it != null) {
+                    when (it.status) {
+                        Status.LOADING -> {
+                            Log.e(TAG, "setData: $it")
+                            progressBar.visibility = View.VISIBLE
+                        }
+
+                        Status.SUCCESS -> {
+                            if (it.data != null) {
+                                progressBar.visibility = View.GONE
+                                Log.e(TAG, "setData: ${it.data.mOtherTvShows}")
+                                detailTvShowAdapter.setOtherTvShows(it.data.mOtherTvShows)
+                                populateDetailTvShows(it.data.mTvShows)
+                            }
+                        }
+
+                        Status.ERROR -> {
+                            progressBar.visibility = View.GONE
+                            Log.e(TAG, "setData: $it")
+                            Toast.makeText(
+                                this@DetailTvShowActivity,
+                                "Terjadi kesalahan",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+                }
+            })
+        }
+
+        with(binding.rvTopMovieShow) {
+            isNestedScrollingEnabled = false
+            layoutManager = LinearLayoutManager(this@DetailTvShowActivity, LinearLayoutManager.HORIZONTAL, false)
+            setHasFixedSize(true)
+            adapter = detailTvShowAdapter
+        }
+//        viewModel.getTvShow().observe(this, {
+//            if (it.tvShowId == tvShowId) {
+//                Log.e(TAG, "setData: $it")
+//                populateDetailTvShows(it)
+//            }
+//        })
     }
 
     private fun setReadMore() {
@@ -136,6 +183,29 @@ class DetailTvShowActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.detail_menu, menu)
+        this.menu = menu
+        binding.apply {
+            viewModel.otherTvShows.observe(this@DetailTvShowActivity, {
+                if (it != null) {
+                    when (it.status) {
+                        Status.LOADING -> progressBar.visibility = View.VISIBLE
+                        Status.SUCCESS -> if (it.data != null) {
+                            progressBar.visibility = View.GONE
+                            val state = it.data.mTvShows.favorited
+                            setFavorite(state)
+                        }
+                        Status.ERROR -> {
+                            progressBar.visibility = View.GONE
+                            Toast.makeText(
+                                this@DetailTvShowActivity,
+                                "Terjadi kesalahan",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+                }
+            })
+        }
         return true
     }
 
@@ -144,18 +214,9 @@ class DetailTvShowActivity : AppCompatActivity() {
 
             android.R.id.home -> onBackPressed()
 
-            R.id.nav_share -> {
-                try {
-
-                    val body = "Visit this awesome shows \n${data.homePage}"
-
-                    val shareIntent = Intent(Intent.ACTION_SEND)
-                    shareIntent.type = "text/plain"
-                    shareIntent.putExtra(Intent.EXTRA_TEXT, body)
-                    startActivity(Intent.createChooser(shareIntent, "Share with:"))
-                } catch (e: Exception) {
-                    Log.e("shareFailed", "onOptionsItemSelected: ${e.localizedMessage}")
-                }
+            R.id.nav_favorite -> {
+                viewModel.setFavorite()
+                return true
             }
 
             R.id.nav_open_in_browser -> {
@@ -168,6 +229,16 @@ class DetailTvShowActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun setFavorite(state: Boolean) {
+        if (menu == null) return
+        val menuItem = menu?.findItem(R.id.nav_favorite)
+        if (state) {
+            menuItem?.icon = ContextCompat.getDrawable(this, R.drawable.ic_favorite)
+        } else {
+            menuItem?.icon = ContextCompat.getDrawable(this, R.drawable.ic_favorite_detail)
+        }
     }
 
     companion object {

@@ -5,10 +5,12 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.taufik.movieshow.data.source.local.entity.MovieEntity
+import com.taufik.movieshow.data.source.local.entity.OtherMoviesEntity
+import com.taufik.movieshow.data.source.local.entity.OtherTvShowsEntity
 import com.taufik.movieshow.data.source.local.entity.TvShowEntity
 
 @Database(
-    entities = [MovieEntity::class, TvShowEntity::class],
+    entities = [MovieEntity::class, TvShowEntity::class, OtherMoviesEntity::class, OtherTvShowsEntity::class],
     version = 1,
     exportSchema = false
 )

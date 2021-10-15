@@ -14,6 +14,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e4e666d-9e16-4687-9c8e-23273236e96a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_283566.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_399566.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_412656.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_458576.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_520946.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_527774.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_529203.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_544401.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_560144.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_578908.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_587807.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_599281.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_602269.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_630586.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_632357.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_638597.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_651571.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_684369.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_709629.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherMovies_797394.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_102966.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_104699.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_114198.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_1416.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_14814.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_2734.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_32415.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_44006.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_58841.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_62650.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_71728.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_71789.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_71790.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_76773.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_79460.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_79696.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_80006.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_82822.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_95631.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/OtherTvShows_99121.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/local/entity/MovieWithOtherMovies.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/local/entity/OtherMoviesEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/local/entity/OtherTvShowsEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/local/entity/TvShowWithOtherTvShows.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/remote/response/OtherMoviesResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/remote/response/OtherTvShowsResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/adapter/DetailMovieAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/tvshow/adapter/DetailTvShowAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/background_movie.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_favorite_detail.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_top_movie_show.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" afterDir="false" />
@@ -24,29 +75,26 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/MovieShowDataSource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/MovieShowDataSource.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/MovieShowRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/MovieShowRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/local/LocalDataSource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/local/LocalDataSource.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/local/entity/MovieEntities.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/local/entity/TvShowEntities.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/local/room/MovieShowDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/local/room/MovieShowDao.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/local/room/MovieShowDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/local/room/MovieShowDatabase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/model/MovieEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/local/entity/MovieEntity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/model/TvShowEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/local/entity/TvShowEntity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/remote/RemoteDataSource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/data/source/remote/RemoteDataSource.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/activity/DetailMovieActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/activity/DetailMovieActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/adapter/MovieAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/adapter/MovieAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/viewmodel/DetailMovieViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/viewmodel/DetailMovieViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/viewmodel/MovieViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/viewmodel/MovieViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/tvshow/activity/DetailTvShowActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/tvshow/activity/DetailTvShowActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/tvshow/adapter/TvShowAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/tvshow/adapter/TvShowAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/tvshow/viewmodel/DetailTvShowViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/tvshow/viewmodel/DetailTvShowViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/tvshow/viewmodel/TvShowViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/tvshow/viewmodel/TvShowViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/utils/DataDummy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/utils/DataDummy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/data/FakeMovieShowRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/data/FakeMovieShowRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/ui/movie/viewmodel/MovieViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/ui/movie/viewmodel/MovieViewModelTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/ui/tvshow/viewmodel/TvShowViewModelTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/ui/tvshow/viewmodel/TvShowViewModelTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/utils/JsonHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/utils/JsonHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_share.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_movie.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_movie.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_tv_show.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_tv_show.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/detail_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/detail_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,10 +134,10 @@
         <option value="Kotlin Object" />
         <option value="JUnit4 Test Class" />
         <option value="Kotlin Interface" />
-        <option value="resourceFile" />
-        <option value="layoutResourceFile" />
         <option value="Kotlin Data Class" />
         <option value="Kotlin Enum" />
+        <option value="layoutResourceFile" />
+        <option value="resourceFile" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -127,14 +175,14 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/test/java/com/taufik/movieshow/ui" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/assets" />
     <property name="settings.editor.selected.configurable" value="preferences.language.Kotlin" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/assets" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/tvshow" />
-      <recent name="$PROJECT_DIR$/app/src/main/assets" />
       <recent name="$PROJECT_DIR$/app/src/main/res" />
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
     </key>
@@ -168,11 +216,11 @@
       <recent name="com.taufik.movieshow.data.viewmodel" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.taufik.movieshow.ui.tvshow.adapter" />
+      <recent name="com.taufik.movieshow.data.source.local.entity" />
+      <recent name="com.taufik.movieshow.data.source.remote.response" />
       <recent name="com.taufik.movieshow.data.viewmodel.data" />
       <recent name="com.taufik.movieshow.ui.tvshow.viewmodel" />
-      <recent name="com.taufik.movieshow.data.source.remote.response" />
-      <recent name="com.taufik.movieshow.data.viewmodel" />
-      <recent name="com.taufik.movieshow.ui.activity" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -503,23 +551,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/activity/DetailMovieActivity.kt</url>
-          <line>45</line>
+          <line>51</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/activity/DetailMovieActivity.kt</url>
-          <line>65</line>
-          <option name="timeStamp" value="5" />
+          <line>145</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/activity/DetailMovieActivity.kt</url>
+          <line>107</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/activity/DetailMovieActivity.kt</url>
+          <line>85</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/activity/DetailMovieActivity.kt</url>
+          <line>77</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/activity/DetailMovieActivity.kt</url>
           <line>92</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/taufik/movieshow/ui/movie/activity/DetailMovieActivity.kt</url>
-          <line>98</line>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

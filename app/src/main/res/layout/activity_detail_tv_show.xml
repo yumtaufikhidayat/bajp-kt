@@ -212,13 +212,37 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvOverview"/>
 
+        <TextView
+            android:id="@+id/tvYouMayLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="12dp"
+            android:text="@string/tvWatchAlso"
+            android:textStyle="bold"
+            android:textColor="@color/colorOrange"
+            app:layout_constraintTop_toBottomOf="@id/tvReadMore"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTopMovieShow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_top_movie_show"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintTop_toBottomOf="@id/tvYouMayLike"
+            app:layout_constraintStart_toStartOf="@id/tvOverview"
+            app:layout_constraintEnd_toEndOf="@id/tvOverview"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="24dp"
             android:weightSum="2"
-            app:layout_constraintTop_toBottomOf="@id/tvReadMore"
+            app:layout_constraintTop_toBottomOf="@id/rvTopMovieShow"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
@@ -249,6 +273,17 @@
                 tools:ignore="ButtonStyle"/>
 
         </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
