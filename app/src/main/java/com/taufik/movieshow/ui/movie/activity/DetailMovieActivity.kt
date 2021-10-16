@@ -190,11 +190,13 @@ class DetailMovieActivity : AppCompatActivity() {
                 if (it != null) {
                     when (it.status) {
                         Status.LOADING -> progressBar.visibility = View.VISIBLE
-                        Status.SUCCESS -> if (it.data != null) {
-                            progressBar.visibility = View.GONE
-                            val state = it.data.mMovie.favorited
-                            setFavorite(state)
-                            Log.e(TAG, "onCreateOptionsMenu: $state")
+                        Status.SUCCESS -> {
+                            if (it.data != null) {
+                                progressBar.visibility = View.GONE
+                                val state = it.data.mMovie.favorited
+                                setFavorite(state)
+                                Log.e(TAG, "onCreateOptionsMenu: $state")
+                            }
                         }
                         Status.ERROR -> {
                             progressBar.visibility = View.GONE
