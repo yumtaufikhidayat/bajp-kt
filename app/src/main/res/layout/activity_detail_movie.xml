@@ -236,44 +236,6 @@
             app:layout_constraintStart_toStartOf="@id/tvOverview"
             app:layout_constraintEnd_toEndOf="@id/tvOverview"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="24dp"
-            android:weightSum="2"
-            app:layout_constraintTop_toBottomOf="@id/rvTopMovieShow"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <Button
-                android:id="@+id/btnShare"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginHorizontal="10dp"
-                tools:text="@string/btnShare"
-                android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:backgroundTint="@color/colorPrimaryAccent"
-                app:cornerRadius="8dp"
-                tools:ignore="ButtonStyle" />
-
-            <Button
-                android:id="@+id/btnWebsite"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginHorizontal="10dp"
-                tools:text="@string/btnWebsites"
-                android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:backgroundTint="@color/colorYellow"
-                app:cornerRadius="8dp"
-                tools:ignore="ButtonStyle"/>
-
-            </LinearLayout>
-
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"

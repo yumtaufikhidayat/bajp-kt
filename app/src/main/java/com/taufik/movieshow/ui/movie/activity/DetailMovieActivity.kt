@@ -144,31 +144,6 @@ class DetailMovieActivity : AppCompatActivity() {
             tvOverview.text = movieEntity.overview
             tvRating.text = movieEntity.rating.toString()
             tvLanguage.text = movieEntity.language
-
-            btnShare.text = getString(R.string.btnShare)
-            btnShare.setOnClickListener {
-                try {
-
-                    val body = "Visit this awesome movie \n${data.homePage}"
-
-                    val shareIntent = Intent(Intent.ACTION_SEND)
-                    shareIntent.type = "text/plain"
-                    shareIntent.putExtra(Intent.EXTRA_TEXT, body)
-                    startActivity(Intent.createChooser(shareIntent, "Share with:"))
-                } catch (e: Exception) {
-                    Log.e("shareFailed", "onOptionsItemSelected: ${e.localizedMessage}")
-                }
-            }
-
-            btnWebsite.text = getString(R.string.btnWebsites)
-            btnWebsite.setOnClickListener {
-                try {
-                    val intentBrowser = Intent(Intent.ACTION_VIEW, Uri.parse(movieEntity.homePage))
-                    startActivity(Intent.createChooser(intentBrowser, "Open with:"))
-                } catch (e: java.lang.Exception) {
-                    Log.e("errorIntent", "onBindViewHolder: ${e.localizedMessage}")
-                }
-            }
         }
     }
 
@@ -221,6 +196,20 @@ class DetailMovieActivity : AppCompatActivity() {
             R.id.nav_favorite -> {
                 viewModel.setFavorite()
                 return true
+            }
+
+            R.id.nav_share -> {
+                try {
+
+                    val body = "Visit this awesome movie \n${data.homePage}"
+
+                    val shareIntent = Intent(Intent.ACTION_SEND)
+                    shareIntent.type = "text/plain"
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, body)
+                    startActivity(Intent.createChooser(shareIntent, "Share with:"))
+                } catch (e: Exception) {
+                    Log.e("shareFailed", "onOptionsItemSelected: ${e.localizedMessage}")
+                }
             }
 
             R.id.nav_open_in_browser -> {
