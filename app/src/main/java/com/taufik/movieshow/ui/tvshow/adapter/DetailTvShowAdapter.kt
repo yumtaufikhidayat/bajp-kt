@@ -4,8 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.taufik.movieshow.R
 import com.taufik.movieshow.data.source.local.entity.OtherTvShowsEntity
 import com.taufik.movieshow.databinding.ItemTopMovieShowBinding
+import com.taufik.movieshow.utils.Utils
 
 class DetailTvShowAdapter : RecyclerView.Adapter<DetailTvShowAdapter.OtherTvShowsViewHolder>() {
 
@@ -35,7 +38,11 @@ class DetailTvShowAdapter : RecyclerView.Adapter<DetailTvShowAdapter.OtherTvShow
         fun bind(otherTvShows: OtherTvShowsEntity) {
             binding.apply {
                 Glide.with(itemView.context)
-                    .load(otherTvShows.imagePoster)
+                    .load(Utils.IMAGE_URL + otherTvShows.imagePoster)
+                    .apply(
+                        RequestOptions.placeholderOf(R.drawable.ic_loading)
+                            .error(R.drawable.ic_error)
+                    )
                     .into(imgPoster)
 
                 tvTitle.text = otherTvShows.title

@@ -11,7 +11,7 @@ import com.taufik.movieshow.data.source.local.entity.TvShowEntity
 
 @Database(
     entities = [MovieEntity::class, TvShowEntity::class, OtherMoviesEntity::class, OtherTvShowsEntity::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class MovieShowDatabase : RoomDatabase() {
@@ -29,7 +29,8 @@ abstract class MovieShowDatabase : RoomDatabase() {
                     context.applicationContext,
                     MovieShowDatabase::class.java,
                     "MovieShowDB.db"
-                ).build().apply {
+                ).fallbackToDestructiveMigration()
+                    .build().apply {
                     INSTANCE = this
                 }
             }
