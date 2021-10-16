@@ -6,8 +6,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.taufik.movieshow.data.MovieShowRepository
 import com.taufik.movieshow.di.Injection
 import com.taufik.movieshow.ui.movie.viewmodel.DetailMovieViewModel
+import com.taufik.movieshow.ui.movie.viewmodel.FavoriteMovieViewModel
 import com.taufik.movieshow.ui.movie.viewmodel.MovieViewModel
 import com.taufik.movieshow.ui.tvshow.viewmodel.DetailTvShowViewModel
+import com.taufik.movieshow.ui.tvshow.viewmodel.FavoriteTvShowViewModel
 import com.taufik.movieshow.ui.tvshow.viewmodel.TvShowViewModel
 
 class ViewModelFactory private constructor(private val movieShowRepository: MovieShowRepository)
@@ -38,6 +40,12 @@ class ViewModelFactory private constructor(private val movieShowRepository: Movi
             }
             modelClass.isAssignableFrom(DetailTvShowViewModel::class.java) -> {
                 DetailTvShowViewModel(movieShowRepository) as T
+            }
+            modelClass.isAssignableFrom(FavoriteMovieViewModel::class.java) -> {
+                FavoriteMovieViewModel(movieShowRepository) as T
+            }
+            modelClass.isAssignableFrom(FavoriteTvShowViewModel::class.java) -> {
+                FavoriteTvShowViewModel(movieShowRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }

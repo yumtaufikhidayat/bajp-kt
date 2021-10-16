@@ -27,6 +27,8 @@
     <string name="tvBackdrop">Backdrop</string>
     <string name="tvWatchAlso">Watch Also</string>
     <string name="tvYear">(2021)</string>
+    <string name="tvCancelDelete">Cancel delete?</string>
+    <string name="tvOk">OK</string>
 
     <string name="btnWebsites">Website</string>
     <string name="btnShare">Share</string>

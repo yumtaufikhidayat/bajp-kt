@@ -8,5 +8,6 @@ import com.taufik.movieshow.data.MovieShowRepository
 import com.taufik.movieshow.vo.Resource
 
 class MovieViewModel(private val movieShowRepository: MovieShowRepository) : ViewModel() {
+
     fun getMovies(): LiveData<Resource<PagedList<MovieEntity>>> = movieShowRepository.getAllMovies()
 }
