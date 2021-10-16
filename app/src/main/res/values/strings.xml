@@ -28,13 +28,13 @@
     <string name="tvWatchAlso">Watch Also</string>
     <string name="tvYear">(2021)</string>
     <string name="tvCancelDelete">Cancel delete?</string>
-    <string name="tvOk">OK</string>
+    <string name="tvYes">Yes</string>
 
     <string name="btnWebsites">Website</string>
     <string name="btnShare">Share</string>
 
     <!--Bottom menu-->
-    <string name="icMovie">Movie</string>
+    <string name="icMovie">Movies</string>
     <string name="icTvShow">TV Shows</string>
-    <string name="icFavorite">Favorite</string>
+    <string name="icFavorite">Favorites</string>
 </resources>

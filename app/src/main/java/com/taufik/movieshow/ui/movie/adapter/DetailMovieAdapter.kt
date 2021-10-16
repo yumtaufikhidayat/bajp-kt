@@ -46,7 +46,7 @@ class DetailMovieAdapter : RecyclerView.Adapter<DetailMovieAdapter.OtherMoviesVi
                     .into(imgPoster)
 
                 tvTitle.text = otherMovies.title
-                tvYear.text = otherMovies.year
+                tvYear.text = String.format("(" + otherMovies.year + ")")
                 tvRating.text = otherMovies.rating.toString()
             }
         }

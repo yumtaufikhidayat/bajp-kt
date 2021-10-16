@@ -120,10 +120,6 @@ class MovieShowRepository private constructor(
         appExecutors.diskIO().execute { localDataSource.setMovieFavorite(movie, state)}
     }
 
-    override fun setReadMovie(otherMovies: OtherMoviesEntity) {
-        appExecutors.diskIO().execute { localDataSource.setReadMovie(otherMovies) }
-    }
-
     override fun getAllTvShows(): LiveData<Resource<PagedList<TvShowEntity>>> {
         return object : NetworkBoundResource<PagedList<TvShowEntity>, List<TvShowResponse>>(appExecutors){
             override fun loadFromDB(): LiveData<PagedList<TvShowEntity>> {
@@ -205,9 +201,5 @@ class MovieShowRepository private constructor(
 
     override fun setTvShowFavorite(tvShow: TvShowEntity, state: Boolean) {
         appExecutors.diskIO().execute { localDataSource.setTvShowFavorite(tvShow, state) }
-    }
-
-    override fun setReadTvShow(otherTvShow: OtherTvShowsEntity) {
-        appExecutors.diskIO().execute { localDataSource.setReadTvShow(otherTvShow) }
     }
 }

@@ -1,6 +1,5 @@
 package com.taufik.movieshow.utils
 
-import android.icu.lang.UCharacter.GraphemeClusterBreak.L
 import android.os.Handler
 import android.os.Looper
 import androidx.annotation.VisibleForTesting

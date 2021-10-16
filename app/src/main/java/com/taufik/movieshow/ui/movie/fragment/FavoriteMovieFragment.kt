@@ -82,7 +82,7 @@ class FavoriteMovieFragment : Fragment() {
                 val movieEntity = favoriteAdapter.getSwipedData(swipedPosition)
                 movieEntity?.let { movieViewModel.setFavorite(it) }
                 val snackBar = Snackbar.make(view as View, R.string.tvCancelDelete, Snackbar.LENGTH_LONG).apply {
-                    setAction(R.string.tvOk) { _ ->
+                    setAction(R.string.tvYes) { _ ->
                         movieEntity?.let { movieViewModel.setFavorite(it) }
                     }
                 }

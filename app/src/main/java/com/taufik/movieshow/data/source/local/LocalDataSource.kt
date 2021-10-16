@@ -30,11 +30,6 @@ class LocalDataSource private constructor(private val movieShowDao: MovieShowDao
         movieShowDao.updateMovies(movie)
     }
 
-    fun setReadMovie(otherMovies: OtherMoviesEntity) {
-        otherMovies.read = true
-        movieShowDao.updateOtherMovie(otherMovies)
-    }
-
     fun getTvShows(): DataSource.Factory<Int, TvShowEntity> = movieShowDao.getTvShows()
 
     fun getDetailTvShow(tvShowId: String): LiveData<TvShowWithOtherTvShows> =
@@ -49,10 +44,5 @@ class LocalDataSource private constructor(private val movieShowDao: MovieShowDao
     fun setTvShowFavorite(tvShow: TvShowEntity, newState: Boolean){
         tvShow.favorited = newState
         movieShowDao.updateTvShows(tvShow)
-    }
-
-    fun setReadTvShow(otherTvShows: OtherTvShowsEntity) {
-        otherTvShows.read = true
-        movieShowDao.updateOtherTvShow(otherTvShows)
     }
 }

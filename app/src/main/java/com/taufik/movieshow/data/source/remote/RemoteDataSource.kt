@@ -50,24 +50,6 @@ class RemoteDataSource private constructor(private val jsonHelper: JsonHelper) {
         return resultTvShow
     }
 
-    fun getDetailMovies(): LiveData<ApiResponse<MovieResponse>>{
-        EspressoIdlingResource.increment()
-        val resultMovie = MutableLiveData<ApiResponse<MovieResponse>>()
-        handler.postDelayed({
-//            resultMovie.value = ApiResponse.success(jsonHelper.loadMovies())
-            EspressoIdlingResource.decrement()
-        }, SERVICE_LATENCY_IN_MILLIS)
-        return resultMovie
-    }
-
-    fun getDetailMovies(movieId: String, callback: LoadDetailMoviesCallback){
-        EspressoIdlingResource.increment()
-        handler.postDelayed({
-            callback.onAllDetailMoviesReceived(movieId, jsonHelper.loadMovies())
-            EspressoIdlingResource.decrement()
-        }, SERVICE_LATENCY_IN_MILLIS)
-    }
-
     fun getOtherMovies(movieId: String): LiveData<ApiResponse<List<OtherMoviesResponse>>> {
         EspressoIdlingResource.increment()
         val resultMovies = MutableLiveData<ApiResponse<List<OtherMoviesResponse>>>()
@@ -76,14 +58,6 @@ class RemoteDataSource private constructor(private val jsonHelper: JsonHelper) {
             EspressoIdlingResource.decrement()
         }, SERVICE_LATENCY_IN_MILLIS)
         return resultMovies
-    }
-
-    fun getDetailTvShows(tvShowId: String, callback: LoadDetailTvShowsCallback){
-        EspressoIdlingResource.increment()
-        handler.postDelayed({
-            callback.onAllDetailTvShowsReceived(tvShowId, jsonHelper.loadTvShow())
-            EspressoIdlingResource.decrement()
-        }, SERVICE_LATENCY_IN_MILLIS)
     }
 
     fun getOtherTvShows(tvShowId: String): LiveData<ApiResponse<List<OtherTvShowsResponse>>> {
@@ -100,15 +74,7 @@ class RemoteDataSource private constructor(private val jsonHelper: JsonHelper) {
         fun onAllMoviesReceived(movieResponse: List<MovieResponse>)
     }
 
-    interface LoadDetailMoviesCallback {
-        fun onAllDetailMoviesReceived(movieId: String, movieResponse: List<MovieResponse>)
-    }
-
     interface LoadTvShowCallback {
         fun onAllTvShowsReceived(tvShowResponse: List<TvShowResponse>)
-    }
-
-    interface LoadDetailTvShowsCallback {
-        fun onAllDetailTvShowsReceived(tvShowId: String, tvShowResponse: List<TvShowResponse>)
     }
 }

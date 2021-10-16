@@ -46,7 +46,7 @@ class DetailTvShowAdapter : RecyclerView.Adapter<DetailTvShowAdapter.OtherTvShow
                     .into(imgPoster)
 
                 tvTitle.text = otherTvShows.title
-                tvYear.text = otherTvShows.year
+                tvYear.text = String.format("(" + otherTvShows.year + ")")
                 tvRating.text = otherTvShows.rating.toString()
             }
         }
