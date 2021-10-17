@@ -30,6 +30,9 @@ interface MovieShowDao {
     @Update
     fun updateOtherMovie(otherMovies: OtherMoviesEntity)
 
+    @Query("SELECT * FROM othermoviesentities WHERE movieId = :movieId")
+    fun getOtherMoviesByMovieId(movieId: String): LiveData<List<OtherMoviesEntity>>
+
     @Query("SELECT * FROM tvshowentities")
     fun getTvShows(): DataSource.Factory<Int, TvShowEntity>
 
@@ -51,4 +54,7 @@ interface MovieShowDao {
 
     @Update
     fun updateOtherTvShow(otherTvShows: OtherTvShowsEntity)
+
+    @Query("SELECT * FROM othertvshowsentities WHERE tvShowId = :tvShowId")
+    fun getOtherTvShowsByTvShowId(tvShowId: String): LiveData<List<OtherTvShowsEntity>>
 }

@@ -2,10 +2,7 @@ package com.taufik.movieshow.data
 
 import androidx.lifecycle.LiveData
 import androidx.paging.PagedList
-import com.taufik.movieshow.data.source.local.entity.MovieEntity
-import com.taufik.movieshow.data.source.local.entity.MovieWithOtherMovies
-import com.taufik.movieshow.data.source.local.entity.TvShowEntity
-import com.taufik.movieshow.data.source.local.entity.TvShowWithOtherTvShows
+import com.taufik.movieshow.data.source.local.entity.*
 import com.taufik.movieshow.vo.Resource
 
 interface MovieShowDataSource {
@@ -16,6 +13,8 @@ interface MovieShowDataSource {
 
     fun getFavoritedMovies(): LiveData<PagedList<MovieEntity>>
 
+    fun getAllOtherMoviesByMovie(movieId: String): LiveData<Resource<List<OtherMoviesEntity>>>
+
     fun setMovieFavorite(movie: MovieEntity, state: Boolean)
 
     fun getAllTvShows(): LiveData<Resource<PagedList<TvShowEntity>>>
@@ -23,6 +22,8 @@ interface MovieShowDataSource {
     fun getDetailTvShow(tvShowId: String): LiveData<Resource<TvShowWithOtherTvShows>>
 
     fun getFavoritedTvShows(): LiveData<PagedList<TvShowEntity>>
+
+    fun getAllOtherTvShowsByTvShow(tvShowId: String): LiveData<Resource<List<OtherTvShowsEntity>>>
 
     fun setTvShowFavorite(tvShow: TvShowEntity, state: Boolean)
 }

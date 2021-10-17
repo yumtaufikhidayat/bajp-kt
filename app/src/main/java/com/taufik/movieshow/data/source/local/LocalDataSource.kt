@@ -19,6 +19,9 @@ class LocalDataSource private constructor(private val movieShowDao: MovieShowDao
     fun getDetailMovie(movieId: String): LiveData<MovieWithOtherMovies> =
         movieShowDao.getDetailMovie(movieId)
 
+    fun getAllOtherMoviesByMovie(movieId: String): LiveData<List<OtherMoviesEntity>> =
+        movieShowDao.getOtherMoviesByMovieId(movieId)
+
     fun getFavoriteMovies(): DataSource.Factory<Int, MovieEntity> = movieShowDao.getFavoriteMovies()
 
     fun insertMovies(movies: List<MovieEntity>) = movieShowDao.insertMovies(movies)
@@ -34,6 +37,9 @@ class LocalDataSource private constructor(private val movieShowDao: MovieShowDao
 
     fun getDetailTvShow(tvShowId: String): LiveData<TvShowWithOtherTvShows> =
         movieShowDao.getDetailTvShow(tvShowId)
+
+    fun getAllOtherTvShowsByTvShow(tvShowId: String): LiveData<List<OtherTvShowsEntity>> =
+        movieShowDao.getOtherTvShowsByTvShowId(tvShowId)
 
     fun getFavoriteTvShows(): DataSource.Factory<Int, TvShowEntity> = movieShowDao.getFavoriteTvShows()
 

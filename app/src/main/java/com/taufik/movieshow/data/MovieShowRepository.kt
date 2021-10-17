@@ -116,6 +116,39 @@ class MovieShowRepository private constructor(
         return LivePagedListBuilder(localDataSource.getFavoriteMovies(), config).build()
     }
 
+    override fun getAllOtherMoviesByMovie(movieId: String): LiveData<Resource<List<OtherMoviesEntity>>> {
+        return object : NetworkBoundResource<List<OtherMoviesEntity>, List<OtherMoviesResponse>>(appExecutors){
+            override fun loadFromDB(): LiveData<List<OtherMoviesEntity>> =
+                localDataSource.getAllOtherMoviesByMovie(movieId)
+
+            override fun shouldFetch(data: List<OtherMoviesEntity>?): Boolean =
+                data == null || data.isEmpty()
+
+            override fun createCall(): LiveData<ApiResponse<List<OtherMoviesResponse>>> =
+                remoteDataSource.getOtherMovies(movieId)
+
+            override fun saveCallResult(data: List<OtherMoviesResponse>) {
+                val otherMoviesList = ArrayList<OtherMoviesEntity>()
+                for (response in data) {
+                    val movie = OtherMoviesEntity(
+                        response.detailMovieId,
+                        response.movieId,
+                        response.title,
+                        response.imagePoster,
+                        response.year,
+                        response.rating,
+                        response.position,
+                        false
+                    )
+                    otherMoviesList.add(movie)
+                }
+
+                localDataSource.insertOtherMovies(otherMoviesList)
+            }
+
+        }.asLiveData()
+    }
+
     override fun setMovieFavorite(movie: MovieEntity, state: Boolean) {
         appExecutors.diskIO().execute { localDataSource.setMovieFavorite(movie, state)}
     }
@@ -197,6 +230,37 @@ class MovieShowRepository private constructor(
             .setPageSize(4)
             .build()
         return LivePagedListBuilder(localDataSource.getFavoriteTvShows(), config).build()
+    }
+
+    override fun getAllOtherTvShowsByTvShow(tvShowId: String): LiveData<Resource<List<OtherTvShowsEntity>>> {
+        return object : NetworkBoundResource<List<OtherTvShowsEntity>, List<OtherTvShowsResponse>>(appExecutors){
+            override fun loadFromDB(): LiveData<List<OtherTvShowsEntity>> =
+                localDataSource.getAllOtherTvShowsByTvShow(tvShowId)
+
+            override fun shouldFetch(data: List<OtherTvShowsEntity>?): Boolean =
+                data == null || data.isEmpty()
+
+            override fun createCall(): LiveData<ApiResponse<List<OtherTvShowsResponse>>> =
+                remoteDataSource.getOtherTvShows(tvShowId)
+
+            override fun saveCallResult(data: List<OtherTvShowsResponse>) {
+                val otherTvShowsList = ArrayList<OtherTvShowsEntity>()
+                for (response in data) {
+                    val tvShow = OtherTvShowsEntity(
+                        response.detailTvShowId,
+                        response.tvShowId,
+                        response.title,
+                        response.imagePoster,
+                        response.year,
+                        response.rating,
+                        response.position,
+                        false
+                    )
+                    otherTvShowsList.add(tvShow)
+                }
+            }
+
+        }.asLiveData()
     }
 
     override fun setTvShowFavorite(tvShow: TvShowEntity, state: Boolean) {

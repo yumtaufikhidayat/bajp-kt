@@ -1,8 +1,12 @@
 package com.taufik.movieshow.utils
 
 import com.taufik.movieshow.data.source.local.entity.MovieEntity
+import com.taufik.movieshow.data.source.local.entity.OtherMoviesEntity
+import com.taufik.movieshow.data.source.local.entity.OtherTvShowsEntity
 import com.taufik.movieshow.data.source.local.entity.TvShowEntity
 import com.taufik.movieshow.data.source.remote.response.MovieResponse
+import com.taufik.movieshow.data.source.remote.response.OtherMoviesResponse
+import com.taufik.movieshow.data.source.remote.response.OtherTvShowsResponse
 import com.taufik.movieshow.data.source.remote.response.TvShowResponse
 
 object DataDummy {
@@ -233,7 +237,7 @@ object DataDummy {
         movies.add(
             MovieResponse(
                 imageBackdrop= "/las0P4Dua54XrZ73VQmGUaH1z0U.jpg",
-                id="283566",
+                id="movieId",
                 language= "ja",
                 overview= "In the aftermath of the Fourth Impact, stranded without their Evangelions, Shinji, Asuka, and Rei search for refuge in the desolate red remains of Tokyo-3. But the danger to the world is far from over. A new impact is looming on the horizon—one that will prove to be the true end of Evangelion.",
                 imagePoster= "/AoevYJSVtg15hntg8SYwWm2k3hP.jpg",
@@ -782,7 +786,7 @@ object DataDummy {
         movies.add(
             MovieEntity(
                 imageBackdrop= "/las0P4Dua54XrZ73VQmGUaH1z0U.jpg",
-                movieId="283566",
+                movieId="movieId",
                 language= "ja",
                 overview= "In the aftermath of the Fourth Impact, stranded without their Evangelions, Shinji, Asuka, and Rei search for refuge in the desolate red remains of Tokyo-3. But the danger to the world is far from over. A new impact is looming on the horizon—one that will prove to be the true end of Evangelion.",
                 imagePoster= "/AoevYJSVtg15hntg8SYwWm2k3hP.jpg",
@@ -1109,5 +1113,261 @@ object DataDummy {
         )
 
         return tvShows
+    }
+
+    fun generateRemoteMovieOtherMovies(movieId: String): List<OtherMoviesResponse> {
+        val otherMovies = ArrayList<OtherMoviesResponse>()
+        otherMovies.add(
+            OtherMoviesResponse(
+                detailMovieId = "{$movieId}m1",
+                movieId = movieId,
+                title = "Venom: Let There Be Carnage",
+                imagePoster = "/lNyLSOKMMeUPr1RsL4KcRuIXwHt.jpg",
+                year = "2021",
+                rating = 7.2,
+                position = 0)
+        )
+
+        otherMovies.add(
+            OtherMoviesResponse(
+                detailMovieId = "{$movieId}m2",
+                movieId = movieId,
+                title = "Free Guy",
+                imagePoster = "/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg",
+                year = "2021",
+                rating = 7.8,
+                position = 1
+            )
+        )
+
+        otherMovies.add(
+            OtherMoviesResponse(
+                detailMovieId = "{$movieId}m3",
+                movieId = movieId,
+                title = "Solitary",
+                imagePoster = "/ApwmbrMlsuOay5rXQA4Kbz7qJAl.jpg",
+                year = "2021",
+                rating = 6.6,
+                position = 2
+            )
+        )
+
+        otherMovies.add(
+            OtherMoviesResponse(
+                detailMovieId = "{$movieId}m4",
+                movieId = movieId,
+                title = "A Man Called Ove",
+                imagePoster = "/pXqnqw4V1Rly2HEacfl07d5DcUE.jpg",
+                year = "2016",
+                rating = 5.6,
+                position = 3
+            )
+        )
+
+        otherMovies.add(
+            OtherMoviesResponse(
+                detailMovieId = "{$movieId}m5",
+                movieId = movieId,
+                title = "Lights Out",
+                imagePoster = "/rxXA5vwJElXQ8BgrB0pocUcuqFA.jpg",
+                year = "2016",
+                rating = 6.1,
+                position = 4
+            )
+        )
+        
+        return otherMovies
+    }
+
+    fun generateDummyMovieOtherMovies(movieId: String): List<OtherMoviesEntity> {
+        val otherMovies = ArrayList<OtherMoviesEntity>()
+        otherMovies.add(
+            OtherMoviesEntity(
+                detailMovieId = "{$movieId}m1",
+                movieId = movieId,
+                title = "Venom: Let There Be Carnage",
+                imagePoster = "/lNyLSOKMMeUPr1RsL4KcRuIXwHt.jpg",
+                year = "2021",
+                rating = 7.2,
+                position = 0)
+        )
+
+        otherMovies.add(
+            OtherMoviesEntity(
+                detailMovieId = "{$movieId}m2",
+                movieId = movieId,
+                title = "Free Guy",
+                imagePoster = "/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg",
+                year = "2021",
+                rating = 7.8,
+                position = 1
+            )
+        )
+
+        otherMovies.add(
+            OtherMoviesEntity(
+                detailMovieId = "{$movieId}m3",
+                movieId = movieId,
+                title = "Solitary",
+                imagePoster = "/ApwmbrMlsuOay5rXQA4Kbz7qJAl.jpg",
+                year = "2021",
+                rating = 6.6,
+                position = 2
+            )
+        )
+
+        otherMovies.add(
+            OtherMoviesEntity(
+                detailMovieId = "{$movieId}m4",
+                movieId = movieId,
+                title = "A Man Called Ove",
+                imagePoster = "/pXqnqw4V1Rly2HEacfl07d5DcUE.jpg",
+                year = "2016",
+                rating = 5.6,
+                position = 3
+            )
+        )
+
+        otherMovies.add(
+            OtherMoviesEntity(
+                detailMovieId = "{$movieId}m5",
+                movieId = movieId,
+                title = "Lights Out",
+                imagePoster = "/rxXA5vwJElXQ8BgrB0pocUcuqFA.jpg",
+                year = "2016",
+                rating = 6.1,
+                position = 4
+            )
+        )
+
+        return otherMovies
+    }
+
+    fun generateRemoteTvShowOtherTvShows(tvShowId: String): List<OtherTvShowsResponse> {
+        val otherTvShows = ArrayList<OtherTvShowsResponse>()
+        otherTvShows.add(
+            OtherTvShowsResponse(
+                detailTvShowId = "{$tvShowId}m1",
+                tvShowId = tvShowId,
+                title = "Venom: Let There Be Carnage",
+                imagePoster = "/lNyLSOKMMeUPr1RsL4KcRuIXwHt.jpg",
+                year = "2021",
+                rating = 7.2,
+                position = 0)
+        )
+
+        otherTvShows.add(
+            OtherTvShowsResponse(
+                detailTvShowId = "{$tvShowId}m2",
+                tvShowId = tvShowId,
+                title = "Free Guy",
+                imagePoster = "/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg",
+                year = "2021",
+                rating = 7.8,
+                position = 1
+            )
+        )
+
+        otherTvShows.add(
+            OtherTvShowsResponse(
+                detailTvShowId = "{$tvShowId}m3",
+                tvShowId = tvShowId,
+                title = "Solitary",
+                imagePoster = "/ApwmbrMlsuOay5rXQA4Kbz7qJAl.jpg",
+                year = "2021",
+                rating = 6.6,
+                position = 2
+            )
+        )
+
+        otherTvShows.add(
+            OtherTvShowsResponse(
+                detailTvShowId = "{$tvShowId}m4",
+                tvShowId = tvShowId,
+                title = "A Man Called Ove",
+                imagePoster = "/pXqnqw4V1Rly2HEacfl07d5DcUE.jpg",
+                year = "2016",
+                rating = 5.6,
+                position = 3
+            )
+        )
+
+        otherTvShows.add(
+            OtherTvShowsResponse(
+                detailTvShowId = "{$tvShowId}m5",
+                tvShowId = tvShowId,
+                title = "Lights Out",
+                imagePoster = "/rxXA5vwJElXQ8BgrB0pocUcuqFA.jpg",
+                year = "2016",
+                rating = 6.1,
+                position = 4
+            )
+        )
+
+        return otherTvShows
+    }
+
+    fun generateDummyTvShowOtherTvShows(tvShowId: String): List<OtherTvShowsEntity> {
+        val otherTvShows = ArrayList<OtherTvShowsEntity>()
+        otherTvShows.add(
+            OtherTvShowsEntity(
+                detailTvShowsId = "{$tvShowId}m1",
+                tvShowId = tvShowId,
+                title = "Venom: Let There Be Carnage",
+                imagePoster = "/lNyLSOKMMeUPr1RsL4KcRuIXwHt.jpg",
+                year = "2021",
+                rating = 7.2,
+                position = 0)
+        )
+
+        otherTvShows.add(
+            OtherTvShowsEntity(
+                detailTvShowsId = "{$tvShowId}m2",
+                tvShowId = tvShowId,
+                title = "Free Guy",
+                imagePoster = "/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg",
+                year = "2021",
+                rating = 7.8,
+                position = 1
+            )
+        )
+
+        otherTvShows.add(
+            OtherTvShowsEntity(
+                detailTvShowsId = "{$tvShowId}m3",
+                tvShowId = tvShowId,
+                title = "Solitary",
+                imagePoster = "/ApwmbrMlsuOay5rXQA4Kbz7qJAl.jpg",
+                year = "2021",
+                rating = 6.6,
+                position = 2
+            )
+        )
+
+        otherTvShows.add(
+            OtherTvShowsEntity(
+                detailTvShowsId = "{$tvShowId}m4",
+                tvShowId = tvShowId,
+                title = "A Man Called Ove",
+                imagePoster = "/pXqnqw4V1Rly2HEacfl07d5DcUE.jpg",
+                year = "2016",
+                rating = 5.6,
+                position = 3
+            )
+        )
+
+        otherTvShows.add(
+            OtherTvShowsEntity(
+                detailTvShowsId = "{$tvShowId}m5",
+                tvShowId = tvShowId,
+                title = "Lights Out",
+                imagePoster = "/rxXA5vwJElXQ8BgrB0pocUcuqFA.jpg",
+                year = "2016",
+                rating = 6.1,
+                position = 4
+            )
+        )
+
+        return otherTvShows
     }
 }
