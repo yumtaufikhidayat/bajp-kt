@@ -61,7 +61,6 @@ class MainActivityTest {
         onView(withId(R.id.tvLanguage)).check(matches(isDisplayed()))
         onView(withId(R.id.tvLanguage)).check(matches(withText(dummyMovie[0].language)))
         onView(withId(R.id.tvReadMore)).perform(click())
-        onView(withId(R.id.btnWebsite)).perform(click())
     }
 
     @Test
@@ -82,6 +81,5 @@ class MainActivityTest {
         onView(withId(R.id.tvLanguage)).check(matches(isDisplayed()))
         onView(withId(R.id.tvLanguage)).check(matches(withText(dummyTvShows[0].language)))
         onView(withId(R.id.tvReadMore)).perform(click())
-        onView(withId(R.id.btnWebsite)).perform(click())
     }
 }
