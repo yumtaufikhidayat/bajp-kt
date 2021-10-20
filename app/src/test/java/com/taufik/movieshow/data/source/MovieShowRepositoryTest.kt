@@ -56,12 +56,12 @@ class MovieShowRepositoryTest {
     fun getDetailMovie() {
         val dummyOtherMovies = MutableLiveData<List<OtherMoviesEntity>>()
         dummyOtherMovies.value = DataDummy.generateDummyMovieOtherMovies(otherMovieId)
-        `when`(local.getAllOtherMoviesByMovie(movieId)).thenReturn(dummyOtherMovies)
+        `when`(local.getAllOtherMoviesByMovie(otherMovieId)).thenReturn(dummyOtherMovies)
 
-        val movieEntities = LiveDataTestUtil.getValue(movieShowRepository.getAllOtherMoviesByMovie(movieId))
-        verify(local).getAllOtherMoviesByMovie(movieId)
+        val movieEntities = LiveDataTestUtil.getValue(movieShowRepository.getAllOtherMoviesByMovie(otherMovieId))
+        verify(local).getAllOtherMoviesByMovie(otherMovieId)
         assertNotNull(movieEntities.data)
-        assertEquals(movieResponses.size.toLong(), movieEntities.data?.size?.toLong())
+        assertEquals(otherMovieResponses.size.toLong(), movieEntities.data?.size?.toLong())
     }
 
     @Test
@@ -91,13 +91,13 @@ class MovieShowRepositoryTest {
     @Test
     fun getDetailTvShow() {
         val dummyOtherTvShows = MutableLiveData<List<OtherTvShowsEntity>>()
-        dummyOtherTvShows.value = DataDummy.generateDummyTvShowOtherTvShows(tvShowId)
-        `when`(local.getAllOtherTvShowsByTvShow(tvShowId)).thenReturn(dummyOtherTvShows)
+        dummyOtherTvShows.value = DataDummy.generateDummyTvShowOtherTvShows(otherTvShowId)
+        `when`(local.getAllOtherTvShowsByTvShow(otherTvShowId)).thenReturn(dummyOtherTvShows)
 
-        val tvShowEntities = LiveDataTestUtil.getValue(movieShowRepository.getAllOtherTvShowsByTvShow(tvShowId))
-        verify(local).getAllOtherTvShowsByTvShow(tvShowId)
+        val tvShowEntities = LiveDataTestUtil.getValue(movieShowRepository.getAllOtherTvShowsByTvShow(otherTvShowId))
+        verify(local).getAllOtherTvShowsByTvShow(otherTvShowId)
         assertNotNull(tvShowEntities.data)
-        assertEquals(movieResponses.size.toLong(), tvShowEntities.data?.size?.toLong())
+        assertEquals(otherTvShowResponses.size.toLong(), tvShowEntities.data?.size?.toLong())
     }
 
     @Test

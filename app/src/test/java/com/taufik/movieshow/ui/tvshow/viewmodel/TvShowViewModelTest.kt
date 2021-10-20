@@ -3,9 +3,10 @@ package com.taufik.movieshow.ui.tvshow.viewmodel
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.taufik.movieshow.data.source.local.entity.TvShowEntity
+import androidx.paging.PagedList
 import com.taufik.movieshow.data.MovieShowRepository
-import com.taufik.movieshow.utils.DataDummy
+import com.taufik.movieshow.data.source.local.entity.TvShowEntity
+import com.taufik.movieshow.vo.Resource
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Before
@@ -29,7 +30,10 @@ class TvShowViewModelTest {
     private lateinit var movieShowRepository: MovieShowRepository
 
     @Mock
-    private lateinit var observer: Observer<List<TvShowEntity>>
+    private lateinit var observer: Observer<Resource<PagedList<TvShowEntity>>>
+
+    @Mock
+    private lateinit var pagedList: PagedList<TvShowEntity>
 
     @Before
     fun setUp() {
@@ -38,15 +42,17 @@ class TvShowViewModelTest {
 
     @Test
     fun getTvShows() {
-        val dummyTvShows = DataDummy.generateTvShowsAiringToday()
-        val tvShows = MutableLiveData<List<TvShowEntity>>()
+        val dummyTvShows = Resource.success(pagedList)
+        `when`(dummyTvShows.data?.size).thenReturn(5)
+
+        val tvShows = MutableLiveData<Resource<PagedList<TvShowEntity>>>()
         tvShows.value = dummyTvShows
 
         `when`(movieShowRepository.getAllTvShows()).thenReturn(tvShows)
-        val tvShowEntities = viewModel.getTvShows().value
+        val tvShowEntities = viewModel.getTvShows().value?.data
         verify(movieShowRepository).getAllTvShows()
         assertNotNull(tvShowEntities)
-        assertEquals(20, tvShowEntities?.size)
+        assertEquals(5, tvShowEntities?.size)
 
         viewModel.getTvShows().observeForever(observer)
         verify(observer).onChanged(dummyTvShows)
