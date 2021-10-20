@@ -153,7 +153,7 @@
       <recent name="com.taufik.movieshow.ui.tvshow.viewmodel" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Instrumented Tests.MainActivityTest">
+  <component name="RunManager" selected="Android App.app">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="Movie_Show.app" />
       <option name="DEPLOY" value="true" />
