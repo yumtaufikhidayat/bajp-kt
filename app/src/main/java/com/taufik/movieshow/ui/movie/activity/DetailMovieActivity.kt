@@ -132,7 +132,7 @@ class DetailMovieActivity : AppCompatActivity() {
             data = movieEntity
 
             imgMovieBackdrop.loadImage(movieEntity.imageBackdrop)
-            imgPosterMovie.loadImage(movieEntity.imagePoster)
+            imgMoviePoster.loadImage(movieEntity.imagePoster)
             tvMovieTitle.text = movieEntity.title
             tvMovieReleaseDate.text = movieEntity.releaseDate
             tvMovieOverview.text = movieEntity.overview
