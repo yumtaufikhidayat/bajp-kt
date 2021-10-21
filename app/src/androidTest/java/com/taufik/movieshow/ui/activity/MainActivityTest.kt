@@ -50,7 +50,7 @@ class MainActivityTest {
         onView(withId(R.id.rvMovie)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(dummyMovie.size))
         onView(withId(R.id.rvMovie)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
         onView(withId(R.id.imgMovieBackdrop)).check(matches(isDisplayed()))
-        onView(withId(R.id.imgPosterMovie)).check(matches(isDisplayed()))
+        onView(withId(R.id.imgMoviePoster)).check(matches(isDisplayed()))
         onView(withId(R.id.tvMovieTitle)).check(matches(isDisplayed()))
         onView(withId(R.id.tvMovieTitle)).check(matches(withText(dummyMovie[0].title)))
         onView(withId(R.id.tvMovieReleaseDate)).check(matches(isDisplayed()))
@@ -68,7 +68,9 @@ class MainActivityTest {
     @Test
     fun loadTvShows() {
         onView(withId(R.id.nav_tv_show)).check(matches(isDisplayed())).perform(click())
-        onView(withId(R.id.rvTvShow)).check(matches(isDisplayed())).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(dummyTvShows.size))
+        onView(withId(R.id.rvTvShow)).check(matches(isDisplayed()))
+        onView(withId(R.id.rvTvShow)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(dummyTvShows.size)
+        )
     }
 
     @Test
@@ -89,6 +91,7 @@ class MainActivityTest {
         onView(withId(R.id.tvTvShowLanguage)).check(matches(isDisplayed()))
         onView(withId(R.id.tvTvShowLanguage)).check(matches(withText(dummyTvShows[0].language)))
         onView(withId(R.id.tvTvShowLanguage)).perform(click())
+        onView(withId(R.id.tvTvShowReadMore)).perform(click())
         onView(withId(R.id.rvTopMovieShow)).check(matches(isDisplayed()))
     }
 
@@ -110,7 +113,7 @@ class MainActivityTest {
         onView(withId(R.id.tabLayoutFavorite)).perform(selectTabAtPosition(0))
         onView(withId(R.id.rvFavoriteMovie)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
         onView(withId(R.id.imgMovieBackdrop)).check(matches(isDisplayed()))
-        onView(withId(R.id.imgPosterMovie)).check(matches(isDisplayed()))
+        onView(withId(R.id.imgMoviePoster)).check(matches(isDisplayed()))
         onView(withId(R.id.tvMovieTitle)).check(matches(isDisplayed()))
         onView(withId(R.id.tvMovieTitle)).check(matches(withText(dummyMovie[0].title)))
         onView(withId(R.id.tvMovieReleaseDate)).check(matches(isDisplayed()))
