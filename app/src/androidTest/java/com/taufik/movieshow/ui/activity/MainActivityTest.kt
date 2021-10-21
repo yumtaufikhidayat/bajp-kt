@@ -23,7 +23,7 @@ import org.junit.Test
 
 class MainActivityTest {
 
-    private val dummyMovie = DataDummy.generateMovieNowPlaying()
+    private val dummyMovies = DataDummy.generateMovieNowPlaying()
     private val dummyTvShows = DataDummy.generateTvShowsAiringToday()
 
     @Before
@@ -41,26 +41,26 @@ class MainActivityTest {
     fun loadMovies() {
         onView(withId(R.id.nav_movie)).check(matches(isDisplayed())).perform(click())
         onView(withId(R.id.rvMovie)).check(matches(isDisplayed()))
-        onView(withId(R.id.rvMovie)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(dummyMovie.size))
+        onView(withId(R.id.rvMovie)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(dummyMovies.size))
     }
 
     @Test
     fun loadDetailMovies() {
         onView(withId(R.id.nav_movie)).check(matches(isDisplayed())).perform(click())
-        onView(withId(R.id.rvMovie)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(dummyMovie.size))
+        onView(withId(R.id.rvMovie)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(dummyMovies.size))
         onView(withId(R.id.rvMovie)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
         onView(withId(R.id.imgMovieBackdrop)).check(matches(isDisplayed()))
         onView(withId(R.id.imgMoviePoster)).check(matches(isDisplayed()))
         onView(withId(R.id.tvMovieTitle)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvMovieTitle)).check(matches(withText(dummyMovie[0].title)))
+        onView(withId(R.id.tvMovieTitle)).check(matches(withText(dummyMovies[0].title)))
         onView(withId(R.id.tvMovieReleaseDate)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvMovieReleaseDate)).check(matches(withText(dummyMovie[0].releaseDate)))
+        onView(withId(R.id.tvMovieReleaseDate)).check(matches(withText(dummyMovies[0].releaseDate)))
         onView(withId(R.id.tvMovieOverview)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvMovieOverview)).check(matches(withText(dummyMovie[0].overview)))
+        onView(withId(R.id.tvMovieOverview)).check(matches(withText(dummyMovies[0].overview)))
         onView(withId(R.id.tvMovieRating)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvMovieRating)).check(matches(withText(dummyMovie[0].rating.toString())))
+        onView(withId(R.id.tvMovieRating)).check(matches(withText(dummyMovies[0].rating.toString())))
         onView(withId(R.id.tvMovieLanguage)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvMovieLanguage)).check(matches(withText(dummyMovie[0].language)))
+        onView(withId(R.id.tvMovieLanguage)).check(matches(withText(dummyMovies[0].language)))
         onView(withId(R.id.tvMovieReadMore)).perform(click())
         onView(withId(R.id.rvTopMovieShow)).check(matches(isDisplayed()))
     }
@@ -100,14 +100,14 @@ class MainActivityTest {
         onView(withId(R.id.nav_favorite)).check(matches(isDisplayed())).perform(click())
         onView(withId(R.id.tabLayoutFavorite)).perform(selectTabAtPosition(0))
         onView(withId(R.id.rvFavoriteMovie)).check(matches(isDisplayed()))
-        onView(withId(R.id.rvFavoriteMovie)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(dummyTvShows.size))
+        onView(withId(R.id.rvFavoriteMovie)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(dummyMovies.size))
     }
 
     @Test
     fun loadDetailFavoriteMovies() {
         onView(withId(R.id.nav_movie)).check(matches(isDisplayed())).perform(click())
         onView(withId(R.id.rvMovie)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
-        onView(withId(R.id.nav_favorite)).perform(click())
+        onView(withId(R.id.action_favorite)).perform(click())
         onView(isRoot()).perform(pressBack())
         onView(withId(R.id.nav_favorite)).check(matches(isDisplayed())).perform(click())
         onView(withId(R.id.tabLayoutFavorite)).perform(selectTabAtPosition(0))
@@ -115,18 +115,18 @@ class MainActivityTest {
         onView(withId(R.id.imgMovieBackdrop)).check(matches(isDisplayed()))
         onView(withId(R.id.imgMoviePoster)).check(matches(isDisplayed()))
         onView(withId(R.id.tvMovieTitle)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvMovieTitle)).check(matches(withText(dummyMovie[0].title)))
+        onView(withId(R.id.tvMovieTitle)).check(matches(withText(dummyMovies[0].title)))
         onView(withId(R.id.tvMovieReleaseDate)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvMovieReleaseDate)).check(matches(withText(dummyMovie[0].releaseDate)))
+        onView(withId(R.id.tvMovieReleaseDate)).check(matches(withText(dummyMovies[0].releaseDate)))
         onView(withId(R.id.tvMovieOverview)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvMovieOverview)).check(matches(withText(dummyMovie[0].overview)))
+        onView(withId(R.id.tvMovieOverview)).check(matches(withText(dummyMovies[0].overview)))
         onView(withId(R.id.tvMovieRating)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvMovieRating)).check(matches(withText(dummyMovie[0].rating.toString())))
+        onView(withId(R.id.tvMovieRating)).check(matches(withText(dummyMovies[0].rating.toString())))
         onView(withId(R.id.tvMovieLanguage)).check(matches(isDisplayed()))
-        onView(withId(R.id.tvMovieLanguage)).check(matches(withText(dummyMovie[0].language)))
+        onView(withId(R.id.tvMovieLanguage)).check(matches(withText(dummyMovies[0].language)))
         onView(withId(R.id.tvMovieReadMore)).perform(click())
         onView(withId(R.id.rvTopMovieShow)).check(matches(isDisplayed()))
-        onView(withId(R.id.nav_favorite)).perform(click())
+        onView(withId(R.id.action_favorite)).perform(click())
         onView(isRoot()).perform(pressBack())
     }
 
@@ -143,7 +143,7 @@ class MainActivityTest {
     fun loadDetailFavoriteTvShows() {
         onView(withId(R.id.nav_tv_show)).check(matches(isDisplayed())).perform(click())
         onView(withId(R.id.rvTvShow)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
-        onView(withId(R.id.nav_favorite)).perform(click())
+        onView(withId(R.id.action_favorite)).perform(click())
         onView(isRoot()).perform(pressBack())
         onView(withId(R.id.nav_favorite)).check(matches(isDisplayed())).perform(click())
         onView(withId(R.id.tabLayoutFavorite)).perform(selectTabAtPosition(1))
@@ -163,7 +163,7 @@ class MainActivityTest {
         onView(withId(R.id.tvTvShowLanguage)).check(matches(withText(dummyTvShows[0].language)))
         onView(withId(R.id.tvTvShowLanguage)).perform(click())
         onView(withId(R.id.rvTopMovieShow)).check(matches(isDisplayed()))
-        onView(withId(R.id.nav_favorite)).perform(click())
+        onView(withId(R.id.action_favorite)).perform(click())
         onView(isRoot()).perform(pressBack())
     }
 

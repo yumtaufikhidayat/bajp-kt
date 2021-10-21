@@ -31,6 +31,4 @@ class DetailTvShowViewModel(private val movieShowRepository: MovieShowRepository
             }
         }
     }
-
-//    fun getTvShow(): LiveData<TvShowEntity> = movieShowRepository.getDetailTvShow(tvShowId)
 }

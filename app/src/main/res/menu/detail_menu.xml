@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/nav_favorite"
+        android:id="@+id/action_favorite"
         android:title="@string/icFavorite"
         android:icon="@drawable/ic_favorite"
         app:showAsAction="ifRoom"/>
@@ -17,13 +17,13 @@
         <menu>
 
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/action_share"
                 android:title="@string/tvShare"
                 android:icon="@drawable/ic_share"
                 app:showAsAction="never"/>
 
             <item
-                android:id="@+id/nav_open_in_browser"
+                android:id="@+id/action_open_in_browser"
                 android:title="@string/tvOpenInBrowser"
                 android:icon="@drawable/ic_language"
                 app:showAsAction="never"/>

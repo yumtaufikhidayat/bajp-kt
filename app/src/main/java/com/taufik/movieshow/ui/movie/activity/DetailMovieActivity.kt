@@ -190,12 +190,12 @@ class DetailMovieActivity : AppCompatActivity() {
 
             android.R.id.home -> onBackPressed()
 
-            R.id.nav_favorite -> {
+            R.id.action_favorite -> {
                 viewModel.setFavorite()
                 return true
             }
 
-            R.id.nav_share -> {
+            R.id.action_share -> {
                 try {
 
                     val body = "Visit this awesome movie \n${data.homePage}"
@@ -209,7 +209,7 @@ class DetailMovieActivity : AppCompatActivity() {
                 }
             }
 
-            R.id.nav_open_in_browser -> {
+            R.id.action_open_in_browser -> {
                 try {
                     val intentBrowser = Intent(Intent.ACTION_VIEW, Uri.parse(data.homePage))
                     startActivity(Intent.createChooser(intentBrowser, "Open with:"))
@@ -224,7 +224,7 @@ class DetailMovieActivity : AppCompatActivity() {
 
     private fun setFavorite(state: Boolean) {
         if (menu == null) return
-        val menuItem = menu?.findItem(R.id.nav_favorite)
+        val menuItem = menu?.findItem(R.id.action_favorite)
         if (state) {
             menuItem?.icon = ContextCompat.getDrawable(this, R.drawable.ic_favorite)
         } else {
