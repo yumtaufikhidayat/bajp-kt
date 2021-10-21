@@ -68,18 +68,18 @@ class DetailTvShowActivity : AppCompatActivity() {
         viewModel.setSelectedTvShow(tvShowId)
 
         binding.apply {
-            progressBar.visibility = View.VISIBLE
+            progressBarTvShow.visibility = View.VISIBLE
             viewModel.otherTvShows.observe(this@DetailTvShowActivity, {
                 if (it != null) {
                     when (it.status) {
                         Status.LOADING -> {
                             Log.e(TAG, "setData: $it")
-                            progressBar.visibility = View.VISIBLE
+                            progressBarTvShow.visibility = View.VISIBLE
                         }
 
                         Status.SUCCESS -> {
                             if (it.data != null) {
-                                progressBar.visibility = View.GONE
+                                progressBarTvShow.visibility = View.GONE
                                 Log.e(TAG, "setData: ${it.data.mOtherTvShows}")
                                 detailTvShowAdapter.setOtherTvShows(it.data.mOtherTvShows)
                                 populateDetailTvShows(it.data.mTvShows)
@@ -87,7 +87,7 @@ class DetailTvShowActivity : AppCompatActivity() {
                         }
 
                         Status.ERROR -> {
-                            progressBar.visibility = View.GONE
+                            progressBarTvShow.visibility = View.GONE
                             Log.e(TAG, "setData: $it")
                             Toast.makeText(
                                 this@DetailTvShowActivity,
@@ -106,26 +106,20 @@ class DetailTvShowActivity : AppCompatActivity() {
             setHasFixedSize(true)
             adapter = detailTvShowAdapter
         }
-//        viewModel.getTvShow().observe(this, {
-//            if (it.tvShowId == tvShowId) {
-//                Log.e(TAG, "setData: $it")
-//                populateDetailTvShows(it)
-//            }
-//        })
     }
 
     private fun setReadMore() {
         binding.apply {
-            tvReadMore.visibility = View.VISIBLE
-            tvReadMore.setOnClickListener {
-                if (tvReadMore.text.toString() == "Read More") {
-                    tvOverview.maxLines = Integer.MAX_VALUE
-                    tvOverview.ellipsize = null
-                    tvReadMore.text = getString(R.string.tvReadLess)
+            tvTvShowReadMore.visibility = View.VISIBLE
+            tvTvShowReadMore.setOnClickListener {
+                if (tvTvShowReadMore.text.toString() == "Read More") {
+                    tvTvShowOverview.maxLines = Integer.MAX_VALUE
+                    tvTvShowOverview.ellipsize = null
+                    tvTvShowReadMore.text = getString(R.string.tvReadLess)
                 } else {
-                    tvOverview.maxLines = 4
-                    tvOverview.ellipsize = TextUtils.TruncateAt.END
-                    tvReadMore.text = getString(R.string.tvReadMore)
+                    tvTvShowOverview.maxLines = 4
+                    tvTvShowOverview.ellipsize = TextUtils.TruncateAt.END
+                    tvTvShowReadMore.text = getString(R.string.tvReadMore)
                 }
             }
         }
@@ -136,13 +130,13 @@ class DetailTvShowActivity : AppCompatActivity() {
 
             data = tvShowsEntity
 
-            imgBackdrop.loadImage(tvShowsEntity.imageBackdrop)
-            imgPoster.loadImage(tvShowsEntity.imagePoster)
-            tvTitle.text = tvShowsEntity.title
-            tvReleaseDate.text = tvShowsEntity.firstAirDate
-            tvOverview.text = tvShowsEntity.overview
-            tvRating.text = tvShowsEntity.rating.toString()
-            tvLanguage.text = tvShowsEntity.language
+            imgTvShowBackdrop.loadImage(tvShowsEntity.imageBackdrop)
+            imgTvShowPoster.loadImage(tvShowsEntity.imagePoster)
+            tvTvShowTitle.text = tvShowsEntity.title
+            tvTvShowReleaseDate.text = tvShowsEntity.firstAirDate
+            tvTvShowOverview.text = tvShowsEntity.overview
+            tvTvShowRating.text = tvShowsEntity.rating.toString()
+            tvTvShowLanguage.text = tvShowsEntity.language
         }
     }
 
@@ -163,14 +157,14 @@ class DetailTvShowActivity : AppCompatActivity() {
             viewModel.otherTvShows.observe(this@DetailTvShowActivity, {
                 if (it != null) {
                     when (it.status) {
-                        Status.LOADING -> progressBar.visibility = View.VISIBLE
+                        Status.LOADING -> progressBarTvShow.visibility = View.VISIBLE
                         Status.SUCCESS -> if (it.data != null) {
-                            progressBar.visibility = View.GONE
+                            progressBarTvShow.visibility = View.GONE
                             val state = it.data.mTvShows.favorited
                             setFavorite(state)
                         }
                         Status.ERROR -> {
-                            progressBar.visibility = View.GONE
+                            progressBarTvShow.visibility = View.GONE
                             Toast.makeText(
                                 this@DetailTvShowActivity,
                                 "Terjadi kesalahan",

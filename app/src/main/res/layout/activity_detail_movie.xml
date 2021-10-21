@@ -14,7 +14,7 @@
         android:layout_height="0dp">
 
         <ImageView
-            android:id="@+id/imgBackdrop"
+            android:id="@+id/imgMovieBackdrop"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:src="@color/colorPrimary"
@@ -31,11 +31,11 @@
             android:layout_marginStart="16dp"
             app:cardCornerRadius="4dp"
             app:cardElevation="0dp"
-            app:layout_constraintTop_toTopOf="@id/imgBackdrop"
-            app:layout_constraintStart_toStartOf="@id/imgBackdrop">
+            app:layout_constraintTop_toTopOf="@id/imgMovieBackdrop"
+            app:layout_constraintStart_toStartOf="@id/imgMovieBackdrop">
 
             <ImageView
-                android:id="@+id/imgPoster"
+                android:id="@+id/imgPosterMovie"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/tvPoster"
@@ -45,7 +45,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/tvTitle"
+            android:id="@+id/tvMovieTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -56,21 +56,21 @@
             tools:text="@string/tvTitle"
             android:maxLines="2"
             android:ellipsize="end"
-            app:layout_constraintTop_toBottomOf="@id/imgBackdrop"
+            app:layout_constraintTop_toBottomOf="@id/imgMovieBackdrop"
             app:layout_constraintStart_toEndOf="@id/cardPoster"
-            app:layout_constraintEnd_toEndOf="@id/tvOverview" />
+            app:layout_constraintEnd_toEndOf="@id/tvMovieOverview" />
 
         <TextView
-            android:id="@+id/tvReleasedOn"
+            android:id="@+id/tvMovieReleasedOn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorGrey"
             android:text="@string/tvReleasedOn"
-            app:layout_constraintStart_toStartOf="@id/tvTitle"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
+            app:layout_constraintStart_toStartOf="@id/tvMovieTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvMovieTitle"/>
 
         <TextView
-            android:id="@+id/tvReleaseDate"
+            android:id="@+id/tvMovieReleaseDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
@@ -78,9 +78,9 @@
             android:ellipsize="end"
             tools:text="@string/tvReleaseDate"
             android:textColor="@color/colorGrey"
-            app:layout_constraintStart_toEndOf="@id/tvReleasedOn"
-            app:layout_constraintTop_toTopOf="@id/tvReleasedOn"
-            app:layout_constraintBottom_toBottomOf="@+id/tvReleasedOn" />
+            app:layout_constraintStart_toEndOf="@id/tvMovieReleasedOn"
+            app:layout_constraintTop_toTopOf="@id/tvMovieReleasedOn"
+            app:layout_constraintBottom_toBottomOf="@+id/tvMovieReleasedOn" />
 
         <LinearLayout
             android:id="@+id/llLayoutMisc"
@@ -110,7 +110,7 @@
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
-                        android:id="@+id/imgRating"
+                        android:id="@+id/imgMovieRating"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:contentDescription="@string/tvRating"
@@ -118,7 +118,7 @@
                         app:tint="@color/colorTextOther"/>
 
                     <TextView
-                        android:id="@+id/tvRatingTitle"
+                        android:id="@+id/tvMovieRatingTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="3dp"
@@ -129,7 +129,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/tvRating"
+                    android:id="@+id/tvMovieRating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:includeFontPadding="false"
@@ -153,7 +153,7 @@
                     tools:ignore="UseCompoundDrawables">
 
                     <ImageView
-                        android:id="@+id/imgLanguage"
+                        android:id="@+id/imgMovieLanguage"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:contentDescription="@string/tvLanguage"
@@ -161,7 +161,7 @@
                         app:tint="@color/colorTextOther"/>
 
                     <TextView
-                        android:id="@+id/tvLanguageTitle"
+                        android:id="@+id/tvMovieLanguageTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="3dp"
@@ -172,22 +172,22 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/tvLanguage"
+                    android:id="@+id/tvMovieLanguage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:includeFontPadding="false"
                     android:textColor="@color/colorTextIcons"
                     tools:text="@string/tvLanguage"
-                    app:layout_constraintTop_toBottomOf="@id/tvLanguageTitle"
-                    app:layout_constraintStart_toStartOf="@id/tvLanguageTitle"
-                    app:layout_constraintEnd_toEndOf="@id/imgLanguage"/>
+                    app:layout_constraintTop_toBottomOf="@id/tvMovieLanguageTitle"
+                    app:layout_constraintStart_toStartOf="@id/tvMovieLanguageTitle"
+                    app:layout_constraintEnd_toEndOf="@id/imgMovieLanguage"/>
 
             </LinearLayout>
 
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tvOverview"
+            android:id="@+id/tvMovieOverview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -200,7 +200,7 @@
             app:layout_constraintStart_toStartOf="@id/cardPoster"/>
 
         <TextView
-            android:id="@+id/tvReadMore"
+            android:id="@+id/tvMovieReadMore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
@@ -210,10 +210,10 @@
             android:text="@string/tvReadMore"
             android:textColor="@color/colorPrimaryAccent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvOverview"/>
+            app:layout_constraintTop_toBottomOf="@id/tvMovieOverview"/>
 
         <TextView
-            android:id="@+id/tvYouMayLike"
+            android:id="@+id/tvMovieYouMayLike"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -221,7 +221,7 @@
             android:text="@string/tvWatchAlso"
             android:textStyle="bold"
             android:textColor="@color/colorOrange"
-            app:layout_constraintTop_toBottomOf="@id/tvReadMore"
+            app:layout_constraintTop_toBottomOf="@id/tvMovieReadMore"
             app:layout_constraintStart_toStartOf="parent"/>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -232,12 +232,12 @@
             tools:itemCount="1"
             tools:listitem="@layout/item_top_movie_show"
             android:layout_marginHorizontal="10dp"
-            app:layout_constraintTop_toBottomOf="@id/tvYouMayLike"
-            app:layout_constraintStart_toStartOf="@id/tvOverview"
-            app:layout_constraintEnd_toEndOf="@id/tvOverview"/>
+            app:layout_constraintTop_toBottomOf="@id/tvMovieYouMayLike"
+            app:layout_constraintStart_toStartOf="@id/tvMovieOverview"
+            app:layout_constraintEnd_toEndOf="@id/tvMovieOverview"/>
 
         <ProgressBar
-            android:id="@+id/progressBar"
+            android:id="@+id/progressBarMovie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"

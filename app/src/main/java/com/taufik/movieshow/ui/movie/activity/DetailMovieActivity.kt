@@ -69,18 +69,18 @@ class DetailMovieActivity : AppCompatActivity() {
         viewModel.setSelectedMovie(movieId)
 
         binding.apply {
-            progressBar.visibility = View.VISIBLE
+            progressBarMovie.visibility = View.VISIBLE
             viewModel.otherMovies.observe(this@DetailMovieActivity, {
                 if (it != null) {
                     when (it.status) {
                         Status.LOADING -> {
                             Log.e(TAG, "setData: $it")
-                            progressBar.visibility = View.VISIBLE
+                            progressBarMovie.visibility = View.VISIBLE
                         }
 
                         Status.SUCCESS -> {
                             if (it.data != null) {
-                                progressBar.visibility = View.GONE
+                                progressBarMovie.visibility = View.GONE
                                 Log.e(TAG, "setData: ${it.data.mOtherMovies}")
                                 detailMovieAdapter.setOtherMovies(it.data.mOtherMovies)
                                 populateDetailMovie(it.data.mMovie)
@@ -88,7 +88,7 @@ class DetailMovieActivity : AppCompatActivity() {
                         }
                         
                         Status.ERROR -> {
-                            progressBar.visibility = View.GONE
+                            progressBarMovie.visibility = View.GONE
                             Log.e(TAG, "setData: $it")
                             Toast.makeText(
                                 this@DetailMovieActivity, 
@@ -107,26 +107,20 @@ class DetailMovieActivity : AppCompatActivity() {
             setHasFixedSize(true)
             adapter = detailMovieAdapter
         }
-//        viewModel.getMovie().observe(this, {
-//            if (it.movieId == movieId) {
-//                Log.e(TAG, "setData: $it")
-//                populateDetailMovie(it)
-//            }
-//        })
     }
 
     private fun setReadMore() {
         binding.apply {
-            tvReadMore.visibility = View.VISIBLE
-            tvReadMore.setOnClickListener {
-                if (tvReadMore.text.toString() == "Read More") {
-                    tvOverview.maxLines = Integer.MAX_VALUE
-                    tvOverview.ellipsize = null
-                    tvReadMore.text = getString(R.string.tvReadLess)
+            tvMovieReadMore.visibility = View.VISIBLE
+            tvMovieReadMore.setOnClickListener {
+                if (tvMovieReadMore.text.toString() == "Read More") {
+                    tvMovieOverview.maxLines = Integer.MAX_VALUE
+                    tvMovieOverview.ellipsize = null
+                    tvMovieReadMore.text = getString(R.string.tvReadLess)
                 } else {
-                    tvOverview.maxLines = 4
-                    tvOverview.ellipsize = TextUtils.TruncateAt.END
-                    tvReadMore.text = getString(R.string.tvReadMore)
+                    tvMovieOverview.maxLines = 4
+                    tvMovieOverview.ellipsize = TextUtils.TruncateAt.END
+                    tvMovieReadMore.text = getString(R.string.tvReadMore)
                 }
             }
         }
@@ -137,13 +131,13 @@ class DetailMovieActivity : AppCompatActivity() {
 
             data = movieEntity
 
-            imgBackdrop.loadImage(movieEntity.imageBackdrop)
-            imgPoster.loadImage(movieEntity.imagePoster)
-            tvTitle.text = movieEntity.title
-            tvReleaseDate.text = movieEntity.releaseDate
-            tvOverview.text = movieEntity.overview
-            tvRating.text = movieEntity.rating.toString()
-            tvLanguage.text = movieEntity.language
+            imgMovieBackdrop.loadImage(movieEntity.imageBackdrop)
+            imgPosterMovie.loadImage(movieEntity.imagePoster)
+            tvMovieTitle.text = movieEntity.title
+            tvMovieReleaseDate.text = movieEntity.releaseDate
+            tvMovieOverview.text = movieEntity.overview
+            tvMovieRating.text = movieEntity.rating.toString()
+            tvMovieLanguage.text = movieEntity.language
         }
     }
 
@@ -164,17 +158,19 @@ class DetailMovieActivity : AppCompatActivity() {
             viewModel.otherMovies.observe(this@DetailMovieActivity, {
                 if (it != null) {
                     when (it.status) {
-                        Status.LOADING -> progressBar.visibility = View.VISIBLE
+                        Status.LOADING -> progressBarMovie.visibility = View.VISIBLE
+
                         Status.SUCCESS -> {
                             if (it.data != null) {
-                                progressBar.visibility = View.GONE
+                                progressBarMovie.visibility = View.GONE
                                 val state = it.data.mMovie.favorited
                                 setFavorite(state)
                                 Log.e(TAG, "onCreateOptionsMenu: $state")
                             }
                         }
+
                         Status.ERROR -> {
-                            progressBar.visibility = View.GONE
+                            progressBarMovie.visibility = View.GONE
                             Toast.makeText(
                                 this@DetailMovieActivity,
                                 "Terjadi kesalahan",
@@ -185,6 +181,7 @@ class DetailMovieActivity : AppCompatActivity() {
                 }
             })
         }
+
         return true
     }
 
