@@ -162,6 +162,7 @@ class MainActivityTest {
         onView(withId(R.id.tvTvShowLanguage)).check(matches(isDisplayed()))
         onView(withId(R.id.tvTvShowLanguage)).check(matches(withText(dummyTvShows[0].language)))
         onView(withId(R.id.tvTvShowLanguage)).perform(click())
+        onView(withId(R.id.tvTvShowReadMore)).perform(click())
         onView(withId(R.id.rvTopMovieShow)).check(matches(isDisplayed()))
         onView(withId(R.id.action_favorite)).perform(click())
         onView(isRoot()).perform(pressBack())
