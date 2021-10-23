@@ -1,9 +1,6 @@
 package com.taufik.movieshow.utils
 
-import com.taufik.movieshow.data.source.local.entity.MovieEntity
-import com.taufik.movieshow.data.source.local.entity.OtherMoviesEntity
-import com.taufik.movieshow.data.source.local.entity.OtherTvShowsEntity
-import com.taufik.movieshow.data.source.local.entity.TvShowEntity
+import com.taufik.movieshow.data.source.local.entity.*
 import com.taufik.movieshow.data.source.remote.response.MovieResponse
 import com.taufik.movieshow.data.source.remote.response.OtherMoviesResponse
 import com.taufik.movieshow.data.source.remote.response.OtherTvShowsResponse
@@ -1125,7 +1122,8 @@ object DataDummy {
                 imagePoster = "/lNyLSOKMMeUPr1RsL4KcRuIXwHt.jpg",
                 year = "2021",
                 rating = 7.2,
-                position = 0)
+                position = 0
+            )
         )
 
         otherMovies.add(
@@ -1369,5 +1367,21 @@ object DataDummy {
         )
 
         return otherTvShows
+    }
+
+    fun generateDummyMovieWithOtherMovies(
+        movie: MovieEntity,
+        isFavorite: Boolean
+    ): MovieWithOtherMovies {
+        movie.favorited = isFavorite
+        return MovieWithOtherMovies(movie, generateDummyMovieOtherMovies(movie.movieId))
+    }
+
+    fun generateDummyTvShowWithOtherTvShows(
+        tvShow: TvShowEntity,
+        isFavorite: Boolean
+    ): TvShowWithOtherTvShows {
+        tvShow.favorited = isFavorite
+        return TvShowWithOtherTvShows(tvShow, generateDummyTvShowOtherTvShows(tvShow.tvShowId))
     }
 }

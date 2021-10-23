@@ -65,7 +65,7 @@ class MovieShowRepositoryTest {
     }
 
     @Test
-    fun getFavoritedMovies() {
+    fun getFavoriteMovies() {
         val dataSourceFactory = mock(DataSource.Factory::class.java) as DataSource.Factory<Int, MovieEntity>
         `when`(local.getFavoriteMovies()).thenReturn(dataSourceFactory)
         movieShowRepository.getFavoritedMovies()
@@ -101,7 +101,7 @@ class MovieShowRepositoryTest {
     }
 
     @Test
-    fun getFavoritedTvShows() {
+    fun getFavoriteTvShows() {
         val dataSourceFactory = mock(DataSource.Factory::class.java) as DataSource.Factory<Int, TvShowEntity>
         `when`(local.getFavoriteTvShows()).thenReturn(dataSourceFactory)
         movieShowRepository.getFavoritedTvShows()
